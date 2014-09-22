@@ -1,6 +1,6 @@
 My family enjoys scuba-diving. Nearly every school vacation we go on a remarkable diving trip. We have noticed that there are three very different types of divers. We refer to them as the "nature lovers", the "pool guys", and the "seals". Those whom we call "nature lovers" enjoy getting in the water for a short swim to look at the rocks, vegetation and sea creatures. The "pool guys", who don the latest hi-tech equipment, come for a short while to have a swim and test how well their new toys perform. The "seals", wearing only their swimsuits, disappear for whats seem like hours. Each of these divers enjoys the ocean in a different way.
 
-The "nature lovers" are the one who enjoy snorkeling around for brief periods of time. They always try to have a minimal impact on the environment. For example, their trash, or garbage, are always taken out. Taking rocks and shells are something they would never do. They are there to see, but not spoil the beauty of nature that are under water.
+The "nature lovers" are the ones who enjoy snorkeling around for brief periods of time. They always try not to hamper with the environment. Trash is always taken care of and they do not remove shells or anything else from the ecosystem. Adventuring to experience, but not spoil, the beauty of nature under the sea.
 
 The "pool guys" are the divers who want to go to the beach, or ocean without ever actually leaving their backyard. They come in utility vehicles (SUVs), carrying heavy-duty wet suits, and the latest in diving masks, fins, and air tanks.
 
