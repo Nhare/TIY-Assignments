@@ -2,9 +2,7 @@ My family enjoys scuba-diving. Nearly every school vacation we go on a remarkabl
 
 The "nature lovers" are the ones who enjoy snorkeling around for brief periods of time. They always try not to hamper with the environment. Trash is always taken care of and they do not remove shells or anything else from the ecosystem. Adventuring to experience, but not spoil, the beauty of nature under the sea.
 
-The "pool guys" are the divers who want to go to the beach, or ocean without ever actually leaving their backyard. They come in utility vehicles (SUVs), carrying heavy-duty wet suits, and the latest in diving masks, fins, and air tanks.
-
-They are the ones who are so covered with equipment they can hardly see, feel, and touch the underwater environment. Comparing air tanks and wet suits are what they do most.
+The "pool guys" are the divers who want to go to the beach, or ocean without ever actually leaving their backyard. They come in SUVs loaded to the brim. Wearing heavy-duty wet suits while carrying the latest in diving masks, fins, and air tanks. Seemingly so covered with equipment they can hardly see, feel, and touch the underwater environment. Comparing air tanks and wet suits is their strong suit.
 
 The "seals" are the divers who act as if they are returning back to their natural habitat. Perhaps in a "previous life", they were actually seals. Diving into the water, they hardly make a splash. As soon as they are in the water, they start poking around looking for crabs, abalone and other fish. The "seals" are the people who cooks on the beach. They are also the ones, who leaves the biggest mess. However, since they use beach wood for their fires and eat what they catch in the ocean, there are no paper or plastic packaging left behind.
 
