@@ -5,14 +5,14 @@
  
 ```
 
-Variable is the boolean value.
+* Variable / Boolean
 
 ```
  @var {string} data.ini file
 
 ```
 
-Variable / String
+* Variable / String
 
 ```
  @var {Array} grf list
@@ -20,42 +20,43 @@ Variable / String
 	static private $grfs = array();
 	
 ```
-Variable / Array
+
+* Variable / Array
 
 ```
   @param {string} regex
 
 ```
 
-Parameter / String
+* Parameter / String
 
 ```
   @return {Array} file list
 
 ```
 
-Returns Array
+* Returns Array
 
 ```
   $out  = array_unique( array_merge($out, $list) );
 
 ```
 
-Output is the Merged Value.
+* Output is the Merged Value.
 
 ```
   return $out;
 
 ```
 
-Returns the Output.
+* Returns the Output.
 
 ```
   @return {boolean}
 
 ```
 
-Boolean
+* Returns Boolean
 
 ```
 $img = imagecreatetruecolor($width, $height);
@@ -64,7 +65,7 @@ $img = imagecreatetruecolor($width, $height);
 
 ```
 
-Boolean
+* Boolean
 
 ```
 	{
@@ -76,7 +77,7 @@ Boolean
 
 ```
 
-Boolean
+* Boolean equation to determine if errors occured.
 
 ```
 /**
@@ -87,4 +88,4 @@ Boolean
 
 ```
 
-Boolean
+* Boolean value returned to check if in debug mode.
