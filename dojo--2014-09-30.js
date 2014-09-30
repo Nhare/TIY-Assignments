@@ -83,9 +83,32 @@ function test_subtract(a, b, c){
      subtract(a,b) === c);
 }
  
+ test_subtract("one", "zero", 1);
  test_subtract("one", "one", 0);
+ test_subtract("two", "zero", 2);
  test_subtract("two ", "one", 1);
  test_subtract("two", "two", 0);
+ test_subtract("three", "zero", 3);
  test_subtract("three", "one", 2);
  test_subtract("three", "two", 1);
  test_subtract("three", "three", 0);
+ test_subtract("four", "zero", 4); 
+ test_subtract("four", "one", 3);
+ test_subtract("four", "two", 2);
+ test_subtract("four", "three", 1);
+ test_subtract("four", "four", 0);
+test_subtract("five", "zero", 5);
+test_subtract("five", "one", 4);
+test_subtract("five", "two", 3);
+test_subtract("five", "three", 2);
+test_subtract("five", "four", 1);
+test_subtract("five", "five", 0);
+
+
+
+
+
+
+
+
+ 
