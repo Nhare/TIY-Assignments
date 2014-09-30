@@ -15,24 +15,39 @@
  */
  
  function wordVal (word){
-    if ( word == " one "){
+     if(word == "zero"){
+         word = 0;
+     }
+    if ( word == "one"){
         word = 1;
     } 
+    if (word == "two"){
+        word = 2;
+    }
     return word;
 }
+
+function test_wordVal(a, b){
+    console.log('it should convert "' + a + '" to ' + b + ': ',
+        wordVal(a) === b);
+}
+
+test_wordVal('one', 1);
  
- function subtract(a, b){
+function subtract(a,b){
      
-    a = word(a);
+    a = wordVal(a);
     
-    b = word(b);
+    b = wordVal(b);
     
     return a - b;
     
- }
+}
  
- function test_subtract(a, b, c){
-     console.log('it should subtract'- a -'and '- b -':',
+function test_subtract(a, b, c){
+     console.log('it should subtract ' + a + 'and ' + b + ':',
      subtract(a,b) === c);
- }
+}
+ 
  test_subtract("one", "one", 0);
+ 
