@@ -2,9 +2,10 @@
 var assert = require('assert');
 
 function conway(cell, neighbors){
-  if (liveNeighbors >= 2)
-      return true;
-}
+    var liveNeighbors = numberOfLiveNeighbors(neighbors);
+
+
+    }
 
 function numberOfLiveNeighbors(neighbors){
     var liveCells = 0;
@@ -95,3 +96,30 @@ neighbors = [
 assert.equal(conway(true, neighbors), false,
     'a cell with 2 to 3 living neighbors survives'
 ) || console.log('Pass');
+
+
+
+
+/**
+ *Check Writing
+ *
+ *Given a Number representing monet -- $1234.56 -- convert that
+ *into it's string representation in English words. For example,
+ *1234.56 is "one thousand, two hundred thirty four and 56/100s",
+ *just like you see on a check.
+
+ *In a lot of ways, this is the inverse of the :String Calculator"
+ *problem, so a lot of what you've learned will be put into practice
+ *here, but backwards. Hooray!
+ */
+
+ /**
+  *Sample Data:
+  *
+  *1234.56 => "one thousand, two hundred thirty four and 56/100s"
+  *123.45 => "one hundred twent three and 45/100s"
+  *12.34 => "twelve and 34/100s"
+  *1.23 => "one and 23/100s"
+  *
+  *Make up your own, too.
+  */
