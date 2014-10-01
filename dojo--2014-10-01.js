@@ -1,2 +1,8 @@
-nombre = 3.14
-nombre.charAt(3)
+var input = "1.00";
+var nombre = "zero"
+
+if (input.charAt(0) == 1){
+  nombre = "one";
+}
+
+console.log("You wrote a check for " + nombre + " dollar(s) : $1.00");
