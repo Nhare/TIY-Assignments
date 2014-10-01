@@ -7,15 +7,31 @@ function conway(cell, neighbors){
 }
 
 function numberOfLiveNeighbors(neighbors){
-   //What do I do with neighbors?
+    var liveCells = 0;
+    var index = 0;
 
-    if (neighbors[0] === true){
-        return 1;
+    while ( index < neighbors.length ){
+      if (neighbors[index] === true)
+        liveCells++;
+      }
+      index++;
     }
-    if (neighbors[1] === true){
-        return 1;
-    }
-    
+    return liveCells;
+
+  //  What do I do with neighbors?
+
+  //  if (neighbors[0] === true){
+  //      liveCells++;
+        //liveCells = liveCells + 1;
+        //liveCells += 1;
+  //  }
+  //  if (neighbors[1] === true){
+        liveCells++;
+  //  }
+  //  if (neighbors[2] === true){
+        liveCells++;
+  //  }
+
         //With each neighbor...
       // If neighbor is TRUE
         //add 1 live neighbor
