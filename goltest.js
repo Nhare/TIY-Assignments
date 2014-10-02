@@ -99,27 +99,35 @@ assert.equal(conway(true, neighbors), false,
 
 
 
+/** Day TWO 10/02
+* For weekend assignment
+* Conway's Game of Life
+*  - Start with a single 'cell' and a list of 'neighbors'.
+*  - When 'conway(cell, neighbors)' is called...
+*  - Then calculate and return the state of the 'cell' in the next gen.
+*/
 
-/**
- *Check Writing
- *
- *Given a Number representing monet -- $1234.56 -- convert that
- *into it's string representation in English words. For example,
- *1234.56 is "one thousand, two hundred thirty four and 56/100s",
- *just like you see on a check.
+assert.equal(true, true);
+assert.equal(true, false, 'This is fail');
 
- *In a lot of ways, this is the inverse of the :String Calculator"
- *problem, so a lot of what you've learned will be put into practice
- *here, but backwards. Hooray!
- */
+row = board[1]
+cell = row[1]
 
- /**
-  *Sample Data:
-  *
-  *1234.56 => "one thousand, two hundred thirty four and 56/100s"
-  *123.45 => "one hundred twent three and 45/100s"
-  *12.34 => "twelve and 34/100s"
-  *1.23 => "one and 23/100s"
-  *
-  *Make up your own, too.
-  */
+//board = [
+//    [ false, true, false ],
+//    [ false, true, false ],
+//    [ false, true, false ],
+//];
+
+board = [
+    [ 0, 1, 0 ],
+    [ 0, 1, 0 ],
+    [ 0, 1, 0 ],
+];
+
+board:
+[0,0],[1,0],[2,0]
+[0,1],[1,1],[2,1]
+[0,2],[1,2],[2,2]
+
+board[1][1]; // Board give me [1,1]
