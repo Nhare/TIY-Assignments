@@ -1,0 +1,2 @@
+// Conway Lite
+// Cellular Automaton

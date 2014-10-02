@@ -125,9 +125,20 @@ board = [
     [ 0, 1, 0 ],
 ];
 
+
 board:
 [0,0],[1,0],[2,0]
 [0,1],[1,1],[2,1]
 [0,2],[1,2],[2,2]
 
 board[1][1]; // Board give me [1,1]
+//Item is a list! Loop over to get items.
+conway(board[0][0], neighborsOf(0, 0))
+conway(board[0][1], neighborsOf(0, 1))
+conway(board[0][2], neighborsOf(0, 2))
+conway(board[1][1], neighborsOf(1, 1))
+
+// For every cell on the board
+neighbors = neighborsOf(row, col); // [ ] of cells
+
+conway(cell, neighbors);
