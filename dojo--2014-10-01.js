@@ -1,4 +1,3 @@
-
 //var cents1 = 0;
 //var cents2 = 0;
 //var a = 0;
@@ -25,15 +24,16 @@
 
 
 
+
+
+
 var testVal = "1.56";
-
-centst1 = testVal.charAt(2);
-centst2 = testVal.charAt(3);
-
+var centst = (testVal.charAt(2) + testVal.charAt(3));
 if (testVal.charAt(0) == 1){
-  testVal = "one";
+      num = "one";
 }
 
 console.log(testVal.charAt(0));
 console.log("please");
-console.log('You wrote a check for ' + testVal + ' dollar(s) and ' + centst1 + + centst2 + '/100 cents. : $1.56');
+console.log('You wrote a check for ' + testVal + ' dollar(s) and ' + centst + '/100 cents. : $1.56');
+console.log('You wrote a check for ' + testVal + ' dollars(s) and noone gives a shit cents.')
