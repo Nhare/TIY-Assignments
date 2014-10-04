@@ -27,53 +27,115 @@
  * - THEN returns a NEW `board` representing the next generation.
 */
 
-/*
-var assert = require('assert');
-
-function test(actual, expected, success){
-    if (success === undefined) success = 'pass!';
-
-    assert.strictEqual(actual, expected);
-
-    console.log(success);
-}
-*/
-
 // TESTS NEEDED
 // x-1, x-1, x-1, xnc, xnc, x+1, x+1, x+1
 // y-1, ync, y+1, y-1, y+1, y-1, ync, y+1
 
-function neighborsOf(board[r][c]){
-  var brainFuck = [
-      [[r] - 1, [r] - 1, [r] - 1, [r], [r], [r] + 1, [r] + 1,[r] + 1],
-      [[c] - 1, [c], [c] + 1, [c] - 1, [c] + 1, [c] - 1, [c], [c] +1 ],
-  ]
-  for (i = 0; i < brainFuck.length; i++){
-    var b = brainFuck[i];
-    for(j = 0; j < b.length; j++){
-        var x = b[j];
-        var win = [];
-        win.push(x);
-    }
-}
+//
+// function neighborsOf(board[r][c]){
+//   var brainFuck = [
+//       [[r] - 1, [r] - 1, [r] - 1, [r], [r], [r] + 1, [r] + 1,[r] + 1],
+//       [[c] - 1, [c], [c] + 1, [c] - 1, [c] + 1, [c] - 1, [c], [c] +1 ],
+//   ]
+// }
+//
+// var board = [
+//     [ false, true, false ],
+//     [ false, true, false ],
+//     [ false, true, false ],
+// ]
+//
+// var liveCell = 0;
+// var win = [];
+//
+//
+//
+// var assert = require('assert');
+// function test(actual, expected, success){
+//     if (success === undefined) success = "Victory, or Death!";
+//     assert.strictEqual(actual, expected);
+//     console.log(success);
+// }
 
-var board = [
-    [ false, true, false ],
-    [ false, true, false ],
-    [ false, true, false ],
+
+
+board = [
+  [false, false, false],
+  [true, true, true],
+  [false, false, false],
 ]
 
-var liveCell = 0;
+// var tick = [];
+// tick.push(newState);
+// console.log(tick);
 
 for (i = 0; i < board.length; i++){
     var b = board[i];
     for(j = 0; j < b.length; j++){
-        var x = b[j];
-          if(x === true){
-            liveCell += 1;
-          }
-        console.log(x);
+        var pos = b[j];
+
     }
 }
 
-console.log(liveCell);
+var neighbors;
+function neighborOf(board, x, y) {
+  if (x === 0 && y === 0) {
+      neighbors = [board[1][1], board[0][1], board[1][0]];
+  }
+  if (x === 1 && y === 0) {
+      neighbors = [board[1][1], board[0][0], board[0][1], board[2][0], board[2][1]];
+  }
+  if (x === 2 && y === 0) {
+      neighbors = [board[1][1], board[1][0], board[2][1]];
+  }
+  if (x === 1 && y === 1) {
+      neighbors = [board[0][0], board[1][0], board[2][0], board[0][1], board[0][2], board[2][1], board[2][2], board[1][2]];
+  }
+  if (x === 1 && y === 2) {
+      neighbors = [board[1][1], board[0][1], board[0][2], board[2][1], board[2][2]];
+  }
+  if (x === 2 && y === 1) {
+      neighbors = [board[1][1], board[2][0], board[1][0], board[1][2], board[2][2]];
+  }
+  if (x === 2 & y === 2) {
+      neighbors = [board[1][1], board[2][1], board[1][2]];
+  }
+  if (x === 0 && y === 1) {
+      neighbors = [board[1][1], board[0][0], board[1][0], board[0][2], board[1][2]];
+  }
+  if (x === 0 && y === 2) {
+      neighbors = [board[1][1], board[0][1], board[1][2]];
+  }
+  return neighbors;
+}
+
+var newState;
+function conway(pos, neighbors){
+  var liveBros = 0;
+  for (var i = 0; i < neighbors.length; i++){
+    if (neighbors[i] === true){
+       liveBros++;
+    }
+  }
+    if (pos === false){
+      if (liveBros === 3){
+        newState = true;
+      }
+      else {
+        newState = false;
+      }
+    }
+    if (pos === true){
+      if (liveBros < 2){
+        newState = false;
+      }
+      if (liveBros > 3){
+        newState = false;
+      }
+      else{
+        newState = true;
+      }
+  }
+
+   return newState;
+}
