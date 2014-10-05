@@ -16,14 +16,16 @@
  *
  * - GIVEN a `board`...
  * - THEN returns a NEW `board` representing the next generation.
-*/
+// */
 var assert = require('assert');
-function test(actual, expected, success){
-    if (success === undefined) success = "Victory, or Death.";
-    assert.strictEqual(actual, expected);
-    console.log(success);
-}
+// function test(actual, expected, success){
+//     if (success === undefined) success = "Victory, or Death.";
+//     assert.strictEqual(actual, expected);
+//     console.log(success);
+// }
+
 //determine neighbors
+
 var neighborsAre;
 function neighborOf(board, x, y){
   if (x === 0 && y === 0) {
@@ -60,7 +62,7 @@ var newState;
 //takes poistion/neighors and runs them through conway's rule set
 function conway(position, neighborsAre){
     var liveN = 0;
-    for (var i = 0; n < neighborsAre.length; i++){
+    for (var i = 0; i < neighborsAre.length; i++){
       if (neighborsAre[i] === true){
           liveN++;
       }
@@ -91,7 +93,7 @@ function tick(board){
   var boardNewTick = [] //store new board
   for (var i = 0; i < board.length; i++){
     for (var j = 0; j < board[i].length; j++){
-      newTick.push(conway(board[i][j], neighborOf(board, i, j)));
+      boardNewTick.push(conway(board[i][j], neighborOf(board, i, j)));
     }
   }
   //credit to Ari here for alerting me to go read up on .splice
@@ -102,11 +104,17 @@ function tick(board){
   board = [row1, row2, boardNewTick];
   return board;
 }
+
 //THE TEST
 function test(board){
   var newTick = tick(board);
+  console.log("Initial Board")
   console.log(board);
+  console.log("\n");
+  console.log("After One Tick")
   console.log(newTick);
+  console.log("\n");
+  console.log("\n");
 }
 
 //boards
@@ -126,28 +134,30 @@ var board3 = [
     [true, true, true ],
     [false, false, false],
 ]
-var board4 = [
-    [false, true, false],
-    [false, true, false],
-    [false, false, false],
-]
-var board5 = [
-    [false, false, false],
-    [false, false, false],
-    [false, false, false],
-]
-var board6 = [
-    [false, true, false],
-    [false, true, true],
-    [false, true, false],
-]
+// var board4 = [
+//     [false, true, false],
+//     [false, true, false],
+//     [false, false, false],
+// ]
+// var board5 = [
+//     [false, false, false],
+//     [false, false, false],
+//     [false, false, false],
+// ]
+// var board6 = [
+//     [false, true, false],
+//     [false, true, true],
+//     [false, true, false],
+// ]
 
 test(board);
 test(board2);
 test(board3);
-test(board4);
-test(board5);
-test(board6);
+// test(board4);
+// test(board5);
+// test(board6);
+
+
 
 //Scribbles and bits I want to remember
 // TESTS NEEDED
