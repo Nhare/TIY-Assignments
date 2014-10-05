@@ -17,20 +17,15 @@
  * - GIVEN a `board`...
  * - THEN returns a NEW `board` representing the next generation.
 */
-
+var assert = require('assert');
 function test(actual, expected, success){
     if (success === undefined) success = "Victory, or Death.";
     assert.strictEqual(actual, expected);
     console.log(success);
 }
-
-board = [
-  [false, true, false],
-  [false, true, false],
-  [false, true, false],
-]
-
+//determine neighbors
 var neighborsAre;
+function neighborOf(board, x, y){
   if (x === 0 && y === 0) {
     neighborsAre = [board[1][1], board[0][1], board[1][0]];
   }
@@ -58,44 +53,106 @@ var neighborsAre;
   if (x === 0 && y === 2) {
     neighborsAre = [board[1][1], board[0][1], board[1][2]];
   }
-  return neighborsAre;
+  return neighborsAre; //Returns neighbors
 }
-//takes poistion/neighors and runs them through conway's rule set
-// var newState = [];
-// var newState;
-// function conway(position, neighborsAre){
-//     var liveN = 0;
-//     for (var i = 0; n < neighborsAre.length; i++){
-//       if (neighborsAre[i] === true){
-//           liveN++;
-//       }
-//       if (position === false){
-//         if (liveN === 3){
-//           newState = true;
-//         }
-//         else {
-//           newState = false;
-//         }
-//       }
-//       if (position === true){
-//         if (liveN < 2){
-//           newState = false;
-//         }
-//         if (liveN > 3){
-//           newState = false;
-//         }
-//         else{
-//           newState = true;
-//         }
-//       }
-//     }
-//     return newState;
-// }
 
+var newState;
+//takes poistion/neighors and runs them through conway's rule set
+function conway(position, neighborsAre){
+    var liveN = 0;
+    for (var i = 0; n < neighborsAre.length; i++){
+      if (neighborsAre[i] === true){
+          liveN++;
+      }
+      if (position === false){
+        if (liveN === 3){
+          newState = true;
+        }
+        else {
+          newState = false;
+        }
+      }
+      if (position === true){
+        if (liveN < 2){
+          newState = false;
+        }
+        if (liveN > 3){
+          newState = false;
+        }
+        else{
+          newState = true;
+        }
+      }
+    }
+    return newState;
+}
+//Putting it all together for a new game board
+function tick(board){
+  var boardNewTick = [] //store new board
+  for (var i = 0; i < board.length; i++){
+    for (var j = 0; j < board[i].length; j++){
+      newTick.push(conway(board[i][j], neighborOf(board, i, j)));
+    }
+  }
+  //credit to Ari here for alerting me to go read up on .splice
+  //solved my initial problem with my first try at this which was
+  //creating a newTick in proper format
+  var row1 = boardNewTick.splice(0, 3);
+  var row2 = boardNewTick.splice(0, 3);
+  board = [row1, row2, boardNewTick];
+  return board;
+}
+//THE TEST
+function test(board){
+  var newTick = tick(board);
+  console.log(board);
+  console.log(newTick);
+}
+
+//boards
+var board = [
+    [false, true, false],
+    [false, true, false],
+    [false, true, false],
+]
+
+var board2 = [
+    [false, false, false],
+    [false, true , false],
+    [false, false, false],
+]
+var board3 = [
+    [false, false, false],
+    [true, true, true ],
+    [false, false, false],
+]
+var board4 = [
+    [false, true, false],
+    [false, true, false],
+    [false, false, false],
+]
+var board5 = [
+    [false, false, false],
+    [false, false, false],
+    [false, false, false],
+]
+var board6 = [
+    [false, true, false],
+    [false, true, true],
+    [false, true, false],
+]
+
+test(board);
+test(board2);
+test(board3);
+test(board4);
+test(board5);
+test(board6);
+
+//Scribbles and bits I want to remember
 // TESTS NEEDED
 // x-1, x-1, x-1, xnc, xnc, x+1, x+1, x+1
 // y-1, ync, y+1, y-1, y+1, y-1, ync, y+1
-
 //
 // function neighborsOf(board[r][c]){
 //   var brainFuck = [
@@ -103,12 +160,6 @@ var neighborsAre;
 //       [[c] - 1, [c], [c] + 1, [c] - 1, [c] + 1, [c] - 1, [c], [c] +1 ],
 //   ]
 // }
-//
-// board = [
-//   [false, false, false],
-//   [true, true, true],
-//   [false, false, false],
-// ]
 //
 // //cycles through board for position
 // var cellBool = [];
@@ -131,8 +182,6 @@ var neighborsAre;
 //   for (l = 0; j < cellLoc.length; l++){
 //   }
 // }
-
-//adding them into a new array "newTick" (Doesn't seem to work yet!!)
 
 //
 // once I figure out the single list for tick, can experiment returning a list of lists
