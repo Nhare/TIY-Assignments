@@ -145,18 +145,9 @@ test(board2);
 test(board3);
 test(board4);
 
-
-
-
-
-
-
-
-
-
-
-
-//Scribbles and bits I want to remember
+//Trying to figure out how to approach this, made me laugh.
+//Kept it here to come back to it one day and tackle it.
+//
 // TESTS NEEDED
 // x-1, x-1, x-1, xnc, xnc, x+1, x+1, x+1
 // y-1, ync, y+1, y-1, y+1, y-1, ync, y+1
@@ -167,33 +158,3 @@ test(board4);
 //       [[c] - 1, [c], [c] + 1, [c] - 1, [c] + 1, [c] - 1, [c], [c] +1 ],
 //   ]
 // }
-//
-// //cycles through board for position
-// var cellBool = [];
-// var cellLoc = [];
-// for (i = 0; i < board.length; i++){
-//     var b = board[i];
-//     for(j = 0; j < b.length; j++){
-//         var pos = b[j];
-//         var x = i;
-//         var y = j;
-//         cellBool.push(pos);
-//         cellLoc.push([x, y]);
-//     }
-// }
-//
-//
-// var cellBros = [];
-// for (k = 0; k < cellLoc.length; k++){
-//   var l = cellLoc[l];
-//   for (l = 0; j < cellLoc.length; l++){
-//   }
-// }
-
-//
-// once I figure out the single list for tick, can experiment returning a list of lists
-// console.log(newTick);
-// console.log(cellBool);
-// console.log(cellLoc);
-// console.log(cellBros);
-// console.log("\nVictory, or Death!");
