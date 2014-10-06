@@ -18,14 +18,8 @@
  * - THEN returns a NEW `board` representing the next generation.
 // */
 var assert = require('assert');
-// function test(actual, expected, success){
-//     if (success === undefined) success = "Victory, or Death.";
-//     assert.strictEqual(actual, expected);
-//     console.log(success);
-// }
 
 //determine neighbors
-
 var neighborsAre;
 function neighborOf(board, x, y){
   if (x === 0 && y === 0) {
@@ -60,6 +54,11 @@ function neighborOf(board, x, y){
 
 var newState;
 //takes poistion/neighors and runs them through conway's rule set
+//conway's rules
+// 1: Fewer than two live nieghbors dies. Under-population.
+// 2: Two or thee live neighbors lives on to the next generation.
+// 3: More than three live neighbors dies. Overcrowding.
+// 4: Exactly three live neighbors will bring life. Reproduction.
 function conway(position, neighborsAre){
     var liveN = 0;
     for (var i = 0; i < neighborsAre.length; i++){
@@ -81,7 +80,8 @@ function conway(position, neighborsAre){
         if (liveN > 3){
           newState = false;
         }
-        else{
+        //using an ELSE here was crushing my tests, learned something valuable
+        if (liveN === 2 || liveN === 3){
           newState = true;
         }
       }
@@ -98,7 +98,7 @@ function tick(board){
   }
   //credit to Ari here for alerting me to go read up on .splice
   //solved my initial problem with my first try at this which was
-  //creating a newTick in proper format
+  //creating a newTick in proper format. List of lists/array of arrays.
   var row1 = boardNewTick.splice(0, 3);
   var row2 = boardNewTick.splice(0, 3);
   board = [row1, row2, boardNewTick];
@@ -131,31 +131,28 @@ var board2 = [
 ]
 var board3 = [
     [false, false, false],
-    [true, true, true ],
+    [false, false, false ],
     [false, false, false],
 ]
-// var board4 = [
-//     [false, true, false],
-//     [false, true, false],
-//     [false, false, false],
-// ]
-// var board5 = [
-//     [false, false, false],
-//     [false, false, false],
-//     [false, false, false],
-// ]
-// var board6 = [
-//     [false, true, false],
-//     [false, true, true],
-//     [false, true, false],
-// ]
+var board4 = [
+    [false, false, false],
+    [false, true, false],
+    [false, true, false],
+]
 
 test(board);
 test(board2);
 test(board3);
-// test(board4);
-// test(board5);
-// test(board6);
+test(board4);
+
+
+
+
+
+
+
+
+
 
 
 
