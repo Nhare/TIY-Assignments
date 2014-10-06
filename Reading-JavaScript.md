@@ -2,7 +2,7 @@
 
 ```
   @var {boolean} auto extract mode
- 
+
 ```
 
 * Variable / Boolean
@@ -16,9 +16,9 @@
 
 ```
  @var {Array} grf list
-	
+
 	static private $grfs = array();
-	
+
 ```
 
 * Variable / Array
@@ -200,14 +200,14 @@ switch (event.data.type) {
 				if (shortcut.ctrl) {
 					str.push('CTRL');
 				}
-
+w
 				if (tmp) {
 					str.push(tmp);
 				}
 
 				return str.join(' + ');
 			}
-		}
+}
 
 ```
 
@@ -223,3 +223,45 @@ for (i = 0; i < count; ++i) {
 ```
 
 * For
+
+```
+function toEnglish(){
+  return 'one';
+}
+
+```
+  A fuction defined as toEnglish.
+
+```
+var testCase = [
+
+];
+
+```
+
+A list
+
+```
+for (var index = 0; index < testCases.length; index++){
+  test etcetc
+}
+
+For loop.
+
+```
+if (value > 20){
+  return 'twenty' + ones[value-20];
+}
+
+```
+
+If statement.
+
+```
+If (value > 39){
+  return 'forty';
+}
+
+```
+
+If statement
