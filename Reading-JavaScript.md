@@ -1,6 +1,171 @@
 #Reading Javascript Assignment#
 
 ```
+  define(function( require )
+{
+	'use strict';
+
+
+	// Load dependencies
+	var jQuery      = require('Utils/jquery');
+	var Queue       = require('Utils/Queue');
+	var Sound       = require('Audio/SoundManager');
+	var BGM         = require('Audio/BGM');
+	var DB          = require('DB/DBManager');
+	var Configs     = require('Core/Configs');
+	var Client      = require('Core/Client');
+	var Thread      = require('Core/Thread');
+	var Context     = require('Core/Context');
+	var LoginEngine = require('Engine/LoginEngine');
+	var Network     = require('Network/NetworkManager');
+	var Renderer    = require('Renderer/Renderer');
+	var MapRenderer = require('Renderer/MapRenderer');
+	var UIManager   = require('UI/UIManager');
+	var Cursor      = require('UI/CursorManager');
+	var Scrollbar   = require('UI/Scrollbar');
+	var Background  = require('UI/Background');
+	var Intro       = require('UI/Components/Intro/Intro');
+	var WinList     = require('UI/Components/WinList/WinList');
+
+```
+Define function()
+@para Require
+loads dependencies as indicated
+
+```
+if (count === 0) {
+				UIManager.showMessageBox( 'Sorry, no server found.', 'ok', init);
+			}
+
+			// Just 1 server, skip the WinList
+			else if (count === 1 && Configs.get('skipServerList')) {
+				LoginEngine.onExitRequest = reload;
+				LoginEngine.init( _servers[0] );
+			}
+			else {
+				for (i = 0; i < count; ++i) {
+					list[i] = _servers[i].display;
+				}
+
+				WinList.append();
+				WinList.setList( list );
+			}
+
+```
+
+If, Else If, Else
+
+```
+for (i = 0, count = files.length; i < count; ++i) {
+				list.push({
+					file: files[i],
+					path: files[i].fullPath || files[i].relativePath || files[i].webkitRelativePath || files[i].name
+				});
+			}
+```
+For loop
+@files
+push's into list array
+
+```
+function search(regex, callback)
+	{
+		Thread.send(
+			'SEARCH_FILE',
+			regex,
+			callback
+		);
+	}
+```
+Function search
+@regex @callback
+
+```
+while (count > 0) {
+			if (_events[0].tick > tick) {
+				break;
+			}
+
+			_events.shift().callback();
+			count--;
+		}
+```
+While
+@count
+
+```
+for (i = 0; i < count; ++i) {
+			matches = fileList[i].table.data.match(regex);
+
+			if (matches !== null) {
+				// Remove duplicates
+				for (j = 0, size = matches.length; j < size; ++j) {
+					out[ matches[j] ] = 1;
+				}
+			}
+		}
+```
+For loop 
+If 
+Nested for loop 
+@count @matches
+
+```
+function calculateClientSize()
+	{
+		var i, count;
+
+		_clientSize = 0;
+
+		for (i = 0, count = _files.length; i < count; ++i) {
+			_clientSize += _files[i].size || 0;
+		}
+	}
+
+```
+function
+For loop
+@_files
+var clientSize -> returned
+
+```
+function cleanUp()
+	{
+		var i, count;
+		var dirReader = _fs_sync.root.createReader();
+		var entries   = dirReader.readEntries();
+
+		for (i = 0, count = entries.length; i < count; ++i) {
+			if (entries[i].isDirectory) {
+				entries[i].removeRecursively();
+			}
+			else {
+				entries[i].remove();
+			}
+		}
+	}
+```
+function cleanUp
+var i, count, dirReader, entries
+@entries
+Removes entries, recursively if Directory
+
+```
+function saveFile( filePath, buffer )
+```
+function
+@filePath
+@buffer
+
+```
+function MemoryItem( onload, onerror )
+	{
+```
+function
+@onload
+@onerror
+
+```
   @var {boolean} auto extract mode
 
 ```
