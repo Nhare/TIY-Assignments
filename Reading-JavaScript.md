@@ -1,6 +1,70 @@
 #Reading Javascript Assignment#
 
 ```
+function exist( filename )
+	{
+		return filename in _memory;
+	}
+
+```
+function exist
+@filename
+
+```
+function clean( gl, now )
+	{
+```
+function clean
+@gl
+@now
+
+```
+function touchTranslationX(oldTouches, touches)
+	{
+```
+function touchTranslationX
+@oldTouches
+@touches
+
+```
+function get( key, def, version )
+	{
+```
+function get
+@key
+@def
+@version
+
+```
+function reload()
+	{
+```
+function 
+anonymous! (learned that today!)
+
+```
+function onRestartAnswer( pkt )
+	{
+		if (!pkt.type) {
+			// Have to wait 10sec
+			ChatBox.addText( DB.getMessage(502), ChatBox.TYPE.ERROR );
+		}
+		else {
+			StatusIcons.clean();
+			ChatBox.clean();
+			ShortCut.clean();
+			PartyFriends.clean();
+			MapRenderer.free();
+			Renderer.stop();
+			onRestart();
+		}
+	}
+```
+function
+@pkt
+if/else
+
+```
   define(function( require )
 {
 	'use strict';
