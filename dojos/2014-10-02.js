@@ -20,39 +20,39 @@
 var assert = require('assert');
 
 //determine neighbors
-var neighborsAre;
+
 function neighborOf(board, x, y){
-  if (x === 0 && y === 0) {
+  var neighborsAre;
+  if (x === 0 && y === 0){
     neighborsAre = [board[1][1], board[0][1], board[1][0]];
   }
-  if (x === 1 && y === 0) {
+  if (x === 1 && y === 0){
     neighborsAre = [board[1][1], board[0][0], board[0][1], board[2][0], board[2][1]];
   }
-  if (x === 2 && y === 0) {
+  if (x === 2 && y === 0){
     neighborsAre = [board[1][1], board[1][0], board[2][1]];
   }
-  if (x === 1 && y === 1) {
+  if (x === 1 && y === 1){
     neighborsAre = [board[0][0], board[1][0], board[2][0], board[0][1], board[0][2], board[2][1], board[2][2], board[1]         [2]];
   }
-  if (x === 1 && y === 2) {
+  if (x === 1 && y === 2){
     neighborsAre = [board[1][1], board[0][1], board[0][2], board[2][1], board[2][2]];
   }
-  if (x === 2 && y === 1) {
+  if (x === 2 && y === 1){
     neighborsAre = [board[1][1], board[2][0], board[1][0], board[1][2], board[2][2]];
   }
-  if (x === 2 && y === 2) {
+  if (x === 2 && y === 2){
     neighborsAre = [board[1][1], board[2][1], board[1][2]];
   }
-  if (x === 0 && y === 1) {
+  if (x === 0 && y === 1){
     neighborsAre = [board[1][1], board[0][0], board[1][0], board[0][2], board[1][2]];
   }
-  if (x === 0 && y === 2) {
+  if (x === 0 && y === 2){
     neighborsAre = [board[1][1], board[0][1], board[1][2]];
   }
   return neighborsAre; //Returns neighbors
 }
 
-var newState;
 //takes poistion/neighors and runs them through conway's rule set
 //conway's rules
 // 1: Fewer than two live nieghbors dies. Under-population.
@@ -61,8 +61,9 @@ var newState;
 // 4: Exactly three live neighbors will bring life. Reproduction.
 function conway(position, neighborsAre){
     var liveN = 0;
-    for (var i = 0; i < neighborsAre.length; i++){
-      if (neighborsAre[i] === true){
+    var newState;
+    neighborsAre.forEach(function(value, index){
+      if (value === true){
           liveN++;
       }
       if (position === false){
@@ -85,17 +86,19 @@ function conway(position, neighborsAre){
           newState = true;
         }
       }
-    }
+    });
     return newState;
 }
 //Putting it all together for a new game board
 function tick(board){
   var boardNewTick = [] //store new board
-  for (var i = 0; i < board.length; i++){
-    for (var j = 0; j < board[i].length; j++){
-      boardNewTick.push(conway(board[i][j], neighborOf(board, i, j)));
-    }
-  }
+  board.forEach(function(value, index){
+      value.forEach(function(x, y){
+  // for (var i = 0; i < board.length; i++){
+  //   for (var j = 0; j < board[i].length; j++){
+      boardNewTick.push(conway(board[index][y], neighborOf(board, index, y)));
+    });
+  });
   //credit to Ari here for alerting me to go read up on .splice
   //solved my initial problem with my first try at this which was
   //creating a newTick in proper format. List of lists/array of arrays.
