@@ -15,8 +15,8 @@ function clean( gl, now )
 	{
 ```
 function clean
-@gl
-@now
++ @gl
++ @now
 
 ```
 function touchTranslationX(oldTouches, touches)
