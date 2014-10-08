@@ -59,3 +59,17 @@ describe('fromEnglish()', function(){
         // assert.isUndefined(fromEnglish('six'));
     });
 });
+
+
+//
+//
+//
+// Chai learning
+
+var expect = require('chai').expect, 
+    iron = 'yard';
+
+it('should have a length of 4', function(){
+    expect(iron).to.have.length(4);
+    expect(iron).to.be.a('number');     
+})    
