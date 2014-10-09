@@ -1,20 +1,46 @@
 #Reading Javascript Assignment#
 
 ```
+for (var index=0; index<testCases.length; index++){
+}
+
+```
++ for loop
++ var index
++ @testCases
++ Runs through the available test cases.
+
+```
+board.forEach(function(row, rowIndex){
+     row.forEach(function(cell, colIndex){
+          arrNextBoard[rowIndex][colIndex]=conway(cell, neighborsOf(board, rowIndex, colIndex)));
+      });
+  });
+```
++ forEach
++ nested forEach
++ @row 
++ @rowIndex 
++ @cell 
++ @colIndex
++ Cycling through the rows/columns to create a new board.
+
+```
 function exist( filename )
 	{
 		return filename in _memory;
 	}
 
 ```
-function exist
-@filename
++ function exist
++ @filename
++ returns the filename that is in _memory.
 
 ```
 function clean( gl, now )
 	{
 ```
-function clean
++ function clean
 + @gl
 + @now
 
@@ -22,25 +48,25 @@ function clean
 function touchTranslationX(oldTouches, touches)
 	{
 ```
-function touchTranslationX
-@oldTouches
-@touches
++ function touchTranslationX
++ @oldTouches
++ @touches
 
 ```
 function get( key, def, version )
 	{
 ```
-function get
-@key
-@def
-@version
++ function get
++ @key
++ @def
++ @version
 
 ```
 function reload()
 	{
 ```
-function 
-anonymous! (learned that today!)
++ function reload 
++ anonymous! (learned that today!)
 
 ```
 function onRestartAnswer( pkt )
@@ -60,9 +86,9 @@ function onRestartAnswer( pkt )
 		}
 	}
 ```
-function
-@pkt
-if/else
++ function onRestartAnswer
++ @pkt
++ if/else
 
 ```
   define(function( require )
@@ -92,9 +118,9 @@ if/else
 	var WinList     = require('UI/Components/WinList/WinList');
 
 ```
-Define function()
-@para Require
-loads dependencies as indicated
++ Define function()
++ @para Require
++ loads dependencies as indicated
 
 ```
 if (count === 0) {
@@ -116,8 +142,8 @@ if (count === 0) {
 			}
 
 ```
-
-If, Else If, Else
++ var count
++ If, Else If, Else
 
 ```
 for (i = 0, count = files.length; i < count; ++i) {
@@ -127,9 +153,10 @@ for (i = 0, count = files.length; i < count; ++i) {
 				});
 			}
 ```
-For loop
-@files
-push's into list array
++ For loop
++ @files.length
++ var i
++ push's into list
 
 ```
 function search(regex, callback)
@@ -141,8 +168,9 @@ function search(regex, callback)
 		);
 	}
 ```
-Function search
-@regex @callback
++ function search
++ @regex 
++ @callback
 
 ```
 while (count > 0) {
@@ -154,8 +182,8 @@ while (count > 0) {
 			count--;
 		}
 ```
-While
-@count
++ while
++ var count
 
 ```
 for (i = 0; i < count; ++i) {
@@ -169,10 +197,11 @@ for (i = 0; i < count; ++i) {
 			}
 		}
 ```
-For loop 
-If 
-Nested for loop 
-@count @matches
++ for loop 
++ nested for loop 
++ var count 
++ var matches
++ var j
 
 ```
 function calculateClientSize()
@@ -187,10 +216,11 @@ function calculateClientSize()
 	}
 
 ```
-function
-For loop
-@_files
-var clientSize -> returned
++ function
++ for loop
++ var i 
++ var count
++ @_files
 
 ```
 function cleanUp()
@@ -209,53 +239,45 @@ function cleanUp()
 		}
 	}
 ```
-function cleanUp
-var i, count, dirReader, entries
-@entries
-Removes entries, recursively if Directory
++ function cleanUp
++ var i 
++ var count 
++ var dirReader 
++ var entries
++ for loop
++ if/else
++ Removes entries, recursively if Directory
 
 ```
 function saveFile( filePath, buffer )
 ```
-function
-@filePath
-@buffer
++ function
++ @filePath
++ @buffer
 
 ```
 function MemoryItem( onload, onerror )
 	{
 ```
-function
-@onload
-@onerror
++ function
++ @onload
++ @onerror
 
 ```
 function get( filename, onload, onerror )
 ```
-function
-@filename
-@onload
-@onerror
++ function
++ @filename
++ @onload
++ @onerror
 
 ```
 function OnMessage( event ) {
 
 ```
 
-* Function
-
-```
-chrome.app.window.create('chrome-app/window.html', {
-		bounds: {
-			width:  width,
-			height: height,
-			left:   Math.round((screenWidth-width)/2),
-			top:    Math.round((screenHeight-height)/2)
-		},
-
-```
-
-* Function
++ Function
++ @event
 
 ```
 if (!Context.Is.APP) {
@@ -265,7 +287,8 @@ if (!Context.Is.APP) {
 
 ```
 
-* If return Function
++ if
++ var onbeforeunload
 
 ```
 if (require.defined('UI/Components/Error/Error')) {
@@ -275,14 +298,16 @@ if (require.defined('UI/Components/Error/Error')) {
 
 ```
 
-* If return Function
++ if 
++ require
 
 ```
 switch (event.data.type) {
 
 ```
 
-* Switch
++ switch
++ @event.data.type
 
 ```
 else {
@@ -294,7 +319,8 @@ else {
 
 ```
 
-* Else
++ Else
++ function
 
 ```
 if (Configs.get('API')) {
@@ -303,7 +329,8 @@ if (Configs.get('API')) {
 
 ```
 
-* If return
++ if
++ @API
 
 ```
 switch (event.data.type) {
@@ -326,7 +353,8 @@ switch (event.data.type) {
 
 ```
 
-* Switch
++ switch
++ @event.data.type
 
 ```
 		for (i = 0; i < count; ++i) {
@@ -358,7 +386,10 @@ w
 
 ```
 
-* For
++ for loop
++ var i
++ @count
++ var shortcut
 
 ```
 for (i = 0; i < count; ++i) {
@@ -369,7 +400,9 @@ for (i = 0; i < count; ++i) {
 
 ```
 
-* For
++ for loop
++ var i
++ @count
 
 ```
 function toEnglish(){
@@ -377,7 +410,7 @@ function toEnglish(){
 }
 
 ```
-  A fuction defined as toEnglish.
++ function toEnligh
 
 ```
 var testCase = [
@@ -386,14 +419,16 @@ var testCase = [
 
 ```
 
-A list
++var testCase
 
 ```
 for (var index = 0; index < testCases.length; index++){
   test etcetc
 }
-
-For loop.
+```
++ for loop
++ var index
++ @testCases (.length)
 
 ```
 if (value > 20){
@@ -402,7 +437,8 @@ if (value > 20){
 
 ```
 
-If statement.
++ if
++ @value
 
 ```
 If (value > 39){
@@ -410,5 +446,5 @@ If (value > 39){
 }
 
 ```
-
-If statement
++ if
++ @value
