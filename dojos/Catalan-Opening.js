@@ -13,7 +13,7 @@ Just for me to visualize!
 ['7,0',                                         ]
 
 */
-var assert = require('chai').assert;
+var assert = require('assert');
 
 var board = [
   ['R','N','B','Q','K','B','N','R'],
