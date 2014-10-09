@@ -68,10 +68,10 @@ describe('fromEnglish()', function(){
 //
 //
 
-var expect = require('chai').expect, 
+var expect = require('chai').expect,
     iron = 'yard';
 
 it('should have a length of 4', function(){
     expect(iron).to.have.length(4);
-    expect(iron).to.be.a('number');     
-})    
+    expect(iron).to.be.a('number');
+})
