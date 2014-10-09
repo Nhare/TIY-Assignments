@@ -103,7 +103,31 @@ var testCases = [
     // [40, 'forty'],
 ];
 
+
 for ( var index = 0; index < testCases.length; index++ ){
     test(testCases[index][0], testCases[index][1]);
 }
 console.log('passed ' + test.passes + ' of ' + test.tests + ' tests');
+
+/*
+
+var assert = require('chai').assert;
+
+var CheckWriting = {
+    toEnglish: function(value){
+        return 'one';
+    }
+}
+
+describe('one through ten', function(){
+    it('should convert 1 to "one"', function(){
+        assert.equal(CheckWriting.toEnglish(1), 'one');
+    });
+});
+
+suite('one through ten', function(){
+    test('convert 1 to "onfunction(){
+        assert.equal(false, true);
+    });
+});
+/*
