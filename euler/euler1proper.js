@@ -22,7 +22,6 @@ function solution(){
 
 
 *Original Solution*
-
 function euler(input){
   var sum = 0;
   for(var num = 0; num < input; num++){
@@ -37,14 +36,18 @@ console.log(euler(1000));
 console.log("\nVictory, or Death.");
 */
 
-function solution(input){
-  var sum = 0;
-  for(var num = 0; num < input; num++){
-      if (num % 5 === 0 || num % 3 === 0){
-        sum += num;
+function solution(){
+  return {
+    solveFor: function(input){
+      var sum = 0;
+      for(var num = 0; num < input; num++){
+        if (num % 5 === 0 || num % 3 === 0){
+          sum += num;
+        }
       }
+      return sum;
+    }
   }
-  return sum;
 }
 
-console.log(solution(1000));
+console.log(solution().solveFor(1000));
