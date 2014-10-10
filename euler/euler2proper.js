@@ -33,11 +33,52 @@ function euler2(prev, curr){
 console.log(euler2(1, 2));
 
 */
-
 function solution(){
-  return{
+  return {
+    fibo: function(limit, prev, curr){
+      var fiboSeq = [];
+      for (curr = curr; curr < limit; curr = prev + curr){
+        prev = curr - prev;
+        fiboSeq.push(curr);
+      }
+      return fiboSeq;
+    },
 
-
-
+    filterEvens: function(fiboSeq){
+      var evens = [];
+      fiboSeq.forEach(function(value, index){
+        if (value % 2 === 0){
+          evens.push(value);
+        }
+      });
+      return evens;
+    }
   }
 }
+
+// function sum(evens);
+//   sumEvens = 0;
+//   forEach(function(value, index){
+//     sumEvens += sumEvens
+//   });
+//   return sumEvens;
+// }
+
+console.log(solution().fibo(100, 1, 2));
+
+
+// console.log(solution().fibo.filterEvens.sum(4000000, 1, 2)(fiboSeq)(evens));
+
+//
+// filterEvens:
+//
+// sum:
+//
+//
+// function solution(){
+//   return{
+//
+//
+//
+//   }
+// }
