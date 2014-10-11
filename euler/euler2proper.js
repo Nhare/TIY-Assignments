@@ -33,6 +33,7 @@ function euler2(prev, curr){
 console.log(euler2(1, 2));
 
 */
+
 function solution(){
   return {
     fibo: function(limit, prev, curr){
@@ -65,6 +66,7 @@ function solution(){
 // }
 
 console.log(solution().fibo(100, 1, 2));
+// console.log(solution());
 
 
 // console.log(solution().fibo.filterEvens.sum(4000000, 1, 2)(fiboSeq)(evens));
