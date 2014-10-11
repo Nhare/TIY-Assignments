@@ -45,7 +45,7 @@ function solution(){
       return fiboSeq;
     },
 
-    filterEvens: function(fiboSeq){
+    filterEvens: function(index){
       var evens = [];
       fiboSeq.forEach(function(value, index){
         if (value % 2 === 0){
@@ -66,6 +66,7 @@ function solution(){
 }
 
 console.log(solution().fibo(100, 1, 2));
+console.log(solution().filterEvens(fiboSeq));
 
 // console.log(solution());
 
