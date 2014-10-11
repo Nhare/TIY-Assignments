@@ -65,8 +65,10 @@ function solution(){
   }
 }
 
-console.log(solution().fibo(100, 1, 2));
-console.log(solution().filterEvens(fiboSeq));
+var seqF = solution().fibo(100, 1, 2);
+var evenF =  solution().filterEvens(seqF);
+var victoryD = solution().sum(evenF);
+console.log(victoryD);
 
 // console.log(solution());
 
