@@ -53,9 +53,23 @@ function solution(){
         }
       });
       return evens;
+    },
+
+    sum: function(evens){
+      sumEvens = 0;
+      evens.forEach(function(value, index){
+        sumEvens += sumEvens
+      });
+      return sumEvens;
     }
   }
 }
+
+console.log(solution().fibo(100, 1, 2));
+
+// console.log(solution());
+
+// console.log(solution().(4000000, 1, 2);
 
 // function sum(evens);
 //   sumEvens = 0;
@@ -63,24 +77,4 @@ function solution(){
 //     sumEvens += sumEvens
 //   });
 //   return sumEvens;
-// }
-
-console.log(solution().fibo(100, 1, 2));
-// console.log(solution());
-
-
-// console.log(solution().fibo.filterEvens.sum(4000000, 1, 2)(fiboSeq)(evens));
-
-//
-// filterEvens:
-//
-// sum:
-//
-//
-// function solution(){
-//   return{
-//
-//
-//
-//   }
 // }
