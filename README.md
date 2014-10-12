@@ -6,6 +6,6 @@ touch README.md
 
 dojos - katas/dojos/pairings
 
-ruler - ProjectEuler.com challenges
+euler - ProjectEuler.net challenges
 
 reading - Reading / Writing assignments
