@@ -35,49 +35,51 @@ console.log(euler2(1, 2));
 */
 
 function solution(){
+  var fiboSeq = [];
+  var evens = [];
+  var sum = 0;
   return {
+    // Creates the Fibonacci Sequence with the starting Values.
     fibo: function(limit, prev, curr){
-      var fiboSeq = [];
       for (curr = curr; curr < limit; curr = prev + curr){
         prev = curr - prev;
         fiboSeq.push(curr);
       }
+      //returns Fibonacci Sequence.
       return fiboSeq;
     },
-
-    filterEvens: function(index){
-      var evens = [];
+    //Filters the even numbers out of the Fibonacci Sequence generated
+    //by object fibo.
+    filterEvens: function(fiboSeq){
       fiboSeq.forEach(function(value, index){
         if (value % 2 === 0){
           evens.push(value);
         }
       });
+      //returns a list of the even numbers pulled from fibo.
       return evens;
     },
-
-    sum: function(evens){
-      sumEvens = 0;
+    //Adds all the values from the list of even numbers generated
+    //above by filterEvens.
+    sumEvens: function(evens){
       evens.forEach(function(value, index){
-        sumEvens += sumEvens
+        sum += value;
       });
-      return sumEvens;
+      //returns the sum.
+      return sum;
     }
   }
 }
 
+// console.log(solution().fibo(100, 1, 2));
+// console.log(solution().fibo(4000000, 1, 2));
 var seqF = solution().fibo(100, 1, 2);
 var evenF =  solution().filterEvens(seqF);
-var victoryD = solution().sum(evenF);
-console.log(victoryD);
-
-// console.log(solution());
-
-// console.log(solution().(4000000, 1, 2);
-
-// function sum(evens);
-//   sumEvens = 0;
-//   forEach(function(value, index){
-//     sumEvens += sumEvens
-//   });
-//   return sumEvens;
-// }
+var victory = solution().sumEvens(evenF);
+var seqBig = solution().fibo(4000000, 1, 2);
+var evenBig =  solution().filterEvens(seqBig);
+var bigVictory = solution().sumEvens(evenBig);
+console.log(seqF);
+console.log(evenF);
+console.log(victory);
+console.log(bigVictory);
