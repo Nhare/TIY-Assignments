@@ -1,6 +1,63 @@
 #Reading Javascript Assignment#
 
 ```
+function toEnglish(val){
+  val = Number(val).toFixed(2);
+  var checkEnd = ' ' + val.slice(-2) + '/100 Dollars';
+  var dollars = val.slice(0,-3);
+
+```
++ function toEnglish
++ @vak
++ var checkEnd
++ var dollars
+
+```
+function sliceNum(number){
+  return number.slice(-1);
+};
+```
++ function sliveNum
++ @number
++ returns number.slice
+
+```
+function tick(board){
+  var newBoard = [];
+  
+  board.forEach(function(value, index){
+      value.forEach(function(x, y){
+         newBoard.push(conway(board[index][y], neighborsOf(board, index, y)));
+      });
+  });
+
+  var row1 = newBoard.splice(0, 3);
+  var row2 = newBoard.splice(0, 3);
+  board = [row1, row2, newBoard];
+  return board;
+}
+```
++ tick function
++ @board
++ forEach
++ var newBoard is a list
++ var row1/2
+
+```
+sumEvens: function(evens){
+      evens.forEach(function(value){
+        sum += value;
+      });
+      return sum;
+    }
+```
++ Object
++ @list evens
++ var sum
++ forEach. 
+
+
+```
 for (var index=0; index<testCases.length; index++){
 }
 
