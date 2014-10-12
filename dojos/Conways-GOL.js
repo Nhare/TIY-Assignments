@@ -27,21 +27,21 @@
 //      *   +---+---+---+
 //      */
 //     display: function(){
-//         var spacer = '+---+---+---+\n';
-//
-//         return spacer +
-//             // Apply `renderRow` to each `row` in `board`...
-//             this.board.map(function renderRow(row){
-//                 return '| ' +
-//                     // Apply `renderCell` to each `cell` in `row`...
-//                     row.map(function renderCell(cell){
-//                         // return 'X' if `cell` is TRUTHY otherwise return ' '
-//                         return cell && 'X' || ' ';
-//                     }).join(' | ') // Place ' | ' between each `cell`...
-//                 + ' |\n';
-//             }).join(spacer) // Place `spacer` between each `row`...
-//         + spacer;
-//     } // END display
+    //     var spacer = '+---+---+---+\n';
+    //
+    //     return spacer +
+    //         // Apply `renderRow` to each `row` in `board`...
+    //         this.board.map(function renderRow(row){
+    //             return '| ' +
+    //                 // Apply `renderCell` to each `cell` in `row`...
+    //                 row.map(function renderCell(cell){
+    //                     // return 'X' if `cell` is TRUTHY otherwise return ' '
+    //                     return cell && 'X' || ' ';
+    //                 }).join(' | ') // Place ' | ' between each `cell`...
+    //             + ' |\n';
+    //         }).join(spacer) // Place `spacer` between each `row`...
+    //     + spacer;
+    // } // END display
 // } // END game
 
 var game = {
@@ -51,7 +51,7 @@ var game = {
     var newState;
     var boardNewTick = []
     newBoard: function(){
-      return this.board;
+      return board;
     },
 
     neighborsOf: function(board, x, y){
@@ -127,6 +127,18 @@ var game = {
     },
 
     display: function(){
-
-    }
+      var spacer = '+---+---+---+\n';
+      return spacer +
+          // Apply `renderRow` to each `row` in `board`...
+          this.board.map(function renderRow(row){
+              return '| ' +
+                  // Apply `renderCell` to each `cell` in `row`...
+                  row.map(function renderCell(cell){
+                      // return 'X' if `cell` is TRUTHY otherwise return ' '
+                      return cell && 'X' || ' ';
+                  }).join(' | ') // Place ' | ' between each `cell`...
+              + ' |\n';
+          }).join(spacer) // Place `spacer` between each `row`...
+      + spacer;
+    } // END display
 }
