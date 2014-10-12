@@ -46,7 +46,23 @@
 
 var game = {
     board: undefined,
-    newBoard: function(){ /* i.e. board() */ },
-    rules: function(cell, neighbors){ /* i.e. conway(cell, neighbors) */ },
-    neighborsOf: function(x,y){ /* . . . */ },
-    tick: function(){ /* accepts nothing, alters `game.board` */ },
+    newBoard: function(){
+
+    },
+
+    neighborsOf: function(x,y){
+
+    },
+
+    rules: function(cell, neighbors){
+
+    },
+
+    tick: function(){
+
+    },
+
+    display: function(){
+
+    }
+}
