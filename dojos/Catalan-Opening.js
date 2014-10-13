@@ -120,9 +120,33 @@ Just for me to visualize!
 //     [' ',' ',' ',' ',' ',' ',' ',' '],
 //     ['p','p','p','p','p','p','p','p'],
 //     ['r','n','b','q','k','b','n','r'] ];
+//
+// function chess(){
+//   var board = [
+//       ['R','N','B','Q','K','B','N','R'],
+//       ['P','P','P','P','P','P','P','P'],
+//       [' ',' ',' ',' ',' ',' ',' ',' '],
+//       [' ',' ',' ',' ',' ',' ',' ',' '],
+//       [' ',' ',' ',' ',' ',' ',' ',' '],
+//       [' ',' ',' ',' ',' ',' ',' ',' '],
+//       ['p','p','p','p','p','p','p','p'],
+//       ['r','n','b','q','k','b','n','r'] ];
+//   return {
+//     move: function(a,b,c,d){
+//       board[a][b] = board[c][d];
+//       board[c][d] = ' ';
+//       return board;
+//     }
+//   }
+// }
+//
+// var w1 = chess().move(4,2,6,2);
+// // var b1 = chess().move(3,3,1,3);
+// console.log(w1.join('\n'));
+
 
 function chess(){
-  var board = [
+  this.board = [
       ['R','N','B','Q','K','B','N','R'],
       ['P','P','P','P','P','P','P','P'],
       [' ',' ',' ',' ',' ',' ',' ',' '],
@@ -131,15 +155,16 @@ function chess(){
       [' ',' ',' ',' ',' ',' ',' ',' '],
       ['p','p','p','p','p','p','p','p'],
       ['r','n','b','q','k','b','n','r'] ];
-  return {
-    move: function(a,b,c,d){
-      board[a][b] = board[c][d];
-      board[c][d] = ' ';
-      return board;
-    }
+
+  this.move = function(a,b,c,d){
+      this.board[a][b] = this.board[c][d];
+      this.board[c][d] = ' ';
+      return this.board;
   }
 }
 
-var w1 = chess().move(4,2,6,2);
-// var b1 = chess().move(3,3,1,3);
+var game = new chess;
+var w1 = game.move(4,2,6,2);
+var b1 = game.move(3,3,1,3);
 console.log(w1.join('\n'));
+console.log(b1.join('\n'));
