@@ -39,8 +39,16 @@ function solution(){
   var evens = [];
   var sum = 0;
   return {
-    // Creates the Fibonacci Sequence with the starting Values.
-    fibo: function(limit, prev, curr){
+    solveFor: function(limit){
+      return this.sumEvens(
+          this.filterEvens(
+              this.fibo(limit)
+          )
+      );
+    },
+    // Creates the fibonacci sequence
+    fibo: function(limit){
+      var prev = 1, curr = 2;
       for (curr = curr; curr < limit; curr = prev + curr){
         prev = curr - prev;
         fiboSeq.push(curr);
@@ -83,6 +91,29 @@ console.log(seqF);
 console.log(evenF);
 console.log(victory);
 console.log(bigVictory);
+
+
+var assert = require('chai').assert
+describe('Project Euler #1', function(){
+    var S; // or var S = solution();
+
+    beforeEach(function(){
+        S = solution();
+    });
+    describe('solveFor', function(){
+        it('should have a function for doing this', function(){
+            assert.isFunction(S.solveFor);
+        });
+
+        it('should be able to solve euler 2', function(){
+            assert.equal(S.solveFor(100, 1, 2), 44);
+        });
+        it('should be able to solve euler 2', function(){
+            assert.equal(S.solveFor(4000000, 1, 2), 4613732);
+        });
+
+    });
+});
 
 
 // 10 - 13 - 2014 Notes
