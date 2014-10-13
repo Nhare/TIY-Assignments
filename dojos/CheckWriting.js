@@ -14,56 +14,102 @@
 
 var assert = require('assert');
 
-numbers = ["zero", "one", "two", "three", "four",
-          "five", "six", "seven", "eight", "nine"]
+var ones = ["zero", "one", "two", "three", "four", "five", "six", "seven",
+            "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
+            "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
 
-teens = ["ten", "eleven", "twelve", "thirteen", "fourteen",
-        "fifteen", "sixteen","seventeen", "eighteen", "nineteen"]
+var tens = ["zero", "ten", "twenty", "thirty", "fourty", "fifty", "sixty",
+            "seventy", "eighty", "ninety"]
 
-tens = ["zero","ten", "twenty", "thirty", "forty", "fifty",
-        "sixty", "seventy", "eighty", "ninety"]
+var teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+             "sixteen", "seventeen", "eighteen", "nineteen"]
 
-hundreds = ["zero", "one hundred ", "two hundred ", "three hundred ",
-            "four hundred ","five hundred ", "six hundred ", "seven hundred ",
-            "eight hundred ","nine hundred "]
+var hundreds = " hundred"
 
-var numerals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var thousands = " thousand"
 
-function num2Letter(num) {
-  var cents = ((num - Math.floor(num))* 100).toFixed(0)
-  num = Math.floor(num)
-  var val = num.toString();
-    if (num < 20){
-      return numbers[num] + " and " + cents + "/100 dollars";
-    }
-    if (num < 100) {
-      if (num % 10 === 0) {
-        return tens[val[0]] + " and " + cents + "/100 dollars";
-    } {
-        return tens[val[0]] + ones[val[1]] + " and " + cents + "/100 dollars";
-    }
-  }
+// var numerals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+var checkWriting = {
+  toEnglish : function(val){
+    val = Number(val).toFixed(2);
+    var cents = ' ' + val.slice(-2) + '/100 dollars';
+    var dollars = val.slice(0,-3);
+
+      if (dollars < 20) {
+        return ones[dollars] + " and" + cents;
+      }
+      if (dollars < 100) {
+        if (dollars % 10 === 0) {
+          return tens[dollars[0]] + " and" + cents;
+        } else {
+          return tens[dollars[0]] + " " + ones[dollars[1]] + " and" + cents;
+        }
+      }
+      else if (dollars < 1000) {
+        if (dollars % 100 === 0) {
+          return ones[dollars[0]] + hundreds + " and" + cents;
+        }
+        else if (dollars % 10 === 0) {
+          return ones[dollars[0]] + hundreds + " " + tens[dollars[1]] + " and "+ cents;
+        }
+        else if (dollars[2] < 2) {
+          return ones[dollars[0]] + hundreds + " "  + teens[dollars[2]] + " and" + cents;
+        } else {
+          return ones[dollars[0]] + hundreds + " "  + tens[dollars[1]] + " " + ones[dollars[2]] + " and" + cents;
+        }
+      }
+      else if (dollars < 10000) {
+        if (dollars % 1000 === 0) {
+          return ones[dollars[0]] + thousands + " and" + cents;
+        }
+        else if (dollars % 100 === 0) {
+          return ones[dollars[0]] + thousands + " "  + ones[dollars[1]] + hundreds + " and" + cents;
+        }
+        else if (dollars % 10 === 0) {
+          return ones[dollars[0]] + thousands + " " + ones[dollars[1]] + hundreds + " " + tens[dollars[2]] + " and" + cents;
+        }
+        else if (dollars[2] < 2) {
+          return ones[dollars[0]] + thousands + " "  + ones[dollars[1]] + hundreds + " " + teens[dollars[3]] + " and" + cents;
+        } else {
+          return ones[dollars[0]] + thousands + " "  + ones[dollars[1]] + hundreds + " "  + tens[dollars[2]] + " " + ones[dollars[3]] + " and" + cents;
+        }
+      }
+   }
 }
 
-describe("num2Letter(), takes a Number with two decimal places as an input and returns it in check form", function(){
+describe("checkWriting.toEnglish(), ", function(){
   it ("should return $1.56 in words", function(){
-    assert.equal(num2Letter(1.56), 'one and 56/100 dollars');
+    assert.equal(checkWriting.toEnglish(1.56), 'one and 56/100 dollars');
   })
-  it ("should return $4.88 in words", function(){
-    assert.equal(num2Letter(4.88), 'four and 88/100 dollars');
+  it ("should return $6.66 in words", function(){
+    assert.equal(checkWriting.toEnglish(6.66), 'six and 66/100 dollars');
   })
   it ("should return $9.99 in words", function(){
-    assert.equal(num2Letter(9.99), 'nine and 99/100 dollars');
+    assert.equal(checkWriting.toEnglish(9.99), 'nine and 99/100 dollars');
   })
-  it ("should return $22.11 in words", function(){
-    assert.equal(num2Letter(22.11), 'twenty two and 11/100 dollars');
+  it ("should return $11.11 in words", function(){
+    assert.equal(checkWriting.toEnglish(11.11), 'eleven and 11/100 dollars');
   })
-  it ("should return $30.75 in words", function(){
-    assert.equal(num2Letter(30.75), 'thirty and 75/100 dollars');
+  it ("should return $30.33 in words", function(){
+    assert.equal(checkWriting.toEnglish(30.33), 'thirty and 33/100 dollars');
   })
-  it ("should return $40.20 in words", function(){
-    assert.equal(num2Letter(40.20), 'forty and 20/100 dollars');
+  it ("should return $88.66 in words", function(){
+    assert.equal(checkWriting.toEnglish(88.66), 'eighty eight and 66/100 dollars');
   })
+  it ("should return $100.99 in words", function(){
+    assert.equal(checkWriting.toEnglish(100.99), 'one hundred and 99/100 dollars');
+  })
+  it ("should return $500.50 in words", function(){
+    assert.equal(checkWriting.toEnglish(500.50), 'five hundred and 50/100 dollars');
+  })
+  it ("should return $1337.66 in words", function(){
+    assert.equal(checkWriting.toEnglish(1337.66), 'one thousand three hundred thirty seven and 66/100 dollars');
+  })
+  it ("should return $1234.56 in words", function(){
+    assert.equal(checkWriting.toEnglish(1234.56), 'one thousand two hundred thirty four and 56/100 dollars');
+  })
+
 })
 
 

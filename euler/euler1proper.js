@@ -36,6 +36,8 @@ console.log(euler(1000));
 console.log("\nVictory, or Death.");
 */
 
+var assert = require('chai').assert;
+
 function solution(){
   return {
     solveFor: function(input){
@@ -50,4 +52,18 @@ function solution(){
   }
 }
 
-console.log(solution().solveFor(1000));
+// console.log(solution().solveFor(10));
+// console.log(solution().solveFor(100));
+// console.log(solution().solveFor(1000));
+
+describe('Solution().solveFor', function(){
+  it('should take "10" and return "23"', function(){
+    assert.equal(solution().solveFor(10), 23);
+  });
+  it('should take "100" and return "2318"', function(){
+    assert.equal(solution().solveFor(100), 2318);
+  });
+  it('should take "1000" and return "233168"', function(){
+    assert.equal(solution().solveFor(1000), 233168);
+  });
+});
