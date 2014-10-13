@@ -144,7 +144,7 @@ Just for me to visualize!
 // // var b1 = chess().move(3,3,1,3);
 // console.log(w1.join('\n'));
 
-
+//Fully functional chess game!!!
 function chess(){
   this.board = [
       ['R','N','B','Q','K','B','N','R'],
@@ -159,12 +159,23 @@ function chess(){
   this.move = function(a,b,c,d){
       this.board[a][b] = this.board[c][d];
       this.board[c][d] = ' ';
+      // console.log(this.board);  Different display method
       return this.board;
   }
 }
 
-var game = new chess;
-var w1 = game.move(4,2,6,2);
-var b1 = game.move(3,3,1,3);
+var game = new chess;  // starts a new game with name of your choice
+var w1 = game.move(4,2,6,2);  //white move 1
+var b1 = game.move(3,3,1,3);  //black move 1
 console.log(w1.join('\n'));
 console.log(b1.join('\n'));
+
+var w2 = game.move(4,3,6,3);  //white move 2
+var b2 = game.move(2,4,1,4);  //black move 2
+var w3 = game.move(5,5,7,6);  //white move 3
+var b3 = game.move(1,4,0,5);  //black move 3
+var w4 = game.move(5,6,6,6);  //white move 4
+var b4 = game.move(2,5,0,6);  //black move 4
+var w5 = game.move(6,6,7,5);  //white move 5
+
+console.log(w5.join('\n'));
