@@ -89,7 +89,6 @@ console.log(bigVictory);
 /**
  * @return Object containing `solveFor`, a method that solves Project Euler #2 for a given limit
  */
-//
 // function solution(){
 //     return {
 //         /**
@@ -258,7 +257,7 @@ console.log(bigVictory);
 //
 //         it('should calculate the final answer', function(){
 //             console.time('4M');
-//             console.log(S.solveFor(4.0e6));
+//             console.log(S.solveFor(4.0e12));
 //             console.timeEnd('4M');
 //         });
 //     });
