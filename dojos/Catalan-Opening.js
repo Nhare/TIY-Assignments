@@ -156,7 +156,7 @@ function chess(){
       ['p','p','p','p','p','p','p','p'],
       ['r','n','b','q','k','b','n','r'] ];
 
-  this.move = function(a,b,c,d){
+  this  .move = function(a,b,c,d){
       this.board[a][b] = this.board[c][d];
       this.board[c][d] = ' ';
       // console.log(this.board);  Different display method

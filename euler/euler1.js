@@ -14,5 +14,7 @@ function euler(input){
   return sum;
 }
 
+console.log(euler(10));
+console.log(euler(100));
 console.log(euler(1000));
 console.log("\nVictory, or Death.");
