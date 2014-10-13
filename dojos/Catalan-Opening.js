@@ -164,18 +164,36 @@ function chess(){
   }
 }
 
-var game = new chess;  // starts a new game with name of your choice
-var w1 = game.move(4,2,6,2);  //white move 1
-var b1 = game.move(3,3,1,3);  //black move 1
-console.log(w1.join('\n'));
-console.log(b1.join('\n'));
+// var game = new chess;  // starts a new game with name of your choice
+// var w1 = game.move(4,2,6,2);  //white move 1
+// var b1 = game.move(3,3,1,3);  //black move 1
+// console.log(w1.join('\n'));
+// console.log(b1.join('\n'));
+//
+// var w2 = game.move(4,3,6,3);  //white move 2
+// var b2 = game.move(2,4,1,4);  //black move 2
+// var w3 = game.move(5,5,7,6);  //white move 3
+// var b3 = game.move(1,4,0,5);  //black move 3
+// var w4 = game.move(5,6,6,6);  //white move 4
+// var b4 = game.move(2,5,0,6);  //black move 4
+// var w5 = game.move(6,6,7,5);  //white move 5
+//
+// console.log(w5.join('\n'));
 
-var w2 = game.move(4,3,6,3);  //white move 2
-var b2 = game.move(2,4,1,4);  //black move 2
-var w3 = game.move(5,5,7,6);  //white move 3
-var b3 = game.move(1,4,0,5);  //black move 3
-var w4 = game.move(5,6,6,6);  //white move 4
-var b4 = game.move(2,5,0,6);  //black move 4
-var w5 = game.move(6,6,7,5);  //white move 5
+var assert = require('chai').assert
 
-console.log(w5.join('\n'));
+describe('Catalan Opening', function(){
+    var game = new chess;
+    it('should be a function', function(){
+        assert.isFunction(game.move);
+    });
+    describe('Catalan Moves', function(){
+        var game = new chess;
+        var w1 = game.move(4,2,6,2);
+        it('should recreate the first white move', function(){
+          // var game = new chess;
+          // var w1 = game.move(4,2,6,2);
+          w1[6][2].should.be.a('string').and.equal('p');
+        });
+    });
+});
