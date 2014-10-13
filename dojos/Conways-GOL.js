@@ -48,11 +48,13 @@ var game = {
     board: undefined,
     neighbors: undefined,
     newState: undefined,
-    newBoard: function(){
+    newBoard: function(index){
+      board = [index];
       return board;
     },
 
-    neighborsOf: function(board, x, y){
+    neighborsOf: function(index, x, y){
+      neighbors = [];
       if (x === 0 && y === 0){
         neighbors = [board[1][1], board[0][1], board[1][0]];
       }
@@ -142,3 +144,13 @@ var game = {
       + spacer;
     } // END display
 }
+
+var test = game.newBoard([[false, true, false],[false, true, false],[false, true, false]]);
+var test2 = game.neighborsOf(test);
+console.log(test2);
+
+// [
+//     [false, true, false],
+//     [false, true, false],
+//     [false, true, false],
+// ]
