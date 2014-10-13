@@ -45,11 +45,9 @@
 // } // END game
 
 var game = {
-    board: undefined;
-    var neighbors;
-    var liveN = 0;
-    var newState;
-    var boardNewTick = []
+    board: undefined,
+    neighbors: undefined,
+    newState: undefined,
     newBoard: function(){
       return board;
     },
@@ -86,6 +84,7 @@ var game = {
     },
 
     rules: function(cell, neighbors){
+      var liveN = 0;
       neighborsAre.forEach(function(value, index){
         if (value === true){
             liveN++;
@@ -114,6 +113,7 @@ var game = {
     },
 
     tick: function(){
+      var boardNewTick = []
       board.forEach(function(value, index){
           value.forEach(function(x, y){
           boardNewTick.push(conway(board[index][y], neighborsOf(board, index, y)));
