@@ -14,8 +14,6 @@ Just for me to visualize!
 
 */
 
-var assert = require('assert');
-
 // console.log(board.join('\n') + '\n\n');
 
 // Example Move
@@ -77,38 +75,96 @@ var assert = require('assert');
 // board[7][5] = ' ';
 //
 // console.log(board.join('\n'));
+//
+// var board = [
+//   ['R','N','B','Q','K','B','N','R'],
+//   ['P','P','P','P','P','P','P','P'],
+//   [' ',' ',' ',' ',' ',' ',' ',' '],
+//   [' ',' ',' ',' ',' ',' ',' ',' '],
+//   [' ',' ',' ',' ',' ',' ',' ',' '],
+//   [' ',' ',' ',' ',' ',' ',' ',' '],
+//   ['p','p','p','p','p','p','p','p'],
+//   ['r','n','b','q','k','b','n','r'] ];
+//
+//
+// function catalan(board){
+//     var moves = [
+//         [ board[4][2], board[6][2] ],
+//         [ board[3][3], board[1][3] ],
+//         [ board[4][3], board[6][3] ],
+//         [ board[2][4], board[1][4] ],
+//         [ board[5][5], board[7][6] ],
+//         [ board[1][4], board[0][5] ],
+//         [ board[5][6], board[6][6] ],
+//         [ board[2][5], board[0][6] ],
+//         [ board[6][6], board[7][5] ],
+//     ];
+//     moves.forEach(function(move, index){
+//         move.forEach(function(x, y){
+//           x = y;
+//           y = ' ';
+//         });
+//     });
+//     console.log(board.join('\n'));
+// }
+//
+//
+// catalan(board);
 
-var board = [
-  ['R','N','B','Q','K','B','N','R'],
-  ['P','P','P','P','P','P','P','P'],
-  [' ',' ',' ',' ',' ',' ',' ',' '],
-  [' ',' ',' ',' ',' ',' ',' ',' '],
-  [' ',' ',' ',' ',' ',' ',' ',' '],
-  [' ',' ',' ',' ',' ',' ',' ',' '],
-  ['p','p','p','p','p','p','p','p'],
-  ['r','n','b','q','k','b','n','r'] ];
+// var new = [
+//     ['R','N','B','Q','K','B','N','R'],
+//     ['P','P','P','P','P','P','P','P'],
+//     [' ',' ',' ',' ',' ',' ',' ',' '],
+//     [' ',' ',' ',' ',' ',' ',' ',' '],
+//     [' ',' ',' ',' ',' ',' ',' ',' '],
+//     [' ',' ',' ',' ',' ',' ',' ',' '],
+//     ['p','p','p','p','p','p','p','p'],
+//     ['r','n','b','q','k','b','n','r'] ];
+//
+// function chess(){
+//   var board = [
+//       ['R','N','B','Q','K','B','N','R'],
+//       ['P','P','P','P','P','P','P','P'],
+//       [' ',' ',' ',' ',' ',' ',' ',' '],
+//       [' ',' ',' ',' ',' ',' ',' ',' '],
+//       [' ',' ',' ',' ',' ',' ',' ',' '],
+//       [' ',' ',' ',' ',' ',' ',' ',' '],
+//       ['p','p','p','p','p','p','p','p'],
+//       ['r','n','b','q','k','b','n','r'] ];
+//   return {
+//     move: function(a,b,c,d){
+//       board[a][b] = board[c][d];
+//       board[c][d] = ' ';
+//       return board;
+//     }
+//   }
+// }
+//
+// var w1 = chess().move(4,2,6,2);
+// // var b1 = chess().move(3,3,1,3);
+// console.log(w1.join('\n'));
 
 
-function catalan(board){
-    var moves = [
-        [ board[4][2], board[6][2] ],
-        [ board[3][3], board[1][3] ],
-        [ board[4][3], board[6][3] ],
-        [ board[2][4], board[1][4] ],
-        [ board[5][5], board[7][6] ],
-        [ board[1][4], board[0][5] ],
-        [ board[5][6], board[6][6] ],
-        [ board[2][5], board[0][6] ],
-        [ board[6][6], board[7][5] ],
-    ];
-    moves.forEach(function(move, index){
-        move.forEach(function(x, y){
-          x = y;
-          y = ' ';
-        });
-    });
-    console.log(board.join('\n'));
+function chess(){
+  this.board = [
+      ['R','N','B','Q','K','B','N','R'],
+      ['P','P','P','P','P','P','P','P'],
+      [' ',' ',' ',' ',' ',' ',' ',' '],
+      [' ',' ',' ',' ',' ',' ',' ',' '],
+      [' ',' ',' ',' ',' ',' ',' ',' '],
+      [' ',' ',' ',' ',' ',' ',' ',' '],
+      ['p','p','p','p','p','p','p','p'],
+      ['r','n','b','q','k','b','n','r'] ];
+
+  this.move = function(a,b,c,d){
+      this.board[a][b] = this.board[c][d];
+      this.board[c][d] = ' ';
+      return this.board;
+  }
 }
 
-
-catalan(board);
+var game = new chess;
+var w1 = game.move(4,2,6,2);
+var b1 = game.move(3,3,1,3);
+console.log(w1.join('\n'));
+console.log(b1.join('\n'));
