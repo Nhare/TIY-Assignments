@@ -65,6 +65,18 @@ arr.fill(value[, start = 0[, end = this.length]])
 #### Array.prototype.pop() ####
 Removes the last element from an array and returns that element.
 
+```
+var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+
+console.log(myFish); // ['angel', 'clown', 'mandarin', 'sturgeon']
+
+var popped = myFish.pop();
+
+console.log(myFish); // ['angel', 'clown', 'mandarin' ]
+
+console.log(popped); // 'sturgeon'
+```
+
 #### Array.prototype.push() ####
 Adds one or more elements to the end of an array and returns the
 new length of the array.

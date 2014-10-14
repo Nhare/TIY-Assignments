@@ -175,6 +175,12 @@ module.exports = game;
 module.exports = {
   // param x coord
   // param y coord
+  // return boolean value of cell
+  getCell: function(){
+    
+  }
+  // param x coord
+  // param y coord
   // return Boolean of x,y if/not alive
   isAlive:function(x,y){
 

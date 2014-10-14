@@ -37,10 +37,10 @@ console.log("\nVictory, or Death.");
 */
 
 var assert = require('chai').assert;
-
+//factory
 function solution(){
-  return {
-    solveFor: function(input){
+  return { //return object literal
+    solveFor: function(input){ //object with method solveFor
       var sum = 0;
       for(var num = 0; num < input; num++){
         if (num % 5 === 0 || num % 3 === 0){
@@ -55,15 +55,24 @@ function solution(){
 // console.log(solution().solveFor(10));
 // console.log(solution().solveFor(100));
 // console.log(solution().solveFor(1000));
+//
+// describe('Solution().solveFor', function(){
+//   it('should take "10" and return "23"', function(){
+//     assert.equal(solution().solveFor(10), 23);
+//   });
+//   it('should take "100" and return "2318"', function(){
+//     assert.equal(solution().solveFor(100), 2318);
+//   });
+//   it('should take "1000" and return "233168"', function(){
+//     assert.equal(solution().solveFor(1000), 233168);
+//   });
+// });
 
-describe('Solution().solveFor', function(){
-  it('should take "10" and return "23"', function(){
-    assert.equal(solution().solveFor(10), 23);
-  });
-  it('should take "100" and return "2318"', function(){
-    assert.equal(solution().solveFor(100), 2318);
-  });
-  it('should take "1000" and return "233168"', function(){
-    assert.equal(solution().solveFor(1000), 233168);
-  });
+var a = solution(), b = solution();
+
+it('should totally pass', function(){
+  assert.typeOf(solution, 'function');
+  assert.typeOf(a, 'object');
+  assert.isDefined(a.solveFor);
+  assert.typeOf(b, 'object');
 });
