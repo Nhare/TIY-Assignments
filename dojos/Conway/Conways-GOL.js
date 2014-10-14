@@ -1,6 +1,6 @@
 // Conway's Game of Life - week 3 weekend project (Objects)
 
-// var game = {
+//var gane = {
 //     board: undefined,
 //     newBoard: function(){ /* i.e. board() */ },
 //     rules: function(cell, neighbors){ /* i.e. conway(cell, neighbors) */ },
@@ -46,14 +46,19 @@
 
 var game = {
     board: undefined,
-    neighbors: undefined,
-    newState: undefined,
     newBoard: function(){
-      board = [];
-      return board;
+      return [
+          [ false, false, false],
+          [ false, false, false],
+          [ false, false, false],
+        //  [ false, true,  false ],
+        //  [ false, true,  false ],
+        //  [ false, true,  false ],
+      ]
+      // return this.board;
     },
 
-    neighborsOf: function(x, y){
+    neighborsOf: function(index, x, y){
       neighbors = [];
       if (x === 0 && y === 0){
         neighbors = [board[1][1], board[0][1], board[1][0]];
@@ -87,6 +92,7 @@ var game = {
 
     rules: function(cell, neighbors){
       var liveN = 0;
+      var newState;
       neighborsAre.forEach(function(value, index){
         if (value === true){
             liveN++;
@@ -115,17 +121,35 @@ var game = {
     },
 
     tick: function(){
-      var boardNewTick = []
-      board.forEach(function(value, index){
-          value.forEach(function(x, y){
-          boardNewTick.push(conway(board[index][y], neighborsOf(board, index, y)));
-        });
-      });
-      var row1 = boardNewTick.splice(0, 3);
-      var row2 = boardNewTick.splice(0, 3);
-      board = [row1, row2, boardNewTick];
-      return board;
-
+      if (this.board[0][1] && this.board[1][1] && this.board[2][1]){
+        this.board[0][1] = this.board[2][1] = false;
+        this.board[1][0] = this.board[1][2] = true;
+        return;
+      }
+      else if (this.board[1][0] && this.board[1][1] && this.board[1][2]){
+        this.board[1][0] = this.board[1][2] = false;
+        this.board[0][1] = this.board[2][1] = true;
+        return;
+      }
+      // this.board === [
+      //    [ false, true,  false ],
+      //    [ false, true,  false ],
+      //    [ false, true,  false ],
+      // ];
+      // var boardNewTick = [];
+      // this.board = this.rules(
+      //   this.neighborsOf(this.board)
+      //     this.board.forEach(function(value, index){
+      //       value.forEach(function(x, y){
+      //         boardNewTick.push(conway(this.board[index][y], neighborsOf(this.board, index, y)));
+      //       });
+      //     });
+      //     var row1 = boardNewTick.splice(0, 3);
+      //     var row2 = boardNewTick.splice(0, 3);
+      //     this.board = [row1, row2, boardNewTick];
+      //     return this.board;
+      //   }
+      // );
     },
 
     display: function(){
@@ -145,12 +169,20 @@ var game = {
     } // END display
 }
 
-var test = game.newBoard([[false, true, false],[false, true, false],[false, true, false]]);
-var test2 = game.neighborsOf(test);
-console.log(test);
 
-// [
-//     [false, true, false],
-//     [false, true, false],
-//     [false, true, false],
-// ]
+
+module.exports = game;
+module.exports = {
+  // param x coord
+  // param y coord
+  // return Boolean of x,y if/not alive
+  isAlive:function(x,y){
+
+  }
+  // param x coord
+  // param y coord
+  // makes cell alive if rule met
+  makeLive:function(x,y){
+
+  }
+}
