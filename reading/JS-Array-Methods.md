@@ -4,12 +4,36 @@
 ##### Array.from() #####
 Creates a new Array instance from an array-like or iterable object.
 
+```
+// Array-like object (arguments) to Array
+function f() {
+  return Array.from(arguments);
+}
+
+f(1, 2, 3);
+// [1, 2, 3]
+```
+
 ##### Array.isArray() #####
 Returns true if a variable is an array, if not false.
 
+```
+// all following calls return true
+Array.isArray([]);
+Array.isArray([1]);
+Array.isArray(new Array());
+// Little known fact: Array.prototype itself is an array:
+Array.isArray(Array.prototype);
+```
 ##### Array.of() ####
 Creates a new Array instance with a variable number of arguments,
 regardless of number or type of the arguments.
+
+```
+Array.of(1);         // [1]
+Array.of(1, 2, 3);   // [1, 2, 3]
+Array.of(undefined); // [undefined]
+```
 
 ### Mutator methods ###
 
@@ -18,9 +42,25 @@ regardless of number or type of the arguments.
 #### Array.prototype.copyWithin() ####
 Copies a sequence of array elements within the array.
 
+```
+[1, 2, 3, 4, 5].copyWithin(0, 3);
+// [4, 5, 3, 4, 5]
+
+[1, 2, 3, 4, 5].copyWithin(0, 3, 4);
+// [4, 2, 3, 4, 5]
+```
+
 #### Array.prototype.fill() ####
 Fills all the elements of an array from a start index to an end
 index with a static value.
+
+```
+[1, 2, 3].fill(4)               // [4, 4, 4]
+[1, 2, 3].fill(4, 1)            // [1, 4, 4]
+[1, 2, 3].fill(4, 1, 2)         // [1, 4, 3]
+
+arr.fill(value[, start = 0[, end = this.length]])
+```
 
 #### Array.prototype.pop() ####
 Removes the last element from an array and returns that element.
