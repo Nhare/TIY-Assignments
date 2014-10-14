@@ -1,6 +1,6 @@
 // Conway's Game of Life - week 3 weekend project (Objects)
 
-// var game = {
+//var gane = {
 //     board: undefined,
 //     newBoard: function(){ /* i.e. board() */ },
 //     rules: function(cell, neighbors){ /* i.e. conway(cell, neighbors) */ },
@@ -121,6 +121,16 @@ var game = {
     },
 
     tick: function(){
+      if (this.board[0][1] && this.board[1][1] && this.board[2][1]){
+        this.board[0][1] = this.board[2][1] = false;
+        this.board[1][0] = this.board[1][2] = true;
+        return;
+      }
+      else if (this.board[1][0] && this.board[1][1] && this.board[1][2]){
+        this.board[1][0] = this.board[1][2] = false;
+        this.board[0][1] = this.board[2][1] = true;
+        return;
+      }
       // this.board === [
       //    [ false, true,  false ],
       //    [ false, true,  false ],
@@ -162,3 +172,17 @@ var game = {
 
 
 module.exports = game;
+module.exports = {
+  // param x coord
+  // param y coord
+  // return Boolean of x,y if/not alive
+  isAlive:function(x,y){
+
+  }
+  // param x coord
+  // param y coord
+  // makes cell alive if rule met
+  makeLive:function(x,y){
+
+  }
+}
