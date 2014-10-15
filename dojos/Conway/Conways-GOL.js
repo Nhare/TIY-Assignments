@@ -68,6 +68,39 @@ Game.prototype.tick = function(){
     this.board = [a, b, newBoard];
 }
 
+/*
+Game.prototype.tick = function(){
+    // Create a new board...
+    var newBoard = board();
+    var self = _self = that = this;
+
+    // This can _replace_ lines 61-67...
+    this.board = newBoard.map(function(row, x){
+        return row.map(function(cell, y){
+            return self.rules(cell, self.neighborsOf(x,y));
+        });
+    });
+
+    // This can replace 70-76...
+    newBoard.forEach(function(row, x){
+        newBoard.forEach(function(cell, y){
+            newBoard[x][y] = self.rules(self.board[x][y], self.neighborsOf(x,y));
+        });
+    });
+    this.board = newBoard;
+
+    // Apply `rules` _to each cell in the current board_...
+    this.board.forEach(function(row, x){
+        row.forEach(function(cell, y){
+            // Record the results in the NEW board...
+            newBoard[x][y] = self.rules(cell, self.neighborsOf(x,y));
+        });
+    });
+    // Make the current board match the new board.
+    this.board = newBoard;
+}
+*/
+
 /**
  * What goes here?
  */
@@ -177,7 +210,43 @@ Game.prototype.neighborOf = function(x, y){
     }
     return liveCell;
 }
+/*
+Game.prototype.rules = function(cell, neighbors){
+    // Survival Rule
+    if ( cell && (2 <= neighbors <= 3) ){
+        return true;
+    }
 
+    // Reproduction Rule
+    if ( !cell && neighbors == 3 ){
+        return true;
+    }
+
+    return false; // EVERYTHING ELSE IS DEATH!
+}
+
+
+// * @param Number x coordinate
+// * @param Number y coordinate
+// * @return Number of live neighbors
+
+Game.prototype.neighborsOf = function(x, y){
+    var neighbors = 0, diffs = [ -1, 0, +1 ];
+    var self = this;
+
+    diffs.forEach(function(dX){
+        diffs.forEach(function(dY){
+            if ( dX == 0 && dY == 0 ) return;
+
+            if ( self.board[x + dX] && self.board[x + dX][y + dY] ){
+                neighbors++;
+            }
+        });
+    });
+
+    return neighbors;
+}
+*/
 
 /**
  * WARNING: This is VOODOO MAGIC...
