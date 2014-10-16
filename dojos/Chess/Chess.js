@@ -28,6 +28,7 @@
 */
 
 module.exports = Chess;
+var _ = require('lodash');
 
 function Chess(){
   this.board = [
@@ -39,49 +40,60 @@ function Chess(){
       [' ',' ',' ',' ',' ',' ',' ',' '],
       ['p','p','p','p','p','p','p','p'],
       ['r','n','b','q','k','b','n','r'] ];
-  // display: function(){
-  //
-  // }
+
+  var pointValues = { 'Pawn': 1, 'Bishop': 3, 'Knight': 3, 'Rook': 5, 'Queen': 9 };
+  this.Q = new Piece('Queen', 'black');
 }
 
 
 Chess.prototype.move = function(a,b,c,d){
     this.board[a][b] = this.board[c][d];
     this.board[c][d] = ' ';
-    return this.board;
+    // return this.board;
 }
 
 Chess.prototype.display = function(){
   console.log(this.board);
 }
 
-// var game = new Chess;
+
 // var w1 = game.move(4,2,6,2);
-// // console.log(w1);
+// console.log(w1);
 // game.display();
 // var b1 = game.move(3,3,1,3);
 // game.display();
 // console.log(b1);
 //
-// function Piece(name, color){
-//   return this;
-// }
-//
-// Piece.prototype.getColor = function(piece){
-//   if(piece === piece.toLowerCase()){
-//      return 'white';
-//   }
-//      return 'black';
-// }
-// Piece.prototype.getName = function(piece){
-//  if(piece === 'Q' || piece === 'q')
-//    return 'Queen';
-// }
-//
+function Piece(name, color){
+  this.name = name;
+  this.color = color;
+}
+
+Piece.prototype.getColor = function(){
+  return this.color;
+  // if(piece === piece.toLowerCase()){
+  //    return 'white';
+  // }
+  // return 'black';
+}
+Piece.prototype.getName = function(){
+  return this.name;
+ // if(piece === 'Q' || piece === 'q')
+ //   return 'Queen';
+}
+
 // var Q = new Piece('Queen', 'black');
-//
+// console.log(Q);
 // console.log(Q.getName());
 // console.log(Q.getColor());
+//
+// var K = new Piece('King', 'white');
+//
+// console.log(K);
+// console.log(K.getName());
+// console.log(K.getName === Q.getName);
+// console.log(K === Q);
+// console.log(K.prototype === Q.prototype)
 // Piece.prototype.setPosition = function(x,y){
 //
 // }

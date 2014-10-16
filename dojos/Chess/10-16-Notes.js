@@ -1,4 +1,4 @@
-// Taught my Brian!
+// Taught by Brian!
 
 var expect = require('chai').expect;
 
