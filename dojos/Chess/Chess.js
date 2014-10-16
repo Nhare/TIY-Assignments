@@ -62,3 +62,14 @@ game.display();
 var b1 = game.move(3,3,1,3);
 game.display();
 // console.log(b1);
+
+// function Piece(){
+//
+// }
+//
+// Piece.prototype.getColor = function(piece){
+//   if(piece === piece.toLowerCase()){
+//      return 'white';
+//   }
+//      return 'black';
+// }
