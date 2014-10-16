@@ -55,16 +55,16 @@ Chess.prototype.display = function(){
   console.log(this.board);
 }
 
-var game = new Chess;
-var w1 = game.move(4,2,6,2);
-// console.log(w1);
-game.display();
-var b1 = game.move(3,3,1,3);
-game.display();
+// var game = new Chess;
+// var w1 = game.move(4,2,6,2);
+// // console.log(w1);
+// game.display();
+// var b1 = game.move(3,3,1,3);
+// game.display();
 // console.log(b1);
-
-// function Piece(){
 //
+// function Piece(name, color){
+//   return this;
 // }
 //
 // Piece.prototype.getColor = function(piece){
@@ -72,4 +72,24 @@ game.display();
 //      return 'white';
 //   }
 //      return 'black';
+// }
+// Piece.prototype.getName = function(piece){
+//  if(piece === 'Q' || piece === 'q')
+//    return 'Queen';
+// }
+//
+// var Q = new Piece('Queen', 'black');
+//
+// console.log(Q.getName());
+// console.log(Q.getColor());
+// Piece.prototype.setPosition = function(x,y){
+//
+// }
+//
+// Piece.prototype.toString = function(){
+//
+// }
+//
+// function Position(x,y){
+//
 // }

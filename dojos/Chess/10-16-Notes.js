@@ -48,3 +48,17 @@ describe('the remove function', function(){
         expect(remove(collection, callback)).to.deep.eq([2, 4]);
     });
 });
+
+//LODASHHH
+/*
+var sum = _.reduce([1, 2, 3], function(sum, num) {
+  return sum + num;
+});
+// → 6
+
+var mapped = _.reduce({ 'a': 1, 'b': 2, 'c': 3 }, function(result, num, key) {
+  result[key] = num * 3;
+  return result;
+}, {});
+// → { 'a': 3, 'b': 6, 'c': 9 }
+*/
