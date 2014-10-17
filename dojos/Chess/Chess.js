@@ -27,6 +27,8 @@
     example: "r" === String(new Piece("Rook", "black"))
 */
 
+// Production Code
+
 module.exports = Chess;
 var _ = require('lodash');
 
@@ -89,7 +91,13 @@ Piece.prototype.getName = function(){
 // }
 //
 Piece.prototype.toString = function(){
- return (this.color + ' ' + this.name);
+  // "q" === String(new Piece("Queen", "white"));
+  if(this.color === 'white'){
+    if(this.name === 'Queen'){
+      return 'q';
+    }
+  }
+ // return (this.color + ' ' + this.name);
 }
 //
 // function Position(x,y){
