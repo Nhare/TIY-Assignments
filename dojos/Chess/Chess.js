@@ -62,7 +62,6 @@ function Chess(){
 Chess.prototype.move = function(a,b,c,d){
     this.board[a][b] = this.board[c][d];
     this.board[c][d] = ' ';
-    // return this.board;
 }
 
 Chess.prototype.display = function(){
@@ -76,28 +75,63 @@ function Piece(name, color){
 
 Piece.prototype.getColor = function(){
   return this.color;
-  // if(piece === piece.toLowerCase()){
-  //    return 'white';
-  // }
-  // return 'black';
 }
 Piece.prototype.getName = function(){
   return this.name;
- // if(piece === 'Q' || piece === 'q')
- //   return 'Queen';
 }
 // Piece.prototype.setPosition = function(x,y){
 //
 // }
 //
 Piece.prototype.toString = function(){
-  // "q" === String(new Piece("Queen", "white"));
-  if(this.color === 'white'){
-    if(this.name === 'Queen'){
+  if(this.name === 'Queen'){
+    if(this.color === 'white'){
       return 'q';
     }
+    else{
+      return 'Q'
+    }
   }
- // return (this.color + ' ' + this.name);
+  if(this.name === 'King'){
+    if(this.color === 'white'){
+      return 'k';
+    }
+    else{
+      return 'K';
+    }
+  }
+  if(this.name === 'Rook'){
+    if(this.color === 'white'){
+      return 'r';
+    }
+    else{
+      return 'R';
+    }
+  }
+  if(this.name === 'Knight'){
+    if(this.color === 'white'){
+      return 'n';
+    }
+    else{
+      return 'N';
+    }
+  }
+  if(this.name === 'Bishop'){
+    if(this.color === 'white'){
+      return 'b';
+    }
+    else{
+      return 'B';
+    }
+  }
+  if(this.name === 'Pawn'){
+    if(this.color === 'white'){
+      return 'p';
+    }
+    else{
+      return 'P';
+    }
+  }
 }
 //
 // function Position(x,y){
