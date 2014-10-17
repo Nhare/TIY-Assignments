@@ -43,6 +43,17 @@ function Chess(){
 
   var pointValues = { 'Pawn': 1, 'Bishop': 3, 'Knight': 3, 'Rook': 5, 'Queen': 9 };
   this.Q = new Piece('Queen', 'black');
+  this.q = new Piece('Queen', 'white');
+  this.K = new Piece('King', 'black');
+  this.k = new Piece('King', 'white');
+  this.P = new Piece('Pawn', 'black');
+  this.p = new Piece('Pawn', 'white');
+  this.B = new Piece('Bishop', 'black');
+  this.b = new Piece('Bishop', 'white');
+  this.N = new Piece('Knight', 'black');
+  this.n = new Piece('Knight', 'white');
+  this.R = new Piece('Rook', 'black');
+  this.r = new Piece('Rook', 'white');
 }
 
 
@@ -56,14 +67,6 @@ Chess.prototype.display = function(){
   console.log(this.board);
 }
 
-
-// var w1 = game.move(4,2,6,2);
-// console.log(w1);
-// game.display();
-// var b1 = game.move(3,3,1,3);
-// game.display();
-// console.log(b1);
-//
 function Piece(name, color){
   this.name = name;
   this.color = color;
@@ -81,26 +84,13 @@ Piece.prototype.getName = function(){
  // if(piece === 'Q' || piece === 'q')
  //   return 'Queen';
 }
-
-// var Q = new Piece('Queen', 'black');
-// console.log(Q);
-// console.log(Q.getName());
-// console.log(Q.getColor());
-//
-// var K = new Piece('King', 'white');
-//
-// console.log(K);
-// console.log(K.getName());
-// console.log(K.getName === Q.getName);
-// console.log(K === Q);
-// console.log(K.prototype === Q.prototype)
 // Piece.prototype.setPosition = function(x,y){
 //
 // }
 //
-// Piece.prototype.toString = function(){
-//
-// }
+Piece.prototype.toString = function(){
+ return (this.color + ' ' + this.name);
+}
 //
 // function Position(x,y){
 //
