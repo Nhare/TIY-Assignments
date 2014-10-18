@@ -3,43 +3,42 @@
 var Chess = require('./Chess.js');
 var _ = require('lodash');
 var assert = require('chai').assert;
+var expect = require('chai').expect;
 
 var game = new Chess;
-var w1 = game.move(4,2,6,2);
+console.log(game.Q.getName());
+var w1 = game.move(4,2,6,2);  //white move 1
+// game.display();
+var b1 = game.move(3,3,1,3);  //black move 1
+// game.display();
+var w2 = game.move(4,3,6,3);  //white move 2
+var b2 = game.move(2,4,1,4);  //black move 2
+var w3 = game.move(5,5,7,6);  //white move 3
+var b3 = game.move(1,4,0,5);  //black move 3
+var w4 = game.move(5,6,6,6);  //white move 4
+var b4 = game.move(2,5,0,6);  //black move 4
+var w5 = game.move(6,6,7,5);  //white move 5
 game.display();
+
 // console.log(game.Q);
 // console.log(game.Q.getName());
-console.log(game.Q.toString());
+// console.log(game.Q.toString());
 // console.log(game.q);
 // console.log(game.q.getName());
-console.log(game.q.toString());
+// console.log(game.q.toString());
 // console.log(game.K);
 // console.log(game.K.getName());
-console.log(game.K.toString());
+// console.log(game.K.toString());
 // console.log(game.k);
 // console.log(game.k.getName());
-console.log(game.k.toString());
+// console.log(game.k.toString());
 // console.log(game.P);
 // console.log(game.P.getName());
-console.log(game.P.toString());
+// console.log(game.P.toString());
 // console.log(game.p);
 // console.log(game.p.getName());
-console.log(game.p.toString());
-
-// describe ('The .display method should display the changes of the .move method', function (){
-//     it('should display the first white move', function(){
-//         assert.deepEqual(game.display() ===
-//         [ 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' ],
-//         [ 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' ],
-//         [ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ],
-//         [ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ],
-//         [ ' ', ' ', 'p', ' ', ' ', ' ', ' ', ' ' ],
-//         [ ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ],
-//         [ 'p', 'p', ' ', 'p', 'p', 'p', 'p', 'p' ],
-//         [ 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' ]  );
-//     });
-// });
-
+// console.log(game.p.toString());
+//
 
 describe ('Piece construction tests', function (){
     it('should return the piece name as a string', function (){
@@ -102,52 +101,52 @@ describe ('Piece construction tests', function (){
     it('should return a string that says Bishop', function (){
         assert.equal(game.B.getName(), 'Bishop');
     });
-    // it('should return a string that says black Bishop', function (){
-    //     assert.equal(game.B.toString(), 'black Bishop');
-    // });
+    it('should return a string for black Bishop, B', function (){
+        assert.equal(game.B.toString(), 'B');
+    });
     it('should return the piece name as a string', function (){
         assert.isString(game.b.getName());
     });
     it('should return a string that says Bishop', function (){
         assert.equal(game.b.getName(), 'Bishop');
     });
-    // it('should return a string that says white Bishop', function (){
-    //     assert.equal(game.b.toString(), 'white Bishop');
-    // });
+    it('should return a string for white Bishop, b', function (){
+        assert.equal(game.b.toString(), 'b');
+    });
     it('should return the piece name as a string', function (){
         assert.isString(game.N.getName());
     });
     it('should return a string that says Knight', function (){
         assert.equal(game.N.getName(), 'Knight');
     });
-    // it('should return a string that says black Knight', function (){
-    //     assert.equal(game.N.toString(), 'black Knight');
-    // });
+    it('should return a string for black Knight, N', function (){
+        assert.equal(game.N.toString(), 'N');
+    });
     it('should return the piece name as a string', function (){
         assert.isString(game.n.getName());
     });
     it('should return a string that says Knight', function (){
         assert.equal(game.n.getName(), 'Knight');
     });
-    // it('should return a string that says white Knight', function (){
-    //     assert.equal(game.n.toString(), 'white Knight');
-    // });
+    it('should return a string for white Knight, n', function (){
+        assert.equal(game.n.toString(), 'n');
+    });
     it('should return the piece name as a string', function (){
         assert.isString(game.R.getName());
     });
     it('should return a string that says Rook', function (){
         assert.equal(game.R.getName(), 'Rook');
     });
-    // it('should return a string that says black Rook', function (){
-    //     assert.equal(game.R.toString(), 'black Rook');
-    // });
+    it('should return a string for black Rook, R', function (){
+        assert.equal(game.R.toString(), 'R');
+    });
     it('should return the piece name as a string', function (){
         assert.isString(game.r.getName());
     });
     it('should return a string that says Rook', function (){
         assert.equal(game.r.getName(), 'Rook');
     });
-    // it('should return a string that says white Rook', function (){
-    //     assert.equal(game.r.toString(), 'white Rook');
-    // });
+    it('should return a string for white Rook, r', function (){
+        assert.equal(game.r.toString(), 'r');
+    });
 });
