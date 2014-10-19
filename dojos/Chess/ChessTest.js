@@ -6,43 +6,24 @@ var assert = require('chai').assert;
 var expect = require('chai').expect;
 
 var game = new Chess;
-// console.log(game.Q.getName());
-// var w1 = game.move(4,2,6,2);  //white move 1
-console.log(game.display());
-// var b1 = game.move(3,3,1,3);  //black move 1
-// game.display();
-// var w2 = game.move(4,3,6,3);  //white move 2
-// var b2 = game.move(2,4,1,4);  //black move 2
-// var w3 = game.move(5,5,7,6);  //white move 3
-// var b3 = game.move(1,4,0,5);  //black move 3
-// var w4 = game.move(5,6,6,6);  //white move 4
-// var b4 = game.move(2,5,0,6);  //black move 4
-// var w5 = game.move(6,6,7,5);  //white move 5
-// game.display();
 
-// console.log(game.Q);
-// console.log(game.Q.getName());
-// console.log(game.Q.toString());
-// console.log(game.q);
-// game.q.setPosition([5,5]);
-// console.log(game.q);
-// game.move(game.q, [4,4]);
-// console.log(game.q);
-// console.log(game.q.getName());
-// console.log(game.q.toString());
-// console.log(game.K);
-// console.log(game.K.getName());
-// console.log(game.K.toString());
-// console.log(game.k);
-// console.log(game.k.getName());
-// console.log(game.k.toString());
-// console.log(game.P);
-// console.log(game.P.getName());
-// console.log(game.P.toString());
-// console.log(game.p);
-// console.log(game.p.getName());
-// console.log(game.p.toString());
-//
+console.log(game.display());
+game.move(game.p3, [4,2]); // white move 1
+console.log(game.display());
+game.move(game.P4, [3,3]); // black move 1
+console.log(game.display());
+game.move(game.p4, [4,3]); // white move 2
+game.move(game.P5, [2,4]); // black move 2
+game.move(game.kn, [5,5]); // white move 3
+game.move(game.kB, [1,4]); // black move 3
+game.move(game.p7, [5,6]); // white move 4
+game.move(game.kN, [2,5]); // black move 4
+game.move(game.kb, [6,6]); // white move 5
+console.log(game.display());
+
+
+
+// var w5 = game.move(6,6,7,5);  //white move 5
 
 describe ('Piece construction tests', function (){
     it('should return the piece name as a string', function (){

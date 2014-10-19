@@ -79,7 +79,6 @@ Chess.prototype.move = function(piece, destination){
 
 
 Chess.prototype.display = function(){
-  var self = this;
   var board = Array.matrix(8,8,0);
   var pieces = [this.Q, this.q, this.K, this.k, this.P1, this.P2, this.P3,
                 this.P4, this.P5, this.P6, this.P7, this.P8, this.p1, this.p2,
@@ -91,7 +90,6 @@ Chess.prototype.display = function(){
     var y = pieces[index].position[1];
     board[x][y] = pieces[index].toString();
   })
-  console.log(board);
   var spacer = '+---+---+---+---+---+---+---+---+\n';
     return spacer +
         board.map(function renderRow(row){
