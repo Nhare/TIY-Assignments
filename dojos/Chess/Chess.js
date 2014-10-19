@@ -80,18 +80,29 @@ Chess.prototype.move = function(piece, destination){
 
 Chess.prototype.display = function(){
   var self = this;
+  var board = Array.matrix(8,8,0);
   var pieces = [this.Q, this.q, this.K, this.k, this.P1, this.P2, this.P3,
                 this.P4, this.P5, this.P6, this.P7, this.P8, this.p1, this.p2,
                 this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.qB,
                 this.kB, this.qb, this.kb, this.qN, this.kN, this.qn, this.kn,
                 this.qR,this.kR, this.qr, this.kr];
-  var board = Array.matrix(8,8,0);
+  pieces.forEach(function(value, index){
+    var x = pieces[index].position[0];
+    var y = pieces[index].position[1];
+    board[x][y] = pieces[index].toString();
+  })
+  console.log(board);
   var spacer = '+---+---+---+---+---+---+---+---+\n';
     return spacer +
         board.map(function renderRow(row){
           return '| ' +
-              row.map(function renderPosition(pieces){
-                  return pieces.position && pieces.toString() || ' ';
+              row.map(function renderPosition(position){
+                    if(position === 0){
+                      return ' ';
+                    }
+                    else{
+                      return position;
+                    }
               }).join(' | ')
           + ' |\n';
         }).join(spacer)
