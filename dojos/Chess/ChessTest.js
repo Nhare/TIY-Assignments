@@ -6,19 +6,19 @@ var assert = require('chai').assert;
 var expect = require('chai').expect;
 
 var game = new Chess;
-console.log(game.Q.getName());
-var w1 = game.move(4,2,6,2);  //white move 1
+// console.log(game.Q.getName());
+// var w1 = game.move(4,2,6,2);  //white move 1
 // game.display();
-var b1 = game.move(3,3,1,3);  //black move 1
+// var b1 = game.move(3,3,1,3);  //black move 1
 // game.display();
-var w2 = game.move(4,3,6,3);  //white move 2
-var b2 = game.move(2,4,1,4);  //black move 2
-var w3 = game.move(5,5,7,6);  //white move 3
-var b3 = game.move(1,4,0,5);  //black move 3
-var w4 = game.move(5,6,6,6);  //white move 4
-var b4 = game.move(2,5,0,6);  //black move 4
-var w5 = game.move(6,6,7,5);  //white move 5
-game.display();
+// var w2 = game.move(4,3,6,3);  //white move 2
+// var b2 = game.move(2,4,1,4);  //black move 2
+// var w3 = game.move(5,5,7,6);  //white move 3
+// var b3 = game.move(1,4,0,5);  //black move 3
+// var w4 = game.move(5,6,6,6);  //white move 4
+// var b4 = game.move(2,5,0,6);  //black move 4
+// var w5 = game.move(6,6,7,5);  //white move 5
+// game.display();
 
 // console.log(game.Q);
 // console.log(game.Q.getName());
@@ -105,13 +105,13 @@ describe ('Piece construction tests', function (){
         assert.equal(game.B.toString(), 'B');
     });
     it('should return the piece name as a string', function (){
-        assert.isString(game.b.getName());
+        assert.isString(game.qb.getName());
     });
     it('should return a string that says Bishop', function (){
-        assert.equal(game.b.getName(), 'Bishop');
+        assert.equal(game.qb.getName(), 'Bishop');
     });
     it('should return a string for white Bishop, b', function (){
-        assert.equal(game.b.toString(), 'b');
+        assert.equal(game.qb.toString(), 'b');
     });
     it('should return the piece name as a string', function (){
         assert.isString(game.N.getName());
