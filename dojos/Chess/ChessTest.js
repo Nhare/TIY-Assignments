@@ -20,12 +20,14 @@ var game = new Chess;
 // var w5 = game.move(6,6,7,5);  //white move 5
 // game.display();
 
-console.log(game.Q);
+// console.log(game.Q);
 // console.log(game.Q.getName());
 // console.log(game.Q.toString());
-console.log(game.q);
-game.q.setPosition([5,5]);
-console.log(game.q);
+// console.log(game.q);
+// game.q.setPosition([5,5]);
+// console.log(game.q);
+// game.move(game.q, [4,4]);
+// console.log(game.q);
 // console.log(game.q.getName());
 // console.log(game.q.toString());
 // console.log(game.K);

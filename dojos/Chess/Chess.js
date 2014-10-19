@@ -82,14 +82,14 @@ function Chess(){
   this.K = new Piece('King', 'black', [0,4]);
   this.k = new Piece('King', 'white', [7,4]);
   this.P1 = new Piece('Pawn', 'black', [1,0]);
-  this.P2 = new Piece('Pawn', 'black'. [1,1]);
+  this.P2 = new Piece('Pawn', 'black', [1,1]);
   this.P3 = new Piece('Pawn', 'black', [1,2]);
   this.P4 = new Piece('Pawn', 'black', [1,3]);
   this.P5 = new Piece('Pawn', 'black', [1,4]);
   this.P6 = new Piece('Pawn', 'black', [1,5]);
   this.P7 = new Piece('Pawn', 'black', [1,6]);
   this.P8 = new Piece('Pawn', 'black', [1,7]);
-  this.p1 = new Piece('Pawn', 'white' [6,0]);
+  this.p1 = new Piece('Pawn', 'white', [6,0]);
   this.p2 = new Piece('Pawn', 'white', [6,1]);
   this.p3 = new Piece('Pawn', 'white', [6,2]);
   this.p4 = new Piece('Pawn', 'white', [6,3]);
@@ -114,7 +114,9 @@ function Chess(){
 }
 
 Chess.prototype.move = function(piece, destination){
-
+  var x,y;
+  piece.position = destination;
+  destination = new Position(x,y)
 }
 // Chess.prototype.move = function(a,b,c,d){
     // this.board[a][b] = this.board[c][d];
