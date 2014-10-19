@@ -20,10 +20,12 @@ var game = new Chess;
 // var w5 = game.move(6,6,7,5);  //white move 5
 // game.display();
 
-// console.log(game.Q);
+console.log(game.Q);
 // console.log(game.Q.getName());
 // console.log(game.Q.toString());
-// console.log(game.q);
+console.log(game.q);
+game.q.setPosition([5,5]);
+console.log(game.q);
 // console.log(game.q.getName());
 // console.log(game.q.toString());
 // console.log(game.K);
@@ -78,31 +80,31 @@ describe ('Piece construction tests', function (){
         assert.equal(game.k.toString(), 'k');
     });
     it('should return the piece name as a string', function (){
-        assert.isString(game.P.getName());
+        assert.isString(game.P1.getName());
     });
     it('should return a string that says Pawn', function (){
-        assert.equal(game.P.getName(), 'Pawn');
+        assert.equal(game.P1.getName(), 'Pawn');
     });
     it('should return a string for black Pawn, P', function (){
-        assert.equal(game.P.toString(), 'P');
+        assert.equal(game.P1.toString(), 'P');
     });
     it('should return the piece name as a string', function (){
-        assert.isString(game.p.getName());
+        assert.isString(game.p1.getName());
     });
     it('should return a string that says Pawn', function (){
-        assert.equal(game.p.getName(), 'Pawn');
+        assert.equal(game.p1.getName(), 'Pawn');
     });
     it('should return a string that for white Pawn, p', function (){
-        assert.equal(game.p.toString(), 'p');
+        assert.equal(game.p1.toString(), 'p');
     });
     it('should return the piece name as a string', function (){
-        assert.isString(game.B.getName());
+        assert.isString(game.qB.getName());
     });
     it('should return a string that says Bishop', function (){
-        assert.equal(game.B.getName(), 'Bishop');
+        assert.equal(game.qB.getName(), 'Bishop');
     });
     it('should return a string for black Bishop, B', function (){
-        assert.equal(game.B.toString(), 'B');
+        assert.equal(game.qB.toString(), 'B');
     });
     it('should return the piece name as a string', function (){
         assert.isString(game.qb.getName());
@@ -114,39 +116,39 @@ describe ('Piece construction tests', function (){
         assert.equal(game.qb.toString(), 'b');
     });
     it('should return the piece name as a string', function (){
-        assert.isString(game.N.getName());
+        assert.isString(game.qN.getName());
     });
     it('should return a string that says Knight', function (){
-        assert.equal(game.N.getName(), 'Knight');
+        assert.equal(game.qN.getName(), 'Knight');
     });
     it('should return a string for black Knight, N', function (){
-        assert.equal(game.N.toString(), 'N');
+        assert.equal(game.qN.toString(), 'N');
     });
     it('should return the piece name as a string', function (){
-        assert.isString(game.n.getName());
+        assert.isString(game.qn.getName());
     });
     it('should return a string that says Knight', function (){
-        assert.equal(game.n.getName(), 'Knight');
+        assert.equal(game.qn.getName(), 'Knight');
     });
     it('should return a string for white Knight, n', function (){
-        assert.equal(game.n.toString(), 'n');
+        assert.equal(game.qn.toString(), 'n');
     });
     it('should return the piece name as a string', function (){
-        assert.isString(game.R.getName());
+        assert.isString(game.qR.getName());
     });
     it('should return a string that says Rook', function (){
-        assert.equal(game.R.getName(), 'Rook');
+        assert.equal(game.qR.getName(), 'Rook');
     });
     it('should return a string for black Rook, R', function (){
-        assert.equal(game.R.toString(), 'R');
+        assert.equal(game.qR.toString(), 'R');
     });
     it('should return the piece name as a string', function (){
-        assert.isString(game.r.getName());
+        assert.isString(game.qr.getName());
     });
     it('should return a string that says Rook', function (){
-        assert.equal(game.r.getName(), 'Rook');
+        assert.equal(game.qr.getName(), 'Rook');
     });
     it('should return a string for white Rook, r', function (){
-        assert.equal(game.r.toString(), 'r');
+        assert.equal(game.qr.toString(), 'r');
     });
 });
