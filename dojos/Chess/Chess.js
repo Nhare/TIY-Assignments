@@ -1,4 +1,5 @@
 // Chess
+
 /*
 @constructor Chess: Setup a board with Pieces representing an initial chessboard.
   @method getPlayer()
@@ -54,7 +55,7 @@ function Chess(){
   this.p6 = new Piece('Pawn', 'white', [6,5]);
   this.p7 = new Piece('Pawn', 'white', [6,6]);
   this.p8 = new Piece('Pawn', 'white', [6,7]);
-  this.qB = new Piece('Bishop', 'black'[0,2]);
+  this.qB = new Piece('Bishop', 'black', [0,2]);
   this.kB = new Piece('Bishop', 'black', [0,5]);
   this.qb = new Piece('Bishop', 'white', [7,2]);
   this.kb = new Piece('Bishop', 'white', [7,5]);
@@ -76,25 +77,39 @@ Chess.prototype.move = function(piece, destination){
   destination = new Position(x,y)
 }
 
+
 Chess.prototype.display = function(){
   var self = this;
-  this.pieces = [this.Q, this.q, this.K, this.k, this.P1, this.P2, this.P3,
+  var pieces = [this.Q, this.q, this.K, this.k, this.P1, this.P2, this.P3,
                 this.P4, this.P5, this.P6, this.P7, this.P8, this.p1, this.p2,
                 this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.qB,
                 this.kB, this.qb, this.kb, this.qN, this.kN, this.qn, this.kn,
                 this.qR,this.kR, this.qr, this.kr];
-
+  var board = Array.matrix(8,8,0);
   var spacer = '+---+---+---+---+---+---+---+---+\n';
     return spacer +
-          this.pieces.map(function renderRow(row){
-            return '| ' +
-                row.forEach(function renderCell(position){
-                    return position && this.toString() || ' ';
-                }).join(' | ')
-            + ' |\n';
+        board.map(function renderRow(row){
+          return '| ' +
+              row.map(function renderPosition(pieces){
+                  return pieces.position && pieces.toString() || ' ';
+              }).join(' | ')
+          + ' |\n';
         }).join(spacer)
     + spacer;
 }
+
+Array.matrix = function(numrows, numcols, initial){
+   var arr = [];
+   for (var i = 0; i < numrows; ++i){
+      var columns = [];
+      for (var j = 0; j < numcols; ++j){
+         columns[j] = initial;
+      }
+      arr[i] = columns;
+    }
+    return arr;
+}
+
 
 function Piece(name, color, position){
   this.name = name;
