@@ -8,7 +8,7 @@ var expect = require('chai').expect;
 var game = new Chess;
 // console.log(game.Q.getName());
 // var w1 = game.move(4,2,6,2);  //white move 1
-// game.display();
+game.display();
 // var b1 = game.move(3,3,1,3);  //black move 1
 // game.display();
 // var w2 = game.move(4,3,6,3);  //white move 2

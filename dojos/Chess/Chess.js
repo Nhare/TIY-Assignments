@@ -29,54 +29,11 @@
 
 // Production Code
 
-module.exports = Chess,Position,Piece,Board;
+module.exports = Chess,Position,Piece;
 var _ = require('lodash');
-// var board = [
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '] ];
-    // ['R','N','B','Q','K','B','N','R'],
-    // ['P','P','P','P','P','P','P','P'],
-    // [' ',' ',' ',' ',' ',' ',' ',' '],
-    // [' ',' ',' ',' ',' ',' ',' ',' '],
-    // [' ',' ',' ',' ',' ',' ',' ',' '],
-    // [' ',' ',' ',' ',' ',' ',' ',' '],
-    // ['p','p','p','p','p','p','p','p'],
-    // ['r','n','b','q','k','b','n','r'] ];
-
-// function keyFor(x,y){
-//     return x + ',' + y;
-// }
-// board = [
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '],
-//       [' ',' ',' ',' ',' ',' ',' ',' '] ];
-function Board(){
-}
-//   return [
-//         [' ',' ',' ',' ',' ',' ',' ',' '],
-//         [' ',' ',' ',' ',' ',' ',' ',' '],
-//         [' ',' ',' ',' ',' ',' ',' ',' '],
-//         [' ',' ',' ',' ',' ',' ',' ',' '],
-//         [' ',' ',' ',' ',' ',' ',' ',' '],
-//         [' ',' ',' ',' ',' ',' ',' ',' '],
-//         [' ',' ',' ',' ',' ',' ',' ',' '],
-//         [' ',' ',' ',' ',' ',' ',' ',' '] ];
-// }
 
 function Chess(){
-  this.board = new Board();
-  var pointValues = { 'Pawn': 1, 'Bishop': 3, 'Knight': 3, 'Rook': 5, 'Queen': 9 }
+  // var pointValues = { 'Pawn': 1, 'Bishop': 3, 'Knight': 3, 'Rook': 5, 'Queen': 9 }
   this.Q = new Piece('Queen', 'black', [0,3]);
   this.q = new Piece('Queen', 'white', [7,3]);
   this.K = new Piece('King', 'black', [0,4]);
@@ -118,25 +75,25 @@ Chess.prototype.move = function(piece, destination){
   piece.position = destination;
   destination = new Position(x,y)
 }
-// Chess.prototype.move = function(a,b,c,d){
-    // this.board[a][b] = this.board[c][d];
-    // this.board[c][d] = ' ';
-    // board[a][b] = board[c][d];
-    // board[c][d] = ' ';
-// }
 
 Chess.prototype.display = function(){
-  // console.log(board);
-  // var spacer = '+---+---+---+---+---+---+---+---+\n';
-  //   return spacer +
-  //       this.board.map(function renderRow(row){
-  //           return '| ' +
-  //               row.map(function renderCell(position){
-  //                   return position && 'Q' || ' ';
-  //               }).join(' | ')
-  //           + ' |\n';
-  //       }).join(spacer)
-  //   + spacer;
+  var self = this;
+  this.pieces = [this.Q, this.q, this.K, this.k, this.P1, this.P2, this.P3,
+                this.P4, this.P5, this.P6, this.P7, this.P8, this.p1, this.p2,
+                this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.qB,
+                this.kB, this.qb, this.kb, this.qN, this.kN, this.qn, this.kn,
+                this.qR,this.kR, this.qr, this.kr];
+
+  var spacer = '+---+---+---+---+---+---+---+---+\n';
+    return spacer +
+          this.pieces.map(function renderRow(row){
+            return '| ' +
+                row.forEach(function renderCell(position){
+                    return position && this.toString() || ' ';
+                }).join(' | ')
+            + ' |\n';
+        }).join(spacer)
+    + spacer;
 }
 
 function Piece(name, color, position){
@@ -208,13 +165,10 @@ Piece.prototype.setPosition = function(position){
   var x,y;
   this.position = position;
   position = new Position(x,y)
-// Piece.prototype.setPosition = function(x,y){
-  // board[x][y] = this.toString();
 }
 
 function Position(x,y){
   this.x = x;
   this.y = y;
   return [x,y];
-  // board[x][y] = this.toString();
 }
