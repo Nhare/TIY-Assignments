@@ -1,44 +1,15 @@
 // Chess
-
-/*
-@constructor Chess: Setup a board with Pieces representing an initial chessboard.
-  @method getPlayer()
-  @return String either "white" or "black" representing current player
-  @method display()
-  @return String representation of board
-  @method move(piece, destination): Move piece to destination and...?
-  @param Piece piece to move
-  @param Position destination to move piece to
-  @method opening(): Advance the board to Catalan Opening, Closed Variation
-@constructor Position(x,y): Represent a position on a chessboard with coordinates
-  usage: new Position(1,1)
-  @property Number x coordinate
-  @property Number y coordinate
-@constructor Piece(name, color): Represent a chesspiece on the board with name and color and appropriate starting position
-  usage: new Piece('Queen', 'black')
-  @method getName()
-  @return String name of Piece, e.g. 'Queen', 'Pawn'
-  @method getColor():
-  @return String player 'black' or 'white'
-  @method setPosition(position): Set Piece to position on board
-  @param Position position
-  @method toString()
-  @return String representation of Piece
-    example: "Q" === String(new Piece("Queen", "white"))
-    example: "r" === String(new Piece("Rook", "black"))
-*/
-
 // Production Code
 
-module.exports = Chess,Position,Piece;
+module.exports = {"chess": Chess, 'position': Position, 'piece': Piece};
 var _ = require('lodash');
 
 function Chess(){
   var pointValues = { 'Pawn': 1, 'Bishop': 3, 'Knight': 3, 'Rook': 5, 'Queen': 9 }
-  this.Q = new Piece('Queen', 'black', [0,3]);
-  this.q = new Piece('Queen', 'white', [7,3]);
-  this.K = new Piece('King', 'black', [0,4]);
-  this.k = new Piece('King', 'white', [7,4]);
+  this.Q =  new Piece('Queen', 'black', [0,3]);
+  this.q =  new Piece('Queen', 'white', [7,3]);
+  this.K =  new Piece('King', 'black', [0,4]);
+  this.k =  new Piece('King', 'white', [7,4]);
   this.P1 = new Piece('Pawn', 'black', [1,0]);
   this.P2 = new Piece('Pawn', 'black', [1,1]);
   this.P3 = new Piece('Pawn', 'black', [1,2]);
@@ -70,7 +41,8 @@ function Chess(){
 }
 
 Chess.prototype.move = function(piece, destination){
-  var x,y;
+  var x,y,active;
+  active = piece;
   piece.position = destination;
   destination = new Position(x,y)
 }
@@ -131,7 +103,6 @@ Array.matrix = function(numrows, numcols, initial){
     }
     return arr;
 }
-
 
 function Piece(name, color, position){
   this.name = name;

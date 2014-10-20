@@ -1,6 +1,8 @@
 // Chess Test Code
 
-var Chess = require('./Chess.js');
+var Chess = require('./Chess.js').chess;
+var Position = require('./Chess.js').position;
+var Piece = require('./Chess.js').piece;
 var _ = require('lodash');
 var assert = require('chai').assert;
 var expect = require('chai').expect;
@@ -9,9 +11,7 @@ var game = new Chess;
 
 // console.log(game.display());
 // game.move(game.p3, [4,2]); // white move 1
-// console.log(game.display());
 // game.move(game.P4, [3,3]); // black move 1
-// console.log(game.display());
 // game.move(game.p4, [4,3]); // white move 2
 // game.move(game.P5, [2,4]); // black move 2
 // game.move(game.kn, [5,5]); // white move 3
@@ -155,5 +155,17 @@ describe ('Piece construction tests', function (){
     });
     it('should return a string for white Rook, r', function (){
         assert.equal(game.qr.toString(), 'r');
+    });
+});
+
+describe ('should have a functions', function (){
+    it('should have a function Chess()', function(){
+        assert.isFunction(Chess);
+    });
+    it('should have a function Position()', function(){
+        assert.isFunction(Position);
+    });
+    it('should have a function Piece()', function(){
+        assert.isFunction(Piece);
     });
 });
