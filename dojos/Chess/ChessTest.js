@@ -21,9 +21,29 @@ game.move(game.kN, [2,5]); // black move 4
 game.move(game.kb, [6,6]); // white move 5
 console.log(game.display());
 
-
-
-// var w5 = game.move(6,6,7,5);  //white move 5
+describe ('Catalan opening should look like', function (){
+  it('should display the Catalan Opening', function (){
+        assert.equal(game.display(),
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| R | N | B | Q | K |   |   | R |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| P | P | P |   | B | P | P | P |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   |   |   | P | N |   |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   |   | P |   |   |   |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   | p | p |   |   |   |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "|   |   |   |   |   | n | p |   |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| p | p |   |   | p | p | b | p |\n" +
+          "+---+---+---+---+---+---+---+---+\n" +
+          "| r | n | b | q | k |   |   | r |\n" +
+          "+---+---+---+---+---+---+---+---+\n"
+        );
+  });
+});
 
 describe ('Piece construction tests', function (){
     it('should return the piece name as a string', function (){

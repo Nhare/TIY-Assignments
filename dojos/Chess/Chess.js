@@ -34,7 +34,7 @@ module.exports = Chess,Position,Piece;
 var _ = require('lodash');
 
 function Chess(){
-  // var pointValues = { 'Pawn': 1, 'Bishop': 3, 'Knight': 3, 'Rook': 5, 'Queen': 9 }
+  var pointValues = { 'Pawn': 1, 'Bishop': 3, 'Knight': 3, 'Rook': 5, 'Queen': 9 }
   this.Q = new Piece('Queen', 'black', [0,3]);
   this.q = new Piece('Queen', 'white', [7,3]);
   this.K = new Piece('King', 'black', [0,4]);
@@ -67,8 +67,6 @@ function Chess(){
   this.kR = new Piece('Rook', 'black', [0,7]);
   this.qr = new Piece('Rook', 'white', [7,0]);
   this.kr = new Piece('Rook', 'white', [7,7]);
-  // this.blackPieces = [this.Q, this.K, this.P, this.B, this.N, this.R];
-  // this.whitePieces = [this.q, this.k, this.p, this.b, this.n, this.r];
 }
 
 Chess.prototype.move = function(piece, destination){
