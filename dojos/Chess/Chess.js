@@ -105,6 +105,21 @@ Chess.prototype.display = function(){
     + spacer;
 }
 
+Chess.prototype.opening = function(){
+  console.log(this.display());
+  this.move(this.p3, [4,2]); // white move 1
+  console.log(this.display());
+  this.move(this.P4, [3,3]); // black move 1
+  this.move(this.p4, [4,3]); // white move 2
+  this.move(this.P5, [2,4]); // black move 2
+  this.move(this.kn, [5,5]); // white move 3
+  this.move(this.kB, [1,4]); // black move 3
+  this.move(this.p7, [5,6]); // white move 4
+  this.move(this.kN, [2,5]); // black move 4
+  this.move(this.kb, [6,6]); // white move 5
+  console.log(this.display());
+}
+
 Array.matrix = function(numrows, numcols, initial){
    var arr = [];
    for (var i = 0; i < numrows; ++i){

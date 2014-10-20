@@ -7,19 +7,21 @@ var expect = require('chai').expect;
 
 var game = new Chess;
 
-console.log(game.display());
-game.move(game.p3, [4,2]); // white move 1
-console.log(game.display());
-game.move(game.P4, [3,3]); // black move 1
-console.log(game.display());
-game.move(game.p4, [4,3]); // white move 2
-game.move(game.P5, [2,4]); // black move 2
-game.move(game.kn, [5,5]); // white move 3
-game.move(game.kB, [1,4]); // black move 3
-game.move(game.p7, [5,6]); // white move 4
-game.move(game.kN, [2,5]); // black move 4
-game.move(game.kb, [6,6]); // white move 5
-console.log(game.display());
+// console.log(game.display());
+// game.move(game.p3, [4,2]); // white move 1
+// console.log(game.display());
+// game.move(game.P4, [3,3]); // black move 1
+// console.log(game.display());
+// game.move(game.p4, [4,3]); // white move 2
+// game.move(game.P5, [2,4]); // black move 2
+// game.move(game.kn, [5,5]); // white move 3
+// game.move(game.kB, [1,4]); // black move 3
+// game.move(game.p7, [5,6]); // white move 4
+// game.move(game.kN, [2,5]); // black move 4
+// game.move(game.kb, [6,6]); // white move 5
+// console.log(game.display());
+
+game.opening();
 
 describe ('Catalan opening should look like', function (){
   it('should display the Catalan Opening', function (){
