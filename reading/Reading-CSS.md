@@ -85,3 +85,61 @@ border-top-color - CSS property sets the color of the top border of an element. 
     color: red;
 }
 ```
+
+text-align - CSS property describes how inline content like text is aligned in its parent block element. text-align does not control the alignment of block elements itself, only their inline content.
+```
+text-align: left
+text-align: right
+text-align: center
+text-align: justify
+text-align: start
+text-align: end
+text-align: match-parent
+text-align: start end
+text-align: "."
+text-align: start "."
+text-align: "." end
+
+div { text-align: center; border:solid; }
+```
+
+font - CSS property is either a shorthand property for setting font-style, font-variant, font-weight, font-size, line-height and font-family, or a way to set the element's font to a system font, using specific keywords.
+```
+Formal syntax: [ [ <‘font-style’> || <font-variant-css21> || <‘font-weight’> || <‘font-stretch’> ]? <‘font-size’> [ / <‘line-height’> ]? <‘font-family’> ] | caption | icon | menu | message-box | small-caption | status-bar
+
+/* Set the font weight to bold, the font-style to italic, the font size to large, 
+and the font family to serif. */
+p { font: bold italic large serif }
+```
+
+font-size - CSS property specifies the size of the font – specifically the desired height of glyphs from the font. Setting the font size may, in turn, change the size of other items, since it is used to compute the value of em and ex length units.
+```
+font-size: 12px      /* <length> values */
+font-size: 0.8em
+font-size: 80%       /* <percentage> values */
+font-size: inherit
+
+body {
+  font-size: 62.5%; /* font-size 1em = 10px */
+}
+p {
+  font-size: 1.6em; /* 1.6em = 16px */
+}
+```
+
+font-style - CSS property allows italic or oblique faces to be selected within a font-family.
+```
+font-style: normal
+font-style: italic
+font-style: oblique
+font-style: inherit
+
+p.normal { font-style:normal } 
+p.italic { font-style:italic } 
+p.oblique { font-style: oblique }
+
+<p class="normal">This paragraph is normal.</p>
+<p class="italic">This paragraph is italic.</p>
+<p class="oblique">This paragraph is oblique.</p>
+```
+
