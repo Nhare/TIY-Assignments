@@ -175,3 +175,41 @@
  * Block-level element
  * em HTML emphasis element
  * Inline element
+
+18
+```
+<p><a href="http://www.meetup.com/The-Iron-Yard-Orlando/">http://www.meetup.com/The-Iron-Yard-Orlando/</a></p>
+<p>See you then!</p>
+```
+
+ * p paragraph tag
+ * Block-level element
+ * a hyperlink element
+ * Inline element
+ * p paragraph tag
+ * Block-level element
+
+19
+```
+<h1 class="title">
+<a href="http://orlando.theironyard.com/post/100189034319/matt-wallaert-behavioral-scientist-bing-will-be">Matt Wallaert, Behavioral Scientist @ Bing, Will be Here Tomorrow!</a></h1><p><em>By Susanna Miller, Campus Director</em></p>
+```
+ * h1 header tag
+ * Block-level element
+ * a hyperlink element
+ * Inline element
+ * p paragraph tag
+ * Block-level element
+ * em HTML emphasis element
+ * Inline element
+
+20
+```
+<p>On Friday, we kicked off our guest lecture series with <a href="http://olivierlacan.com/about/">Olivier Lacan</a> from Code School, who showed our students how Code School uses Github internally and demonstrated a couple neat <a href="http://olivierlacan.com/tools/">tools</a> that he uses to improve his workflow. </p>
+```
+ * p paragraph tag
+ * Block-level element
+ * a hyperlink element
+ * Inline element
+ * a hyperlink element
+ * Inline element
