@@ -1,45 +1,95 @@
-<html>
+html>
   <body>
     <style>
+* {
+  font-family: sans-serif;
+}
+a:link {
+  text-decoration: none;
+}
 header {
     background-image: url(http://static.tumblr.com/3c7cd96cde56779343d2e9a22afec085/w5gxxfv/oCrn8vkw8/tumblr_static_9cxjqqnfamsccsg4ow84sg8kg.jpg);
     background-repeat: no-repeat;
     height: 399px;
+    margin: -10px;
+}
+#social {
+  float: right;
 }
 #logo {
     margin-top: -75px;
-    margin-left: 20%;
-    border: 5pt solid red;
+    margin-left: 10%;
+    border: 5pt solid white;
     width: 150px;
+}
+#blogTitle1 a {
+  color: #4F4F4F;
 }
 #logo img {
     width: 150px;
     height: 150px;
 }
+#logoTagLine a {
+  font-weight: bolder;
+  color:#4F4F4F;
+}
+#logoTagLine p {
+  color: #B8B8B8;
+}
+h1 {
+  font-size: 35px;
+}
+#blogTitle2 a {
+  color: #4F4F4F;
+}
 section {
     width: 50%;
     margin: auto;
+    margin-top: -80px;
+    font-size:18px;
     /* This totally works!
     margin-left: 25%;
     margin-right: 25%;
     */
 }
+#timeStamp a {
+  float: right;
+  margin-top: -30px;
+  color: #4F4F4F;
+}
+#tube {
+  font-size:20px;
+  font-weight: lighter;
+}
+article {
+  margin-left:50px;
+  color: #4F4F4F;
+}
+aside {
+    padding-top:10px;
+    float: left;
+    width: 12%;
+    margin-left:129px;
+}
+aside p {
+  color: #B8B8B8;
+};
+}
     </style>
     <header>
-        <nav><a href="#">Edit Theme</a> <a href="#">Follow</a> <a href="#">Dashboard</a></nav>
+        <nav id = "social"><a href="#">Edit Theme</a> <a href="#">Follow</a> <a href="#">Dashboard</a></nav>
     </header>
     <nav id="logo"><a href="http://theironyard.com"><img src="http://static.tumblr.com/37ca133c1a84d5b7856c51a7682df3e9/w5gxxfv/6j4n8vkw8/tumblr_static_20mtuue2w17o0sksogs0c44cw.png"></a></nav>
     <aside>
-      <nav><a href="http://orlando.theironyard.com">The Iron Yard -- Orlando</a></nav>
+      <nav id = "LogoTagLine"><a href="http://orlando.theironyard.com">THE IRON YARD <span id = "tube">|</span>  ORLANDO</a></nav>
       <p>Happenings and updates from The Iron Yard in Orlando, FL.</p>
       <hr>
-      <!-- OMG SEARCH IS HARD! -->
     </aside>
     <section>
       <article>
-        <h1><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">Successful Orlando Tech Meetup at The Iron Yard!</a></h1>
+        <h1 id="blogTitle1"><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">Successful Orlando Tech Meetup at The Iron Yard!</a></h1>
 
-        <p><???>By Susanna Miller, Campus Director</???></p>
+        <p><em>By Susanna Miller, Campus Director</em></p>
 
         <p>A great turnout on Friday at The Iron Yard Orlando to hear Matt Wallaert - kudos to the Orlando Tech Association for putting the event together! There were 65 attendees, and a fantastics Q&A afterwards. Looking forward to future events and collaboration with the Orlando Tech Association!</p>
 
@@ -48,27 +98,30 @@ section {
         <nav>
           <a href="#" style="color: grey;">&#9829;</a>
           <a href="#">&#8644;</a>
-          <a href="#">???</a>
+          <a href="#">&#10156;</a>
         </nav>
 
-        <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">2 hours ago</a></nav>
+        <nav id="timeStamp"><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">2 hours ago</a></nav>
       </article>
       <article>
-        <h1><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">Successful Orlando Tech Meetup at The Iron Yard!</a></h1>
+        <h1 id="blogTitle2"><a href="http://orlando.theironyard.com/post/100189034319/matt-wallaert-behavioral-scientist-bing-will-be">Matt Wallaert, Behavioral Scientist @ Bing, Will be Here Tomorrow!</a></h1>
 
-        <p><???>By Susanna Miller, Campus Director</???></p>
+        <p><em>By Susanna Miller, Campus Director</em></p>
 
-        <p>A great turnout on Friday at The Iron Yard Orlando to hear Matt Wallaert - kudos to the Orlando Tech Association for putting the event together! There were 65 attendees, and a fantastics Q&A afterwards. Looking forward to future events and collaboration with the Orlando Tech Association!</p>
+        <p>At 6pm tomorrow, The Iron Yard Orlando will be hosting Matt Wallaert, Behavioral Scientist @ Bing, as he speaks at an Orlando Tech Meetup in our space here at 101 S. Garland Ave. This is a great opportunity to meet him and ask questions, and I hope you’ll join us!
+You can find more information on our Meetup page:<br><br>
+http://www.meetup.com/The-Iron-Yard-Orlando/<br><br>
+See you then!<br></p>
 
-        <p><img src="http://media.tumblr.com/e2250665076068f4f6a856187e14a00e/tumblr_inline_nduqyizSQT1t311sy.jpg"></p>
+        <p><img src="http://media.tumblr.com/c5b6fcd73c1e6a076269eb477b09c379/tumblr_inline_ndk4rsMem41t311sy.jpg"></p>
 
         <nav>
           <a href="#" style="color: grey;">&#9829;</a>
           <a href="#">&#8644;</a>
-          <a href="#">???</a>
+          <a href="#">&#10156;</a>
         </nav>
 
-        <nav><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">2 hours ago</a></nav>
+        <nav id="timeStamp"><a href="http://orlando.theironyard.com/post/100672003784/successful-orlando-tech-meetup-at-the-iron-yard">2 hours ago</a></nav>
       </article>
     </section>
   </body>
