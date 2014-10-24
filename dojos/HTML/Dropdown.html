@@ -2,17 +2,150 @@
 
 <html>
   <head>
-
+    <title>Nick Nack</title>
+    <link href="dojos/HTML/dropdownstyles.css" rel="stylesheet" media="screen"/>
+    <script type="text/javascript">
+      <!--
+        function showMenu(id){
+          var arrMenus = [];
+          var  thisMenu = docuement.getElementById(id);
+          arrMenus.forEach(function(value,index){
+            var thisTab = value + 'Tab';
+            if(value==id){
+              thisMenu.style.display = 'block';
+              docuement.getElementById(thisTab).style.backgroundColor = '47cc58'
+            }else{
+              docuement.getElementById(value).style.display = 'none';
+              docuement.getElementById(thisTab).style.backgroundColor = 'fff'
+            };
+          });
+        }
+      //-->
+    </script>
   </head>
   <body>
-    <nav>
+    <nav class="tabs">
       <ul>
-        <li>Products</li>
+        <li><a id="Products" href='#' onclick="showMenu('products');">Products</a></li>
         <li>Downloads</li>
         <li>Applications</li>
         <li>Projects</li>
         <li>Freeware</li>
       </ul>
     </nav>
+    <section id="products">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
+    <section id="downloads">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
+    <section id="applications">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
+    <section id="projects">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
+    <section id="freeware">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
   </body>
 </html>
