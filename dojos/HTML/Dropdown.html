@@ -6,20 +6,25 @@
     <link href="dropdownstyles.css" rel="stylesheet" media="screen"/>
     <script type="text/javascript">
       <!--
-        function showMenu(id){
-          var arrMenus = ['products', 'downloads', 'applications', 'projects', 'freeware'];
-          var  thisMenu = docuement.getElementById(id);
-          arrMenus.forEach(function(value,index){
-            var thisTab = value + 'Tab';
-            if(value==id){
-              thisMenu.style.display = 'block';
-              docuement.getElementById(thisTab).style.backgroundColor = '47cc58'
-            }else{
-              docuement.getElementById(value).style.display = 'none';
-              docuement.getElementById(thisTab).style.backgroundColor = 'fff'
-            };
-          });
-        }
+        function showMenu(id) {
+					 var arrMenus = ['products','downloads','applications','projects','freeware'];
+		       var thisMenu = document.getElementById(id);
+           if(thisMenu.style.display === 'block'){
+             thisMenu.style.display = 'none';
+           }
+           else{
+             arrMenus.forEach(function(value,index){
+							        var thisTab = value + 'Tab';
+							        if(value==id){
+									       thisMenu.style.display = 'block';
+									       document.getElementById(thisTab).style.backgroundColor = '#ababab'
+							        }else{
+									       document.getElementById(value).style.display = 'none';
+									       document.getElementById(thisTab).style.backgroundColor = '#fff'
+							        };
+					   });
+           }
+		    }
       //-->
     </script>
   </head>
@@ -125,7 +130,6 @@
     <section id="freeware" style="display:none;">
       <h1 class="menuHeader">Learning</h1>
         <ul class ="menuList">
-          <li>Catch the Bullet</li>
           <li>Catch the Bullet</li>
           <li>Catch the Bullet</li>
           <li>Catch the Bullet</li>

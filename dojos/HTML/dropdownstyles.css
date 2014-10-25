@@ -6,14 +6,14 @@ body {
   padding:0;
 }
 header{
-  border-bottom: 5px solid #47cc58;
+  border-bottom: 5px solid #ff0000;
   height: 143px;
 }
 header p{
   margin-top: 20px;
   margin-left: 8%;
   font-size: 25pt;
-  color: #47cc58;
+  color: #ff0000;
 }
 nav ul {
   list-style-type: none;
@@ -35,17 +35,16 @@ nav li a {
   text-align: center;
 }
 section {
-  background-color: #47cc58;
+  background-color: #ababab;
 }
 .menuHeader {
   margin-top: 0;
-  color: #58ff6e;
+  color: #ff0000;
   font-size: 18pt;
 }
 .menuList {
   color: #fff;
-  list-style-type: none;
-  padding: 0px;
+  padding: 0 0 10px 0;
   margin: 0px;
 }
 .menuList li {
