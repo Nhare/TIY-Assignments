@@ -1,1 +1,44 @@
 <!-- Nested Accordian -->
+<html>
+  <head>
+    <title>#Winning</title>
+    <link href="nestedstyles.css" rel="stylesheet" media="screen"/>
+    <script type="text/javascript">
+      <!--
+      function showMenu(id) {
+        //  var arrMenus = ['debate'];
+         var thisMenu = document.getElementById(id);
+         if(thisMenu.style.display === 'none'){
+           thisMenu.style.display = 'block';
+         }
+         else{
+           if(thisMenu.style.display === 'block'){
+             thisMenu.style.display = 'none';
+           }
+          //  arrMenus.forEach(function(value,index){
+          //           var thisTab = value + 'Tab';
+          //           if(value==id){
+          //              thisMenu.style.display = 'block';
+          //              document.getElementById(thisTab).style.backgroundColor = '#ababab'
+          //           }else{
+          //              document.getElementById(value).style.display = 'none';
+          //              document.getElementById(thisTab).style.backgroundColor = '#fff'
+          //           };
+          //  });
+        };
+      }
+      //-->
+    </script>
+  </head>
+  <header>
+    <p>Recipe for Winning</p>
+  </header>
+  <body>
+    <!-- <nav class="tabs"> -->
+    <h3><a id="debateTab" href='#' onclick="showMenu('debate');">Debate</a></h3>
+      <p id="debate" style="display:none;">No, you won't get high .... It's all good. It's all good, guys. Quit
+          panicking. Quit panicking. No panic, no judgment. But I dare anyone to
+          debate me on things.</p>
+    <!-- </nav> -->
+  </body>
+</html>
