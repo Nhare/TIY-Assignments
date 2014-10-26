@@ -5,8 +5,7 @@
     <link href="nestedstyles.css" rel="stylesheet" media="screen"/>
     <script type="text/javascript">
       <!--
-      function showMenu(id) {
-        //  var arrMenus = ['debate'];
+      function openClose(id) {
          var thisMenu = document.getElementById(id);
          if(thisMenu.style.display === 'none'){
            thisMenu.style.display = 'block';
@@ -15,16 +14,6 @@
            if(thisMenu.style.display === 'block'){
              thisMenu.style.display = 'none';
            }
-          //  arrMenus.forEach(function(value,index){
-          //           var thisTab = value + 'Tab';
-          //           if(value==id){
-          //              thisMenu.style.display = 'block';
-          //              document.getElementById(thisTab).style.backgroundColor = '#ababab'
-          //           }else{
-          //              document.getElementById(value).style.display = 'none';
-          //              document.getElementById(thisTab).style.backgroundColor = '#fff'
-          //           };
-          //  });
         };
       }
       //-->
@@ -34,11 +23,39 @@
     <p>Recipe for Winning</p>
   </header>
   <body>
-    <!-- <nav class="tabs"> -->
-    <h3><a id="debateTab" href='#' onclick="showMenu('debate');">Debate</a></h3>
-      <p id="debate" style="display:none;">No, you won't get high .... It's all good. It's all good, guys. Quit
+    <h3><a id="debateTab" href='#' onclick="openClose('debate');">Debate</a></h3>
+      <section id="debate" style="display:none;">
+        <p>No, you won't get high .... It's all good. It's all good, guys. Quit
           panicking. Quit panicking. No panic, no judgment. But I dare anyone to
           debate me on things.</p>
-    <!-- </nav> -->
+        <!-- <h4 id="debate" style ="display:none;">       -->
+        <h4><a id="bsTab" href='#' onclick="openClose('bs');">BS</a></h4>
+          <p id="bs" style="display:none;">Well, yeah. But I was gonna tell you, I'm tired of being told like, 'Oh,
+            you can't talk about that. You can't talk about that.' Bull s.h.i.t. ... uh
+            ....</p>
+        <!-- <h4 id="debate" style ="display:none;">     -->
+        <h4><a id="peaceTab" href='#' onclick="openClose('peace');">Peace</a></h4>
+          <p id="peace" style="display:none;">So ... you know ... within that is tremendous focus, and tremendous
+            clarity, and tremendous peace.</p>
+      </section>
+      <h3><a id="marriageTab" href='#' onclick="openClose('marriage');">Marriage</a></h3>
+        <section id="marriage" style="display:none;">
+          <p> So if you think about it, dude, it's like I'm 0-for-3 with marriage,
+            with ne'er an excuse. Um ... but I'm excited to get back ... to work. Um
+            ... and not to completely discount what you just talked about ... It's just
+            that if I bring up these ... these turds ... these little losers ...
+            there's no reason to then bring them back into the fold, because I have
+            real fame, and they have nothing.</p>
+          <!-- <h4 id="debate" style ="display:none;">       -->
+          <h4><a id="fairTab" href='#' onclick="openClose('fair');">Fair Game</a></h4>
+            <p id="fair" style="display:none;">But it's just not ... I'm not fair game. I'm not a soft target. It's
+              over.</p>
+          <!-- <h4 id="debate" style ="display:none;">     -->
+          <h4><a id="tiredTab" href='#' onclick="openClose('tired');">Tired</a></h4>
+            <p id="tired" style="display:none;">And you know, I'm tired ... I'm so tired of pretending like my life
+              isn't perfect and bitchin' and just winning every second .... And I'm not
+              perfect and bitchin', and just delivering the goods at every frickin'
+              turn.</p>
+        </section>
   </body>
 </html>
