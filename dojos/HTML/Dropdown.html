@@ -25,10 +25,19 @@
 					   });
            }
 		    }
+
+        function clearMenu(index){
+          var arrMenus = ['products','downloads','applications','projects','freeware'];
+          var thisTab = value + 'Tab';
+          arrMenus.forEach(function(value,index){
+            document.getElementById(value).style.display = 'none';
+            document.getElementById(thisTab).style.backgroundColor = '#fff';
+          });
+        }
       //-->
     </script>
   </head>
-  <header>
+  <header onclick="clearMenu(arrMenus);">
     <p>Nick's Drop Down Bonanza</p>
     <nav class="tabs">
       <ul>
