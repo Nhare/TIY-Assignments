@@ -1,4 +1,3 @@
-<!-- Dropdown -->
 <!doctype html>
 <html>
   <head>
@@ -84,30 +83,32 @@
         </div> <!-- .submenu -->
       </li><!-- END Applications -->
 
-        <li><h3> Projects</h3>
-        <h4>Learning &amp; Games</h4>
-        <ul>
-          <li>Catch the Bullet</li>
-          <li>Snoopydoo</li>
-          <li>Fallen Angel</li>
-          <li>Sui Maker</li>
-          <li>Wave Master</li>
-          <li>Golf Pro</li>
-        </ul>
-        <h4>Utilities</h4>
-        <ul>
-          <li>Gadget Finder</li>
-          <li>Green Tree Express</li>
-        </ul>
-        <h4>Entertainment</h4>
-        <ul>
-          <li>Gadget Finder</li>
-          <li>Green Tree Express</li>
-          <li>Green Tree Pro</li>
-          <li>Holy Cannoli</li>
-          <li>Wobbler 3.0</li>
-          <li>Coolkid</li>
-        </ul>
+      <li><h3> Projects</h3>
+        <div class="submenu">
+          <h4>Learning &amp; Games</h4>
+          <ul>
+            <li>Catch the Bullet</li>
+            <li>Snoopydoo</li>
+            <li>Fallen Angel</li>
+            <li>Sui Maker</li>
+            <li>Wave Master</li>
+            <li>Golf Pro</li>
+          </ul>
+          <h4>Utilities</h4>
+          <ul>
+            <li>Gadget Finder</li>
+            <li>Green Tree Express</li>
+          </ul>
+          <h4>Entertainment</h4>
+          <ul>
+            <li>Gadget Finder</li>
+            <li>Green Tree Express</li>
+            <li>Green Tree Pro</li>
+            <li>Holy Cannoli</li>
+            <li>Wobbler 3.0</li>
+            <li>Coolkid</li>
+          </ul>
+        </div>
       </li><!-- END Projects -->
 
       <li><h3> Freeware</h3>
@@ -171,18 +172,24 @@ _.each(navItems, function(navItem){
   navItem.onclick = clickNavItem;
 });
 
-/**
- * @param HTMLElement element
- * @return Boolean if `element` is "open"
- */
-function isOpen(element){
-}
-/**
- * @param HTMLElement element
- * @return Boolean if `element` is "closed"
- */
-function isClosed(element){
+function hasOpenClass(element){
+  if ( element.className === 'open' ){
+    return true;
+  }
 
+  return false;
+}
+
+function isOpen(element){
+  if ( element.className === 'open' ){
+    return true;
+  }
+}
+
+function isClosed(element){
+  if ( element.className === '' ){
+    return false;
+  }
 }
 
 function makeItOpen(element){
@@ -195,7 +202,7 @@ function makeItClosed(element){
 
 function makeEverythingClosed(elements){
   // for every element in elements
-  //  make it closed
+  // make it closed
 }
 
     </script>
