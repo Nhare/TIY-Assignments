@@ -9,10 +9,29 @@
   <body>
     <ul class="menu">
       <li><h3>Products</h3>
+        <div class="submenu">
+          <h4>Learning &amp; Games</h4>
+          <ul>
+            <li>Catch the Bullet</li>
+            <li>Snoopydoo</li>
+          </ul>
+          <h4>Utilities</h4>
+          <ul>
+            <li>Gadget Finder</li>
+            <li>Green Tree Express</li>
+            <li>Green Tree Pro</li>
+            <li>Wobbler 3.0</li>
+            <li>Coolkid</li>
+          </ul>
+          <h4>Education</h4>
+          <ul>
+            <li>Learn Thai</li>
+            <li>Math Genius</li>
+          </ul>
+        </div>
+      </li>
 
-      </li><!-- END Products -->
-
-      <li class="open">
+      <li>
         <h3>Downloads</h3>
 
         <div class="submenu">
@@ -141,69 +160,14 @@
         </div>
       </li><!-- END Freeware -->
     </ul>
-    <script src="/node_modules/lodash/lodash.js"></script>
+    <script src="/usr/local/lib/node_modules/lodash/lodash.js"></script>
+    <script src="elmertest.js"></script>
     <script>
 
-var navItems = document.getElementsByTagName('h3');
-
-/**
- * If "this" `navItem` is "closed", make it "open"; if "this" `navItem` is "open"
- * make it "closed". If other `navItems` are "open" then close them, too.
- *
- * @todo FIX THIS FUNCTION!
- *
- * @param DOMEvent event
- * @return undefined
- */
-function clickNavItem(event){
-  // if "this" navItem is "closed"...
-  if ( navItem.parentElement.className !== 'open' ){
-    makeEverythingClosed(navItems);
-    makeItOpen(navItem.parentElement);
-  // otherwise if "this" navItem is "open"
-  } else if ( navItem.parentElement.className === 'open' ){
-    makeItClosed(navItem.parentElement);
-  }
-}; // END clickNavItem
-
-// for each navItem in navItems...
-_.each(navItems, function(navItem){
-  // attach the event handler...
-  navItem.onclick = clickNavItem;
-});
-
-function hasOpenClass(element){
-  if ( element.className === 'open' ){
-    return true;
-  }
-
-  return false;
-}
-
-function isOpen(element){
-  if ( element.className === 'open' ){
-    return true;
-  }
-}
-
-function isClosed(element){
-  if ( element.className === '' ){
-    return false;
-  }
-}
-
-function makeItOpen(element){
-  element.className = 'open';
-}
-
-function makeItClosed(element){
-  element.className = '';
-}
-
-function makeEverythingClosed(elements){
-  // for every element in elements
-  // make it closed
-}
+      var navItems = document.getElementsByTagName('h3');
+      _.each(navItems, function(navItem){
+        navItem.onclick = clickNavItem;
+      });
 
     </script>
   </body>

@@ -1,37 +1,27 @@
-// Functions
-var _ = require('lodash');
-
 function clickNavItem(event){
-  if (isClosed(this.parentElement)){
+   if (isClosed(this.parentElement)){
      makeEverythingClosed(navItems);
      makeItOpen(this.parentElement);
+     //otherwise if this navItem is open
    } else if (isOpen(this.parentElement)){
      makeItClosed(this.parentElement);
    }
 };
 
-_.each(navItems, function(navItem){
-  navItem.onclick = clickNavItem;
-});
-
-// function hasOpenClass(element){
-//   if ( element.className === 'open' ){
-//     return true;
-//   }
-//
-//   return false;
-// }
-
+/**
+ * @param HTMLElement element
+ * @return Boolean if `element` is "open"
+ */
 function isOpen(element){
-  if ( element.className === 'open' ){
-    return true;
-  }
+  return (element.className === 'open') ? true : false;
 }
 
+/**
+ * @param HTMLElement element
+ * @return Boolean if `element` is "closed"
+ */
 function isClosed(element){
-  if ( element.className === '' ){
-    return false;
-  }
+  return (element.className === '') ? true : false;
 }
 
 function makeItOpen(element){
