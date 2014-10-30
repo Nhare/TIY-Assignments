@@ -1,0 +1,167 @@
+<!-- Drop Down menus -->
+
+<html>
+  <head>
+    <title>Nick Nack</title>
+    <link href="dropdownstyles.css" rel="stylesheet" media="screen"/>
+    <script type="text/javascript">
+      <!--
+        function showMenu(id) {
+					 var arrMenus = ['products','downloads','applications','projects','freeware'];
+		       var thisMenu = document.getElementById(id);
+           if(thisMenu.style.display === 'block'){
+             thisMenu.style.display = 'none';
+           }
+           else{
+             arrMenus.forEach(function(value,index){
+							        var thisTab = value + 'Tab';
+							        if(value==id){
+									       thisMenu.style.display = 'block';
+									       document.getElementById(thisTab).style.backgroundColor = '#ababab'
+							        }else{
+									       document.getElementById(value).style.display = 'none';
+									       document.getElementById(thisTab).style.backgroundColor = '#fff'
+							        };
+					   });
+           }
+		    }
+
+        // function clearMenu(){
+        //   var arrMenus = ['products','downloads','applications','projects','freeware'];
+        //   arrMenus.forEach(function(value,index){
+        //     var thisTab = value + 'Tab';
+        //     document.getElementById(value).style.display = 'none';
+        //     document.getElementById(thisTab).style.backgroundColor = '#fff';
+        //   });
+        // }
+      //-->
+    </script>
+  </head>
+  <header id="main" onclick="clearMenu();">
+    <p>Nick's Drop Down Bonanza</p>
+    <nav class="tabs">
+      <ul>
+        <li><a id="productsTab" href='#' onclick="showMenu('products');">Products</a></li>
+        <li><a id="downloadsTab" href='#' onclick="showMenu('downloads');">Downloads</a></li>
+        <li><a id="applicationsTab" href='#' onclick="showMenu('applications');">Applications</a></li>
+        <li><a id="projectsTab" href='#' onclick="showMenu('projects');">Projects</a></li>
+        <li><a id="freewareTab" href='#' onclick="showMenu('freeware');">Freeware</a></li>
+      </ul>
+    </nav>
+  </header>
+    <body>
+    <section id="products" style="display:none;">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
+    <section id="downloads" style="display:none;">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
+    <section id="applications" style="display:none;">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
+    <section id="projects" style="display:none;">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
+    <section id="freeware" style="display:none;">
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+      <h1 class="menuHeader">Learning</h1>
+        <ul class ="menuList">
+          <li>Catch the Bullet</li>
+          <li>Catch the Bullet</li>
+        </ul>
+    </section>
+  </body>
+</html>

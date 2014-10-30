@@ -1,0 +1,39 @@
+/*Mobile First*/
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+header {
+    margin: 5% 0 5% 10%;
+    color: red;
+}
+
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+}
+
+#container {
+    width: 80%; margin: auto;
+    outline: 1px solid red;
+}
+
+@media (min-width: 768px) {
+    .timeline > li time {
+        position: static;
+        float: left;
+        padding-bottom: 15px;
+        margin: 0 auto;
+    }
+    .timeline > li article {
+        background-color: grey;
+        margin: 0; padding: 5pt 2em;
+        border-radius: 5pt;
+    }
+    .timeline > li:nth-child(even) article {
+        background-color: red;
+    }
+}
+
+@media (min-width: 1048px) {
+    .timeline {
+        border-left: 0.5em solid grey;
+    }
+}
