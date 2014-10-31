@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     connect = require('gulp-connect'),
     args = require('yargs')
         .alias('p', 'path')
-        .demand(['/dojos/Responsive/Product-Grid/index.html'])
+        .demand(['path'])
         .alias('w', 'watch')
         .argv;
 
