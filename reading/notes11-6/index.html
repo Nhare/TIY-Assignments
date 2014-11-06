@@ -1,1 +1,43 @@
-<!-- 11-6 notes -->
+<!doctype>
+<html>
+  <head>
+    <meta name ="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <style>
+      body > .container > * {
+        outline: 1pt solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class = "container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <a class="brand" href="#">Github</a>
+        </div>
+      </nav>
+      <aside class="col-sm-4 col-md-4" style="outline: 1pt solid red">
+        <a href="#" class="avatar"><img src=""></a>
+        <h1>This shouldn't be blank</h1>
+      </aside>
+      <section class="col-sm-8 col-md-8">
+        <h1>This is the main section</h1>
+      </section>
+    </div>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+      // ;(function(){ console.log('hello') ; })();
+      ;(function(){
+        jQuery.ajax('octrocat.json', {
+          success: function (data){
+            var avatar_url = data.avatar_url;
+            $('#avatar')
+              .attr('href', avatar_url)
+              .children('img')
+                .attr('src', avatar_url)
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
