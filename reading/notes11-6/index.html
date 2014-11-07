@@ -9,6 +9,8 @@
       }
     </style>
   </head>
+  <header>
+  </header>
   <body>
     <div class = "container">
       <nav class="navbar navbar-default">
@@ -28,7 +30,7 @@
     <script>
       // ;(function(){ console.log('hello') ; })();
       ;(function(){
-        jQuery.ajax('octrocat.json', {
+        jQuery.ajax('octocat.json', {
           success: function (data){
             var avatar_url = data.avatar_url;
             $('#avatar')
