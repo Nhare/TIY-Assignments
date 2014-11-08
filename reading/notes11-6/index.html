@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.min.css" rel="stylesheet">
     <style>
 body > .container {
   min-width: 1020px;
@@ -143,8 +143,8 @@ body > .container {
         </section>
       </div> <!-- .row -->
     </div>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script>
+     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+     <script>
 ;(function(){ // closure
   jQuery.ajax('octocat.json', {
     success: function(data){
@@ -161,11 +161,12 @@ body > .container {
         .siblings('small').text(data.login)
       sidebar.children('.bio')
         .find('li').each(function(){
-          console.log(arguments);
+          if (li.text == data.text){
+            li.text = data.text;
+          }
         });
       sidebar.children('.stats')
         .find('big').each(function(){
-          console.log(arguments);
         });
     } // END success
   }); // END jQuery.ajax
@@ -182,19 +183,6 @@ body > .container {
     }); // END click
   }); // each(.main)
 })(); // END closure
-    </script>
+     </script>
   </body>
 </html>
-  <!-- ;(function(){ -->
-        <!-- jQuery.ajax('octocat.json', {
-          success: function (data){
-            var avatar_url = data.avatar_url;
-            $('#avatar')
-              .attr('href', avatar_url)
-              .children('img')
-                .attr('src', avatar_url)
-          }
-          jQuery('sidebar > *').filter('h2');
-    </script>
-  </body>
-</html> -->
