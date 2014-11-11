@@ -1,0 +1,173 @@
+.container {
+  margin: 0 0 0 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+}
+.userInfo > li {
+  list-style: none;
+}
+.userInfo {
+  padding: 0;
+}
+.content {
+  width: 971px;/*70%*/
+  margin: 0 auto 5% auto;
+}
+.center {
+  width: 971px;/*70%;*/
+  margin: 0 auto;
+  padding: 0 2%;
+}
+.search {
+  width: 200px;
+}
+.navbar-brand {
+  color: black;
+  font-weight: bold;
+  font-size: 20pt;
+}
+.navbar-form .form-control {
+  display: inline-block;
+  width: 345px;
+  vertical-align: middle;
+  height: 30px;
+  margin: 1% 0;
+}
+.btn {
+  margin: 1% 0;
+  font-weight: bold;
+  font-size: 8pt;
+}
+button {
+  width: 60px;
+  align-content: center;
+}
+.sign-up {
+  background-color: #73CE53;
+  color: white;
+}
+#avatar {
+  width: 220px;/*100%*/
+  border-radius: 8px;
+}
+aside {
+  margin:0;
+  padding: 0;
+}
+.name {
+  margin: 0;
+}
+.user {
+  margin: 0;
+  color: gray;
+}
+.glyphicon {
+  color: lightgray;
+}
+.orgs {
+  width: 30px;
+}
+.popular, .contrib2 {
+  margin-top: 3ex;
+  width: 48%;
+  border: 1px solid lightgray;
+  padding: 0;
+  text-indent: 1em;
+}
+.col-md-6 {
+  width: 35%;
+  margin-right: 23px;
+  margin-top: 23px;
+}
+  .popular hr, .contrib2 hr, #conActivity hr {
+  margin-bottom: 2ex;
+}
+#conActivity {
+  margin-top: 30px;
+  margin-left: 20.5em;
+}
+#repos, #activity {
+  display: none;
+}
+.repoList {
+  list-style-type: none;
+
+}
+.octicon:before {
+  margin-right: 1ex;
+  color: gainsboro;
+}
+.octicon-logo-github:before {
+  font-size: 20pt;
+  margin: 0;
+  color: black;
+}
+#name {
+  margin-top: 6px;
+  font-weight: bold;
+  font-size: 28px;
+}
+#user {
+  font-size: 20px;
+  margin-top: -7px;
+  font-weight: 300;
+}
+#location:before {
+  padding-right: 4px;
+}
+#graph {
+  width: 50%;
+  padding: 0;
+}
+#graph img{
+  margin-top: 4ex;
+}
+#contribmenu {
+  border-color: lightgray;
+  border-bottom-color: white;
+}
+#navBar {
+  padding: 0;
+}
+.listOfRepos, .listOfActive {
+  width: 75%;
+}
+.repoList>li {
+  font-size: 16pt;
+  vertical-align: center;
+}
+#r1 {
+  text-indent: 0;
+}
+.activeHead {
+  font-size: 14pt;
+  margin: -6px 0 0 -12px;
+  padding-bottom: 26px;
+  font-weight: 400;
+}
+#klout li {
+  display: inline;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 35px;
+}
+.popular h5 {
+  padding: 10px 0;
+  margin: 0;
+  background-color: #F5F5F5;
+}
+#klout {
+  padding: 0;
+}
+#klout a {
+  font-size: 24pt;
+}
+#klout p{
+  font-size: 8pt;
+}
+#conActivity h6 {
+  text-align: center;
+  padding-top: 5ex;
+  padding-bottom: 10ex;
+}
