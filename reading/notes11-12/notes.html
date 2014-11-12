@@ -1,0 +1,56 @@
+<!doctype>
+<html>
+  <head>
+  </head>
+  <body>
+  <script>
+
+    ;(function(){
+      _.templateSettings.interpolate = BLAHFUCKWHAT;
+      var $slide = $($('.slides template').prop('content').children),
+          sLideTpl = _.template($slide.html());
+
+      var images = [
+        { src: 'url' },
+        { src: 'url' }
+      ]
+
+      _.each(images, function(image){
+        $slide.clone().html(sLideTpl({ image: image })).appendTo($slides);
+      });
+
+    })();
+
+  </script>
+  </body>
+</html>
+
+
+<!--script
+_.reduce(fields, function(dict, item){ dict[item.name] = item.value; return dict; }, { })
+
+gulp
+
+gulp.task('wiredep', function(){
+  wiredep({ src: 'index.html' });
+});
+
+gulp.task('bower', function(){
+  gulp.watch('bower.json', [ 'wiredep' ]);
+});
+
+gulp.task('default', [ 'connect', 'watch', 'bower' ]);
+
+-->
+
+<!--
+Brew - Package manager.
+Bower
+Npm
+Gulp
+Lodash
+Chai
+wiredep
+jquery
+bootstrap
+-->
