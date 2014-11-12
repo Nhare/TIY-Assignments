@@ -1,0 +1,65 @@
+body {
+  background-color: white;
+  text-align: center;
+}
+
+header {
+  margin-top: 2%;
+}
+
+ul {
+  list-style: none;
+}
+
+.slide img{
+  height: 400px;
+  width: 400px;
+  border-radius: 5%;
+  margin: 10% 0;
+}
+.hidden {
+  display: none;
+}
+
+.buttons {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 .5ex;
+  background-color: red;
+}
+
+.buttons:hover {
+  background-color: black;
+}
+
+.current:hover {
+  background-color: grey;
+}
+
+.current {
+  background-color: grey;
+  box-shadow: 0 0 0 2px grey;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.left {
+  height: 100px;
+  width: 70px;
+  float: left;
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  cursor: pointer;
+}
+
+.right {
+  height: 100px;
+  width: 100px;
+  float: right;
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  cursor: pointer;
+}

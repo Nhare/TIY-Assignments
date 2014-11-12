@@ -3,17 +3,108 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="styles.css">
   </head>
+  <header>
+    <h2>Sir Charles the Sheen</h2>
+  </header>
   <body>
-    <div id="slider-con" class="slider">
-      <ul>
-        <li><a href="#"><img src="http://placesheen.com/200/300" </a></li>
-        <li><a href="#"><img src="http://placesheen.com/200/300" </a></li>
-        <li><a href="#"><img src="http://placesheen.com/200/300" </a></li>
-        <li><a href="#"><img src="http://placesheen.com/200/300" </a></li>
-        <li><a href="#"><img src="http://placesheen.com/200/300" </a></li>
-      </ul>
+    <div class="container">
+      <section class="main">
+        <ul id="slider">
+          <li id="slide1" class="active slide"><a href="http://placesheen.com/200/300">
+            <img src="http://placesheen.com/200/300" alt="sheen"></a></li>
+          <li id="slide2" class="hidden slide"><a href="http://placesheen.com/250/300">
+            <img src="http://placesheen.com/250/300" alt="sheen"></a></li>
+          <li id="slide3" class="hidden slide"><a href="http://placesheen.com/300/350">
+          <img src="http://placesheen.com/300/350" alt="sheen"></a></li>
+          <li id="slide4" class="hidden slide"><a href="http://placesheen.com/300/300">
+            <img src="http://placesheen.com/300/300" alt="sheen"></a></li>
+          <li id="slide5" class="hidden slide"><a href="http://placesheen.com/400/300">
+            <img src="http://placesheen.com/400/300" alt="sheen"></a></li>
+        </ul>
+        </section>
+        <nav>
+          <ul>
+            <li class="buttons current" id="button1">
+            <li class="buttons" id="button2">
+            <li class="buttons" id="button3">
+            <li class="buttons" id="button4">
+            <li class="buttons" id="button5">
+          </ul>
+        </nav>
+        <nav>
+          <span><img class="left hidden" src="http://www.massachusettscriminaldefenseattorneyblog.com/files/2014/07/Middle-finger-emoticon.png"></span>
+        </nav>
+        <nav>
+          <span><img class="right" src="http://www.massachusettscriminaldefenseattorneyblog.com/files/2014/07/Middle-finger-emoticon.png"></span>
+        </nav>
+      </section>
     </div>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script>
+$(".right").click(function() {
+  $(".active").addClass('hidden').next().removeClass('hidden');
+  $(".active").removeClass('active').next().addClass('active');
+  $(".current").removeClass('current').next().addClass('current');
+  $(".left").removeClass("hidden");
+  if ($("#slider > li:last").hasClass("active")) {
+    $(".right").addClass('hidden');
+  }
+});
+
+$(".left").click(function() {
+  $(".active").addClass('hidden').prev().removeClass('hidden');
+  $(".active").removeClass('active').prev().addClass('active');
+  $(".current").removeClass('current').prev().addClass('current');
+  $(".right").removeClass("hidden");
+  if ($("#slider > li:first").hasClass("active")) {
+    $(".left").addClass('hidden');
+  }
+});
+
+$("#button1").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide1").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button1").addClass('current');
+  $(".left").addClass('hidden');
+  $(".right").removeClass("hidden");
+});
+
+$("#button2").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide2").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button2").addClass('current');
+  $(".left, .right").removeClass("hidden");
+});
+
+$("#button3").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide3").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button3").addClass('current');
+  $(".left, .right").removeClass("hidden");
+});
+
+$("#button4").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide4").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button4").addClass('current');
+  $(".left, .right").removeClass("hidden");
+});
+
+$("#button5").click(function(){
+  $(".active").addClass('hidden').removeClass('active');
+  $("#slide7").removeClass('hidden').addClass('active');
+  $(".current").removeClass('current');
+  $("#button7").addClass('current');
+  $(".left").removeClass("hidden");
+  $(".right").addClass('hidden');
+});
+
+  </script>
   </body>
 </html>
