@@ -4,8 +4,8 @@
 	angular.module('todomvc', [ ])
 		.controller('Ctrl', function(){
 			this.tasks = [
-			 { text: 'thing in controller 1'},
-			 { text: 'thing in controller 2'},
+			 { text: 'Nicholas Patrick OHare'},
+			 { text: 'Isabella Von Carstein'},
 			];
 
 		this.cancelEdit = function(keyCode, task){

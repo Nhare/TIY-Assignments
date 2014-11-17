@@ -31,7 +31,7 @@
 					<li ng-repeat="task in taskList.tasks" ng-class="{completed: task.completed, editing: task.editing}">
 						<div class="view">
 							<input class="toggle" type="checkbox" ng-model="task.completed">
-							<label ng-dblclick="task.startEdit(task)">{{task}}</label>
+							<label ng-dblclick="task.startEdit(task)">{{task.text}}</label>
 							<button class="destroy"></button>
 						</div>
 						<input class="edit" value="{{task.text}}" ng-keyup="taskList.cancelEdit(task)">
