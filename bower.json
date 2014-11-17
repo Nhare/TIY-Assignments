@@ -1,0 +1,21 @@
+{
+  "name": "bower.json",
+  "version": "1.3.12",
+  "homepage": "https://github.com/Nhare/TIY-Assignments",
+  "authors": [
+    "Nicholas Hare <oharemarketing@gmail.com>"
+  ],
+  "description": "bower json file",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.3.2"
+  }
+}
