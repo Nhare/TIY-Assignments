@@ -12,10 +12,10 @@
 
 ____
 
-#### I can _mark a trask as completed_ so that I can _track what has been done_.
+#### I can _mark a task as completed_ so that I can _track what has been done_.
 ____
 
-#### I can _add a trask to the list_ so that I can _be reminded to do it_.
+#### I can _add a task to the list_ so that I can _be reminded to do it_.
 ____
 
 #### I can _view a list of incomplete tasks_ so that I can _pick what I need to do next_.
