@@ -5,38 +5,48 @@
     .factory('TaskList', [ '$filter', '$http', function($filter, $http){
       return self = {
         tasks: [ ],
+
         get: function(){
           return $http.get("tasks.json")
             .success(function(data){
               self.tasks = data;
             });
         },
+
         completed: function(){
           return $filter('filter')(self.tasks, function(task){
             return !task.completed;
           });
         },
+
         addTask: function(task){
           self.tasks.push({ text: task });
         },
+
         removeTask: function(task){
         },
+
         editTask: function(task, text){
           task.text = text;
 
           self.cancelEditing(task);
         },
-        startEditing: function(task){
+
+        startEditing: function($event, task){
+					angular.forEach(self.tasks, function(task){
+						self.cancelEditing(task);
+					});
           task.editing = true;
         },
+
         cancelEditing: function(task){
           task.editing = false;
         },
+
       };
     } ]) // END factory(TaskList)
 
     .controller('Ctrl', [ 'TaskList', function(TaskList){
-      console.log(TaskList);
       var self = this,
           tasks = this.tasks = [ ];
 

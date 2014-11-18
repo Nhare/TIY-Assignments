@@ -24,12 +24,13 @@
 					<li ng-repeat="task in taskList.tasks" ng-class="{completed: task.completed, editing: task.editing}">
 						<div class="view">
 							<input class="toggle" type="checkbox" ng-model="task.completed">
-							<label ng-dblclick="taskList.startEdit($event, task)">{{task.text}}</label>
+							<label ng-dblclick="taskList.startEdit($event, task, tasks)">{{task.text}}</label>
 							<button class="destroy"></button>
 						</div>
 						<form ng-submit="taskList.editTask(task, updatedText)">
 							<input class="edit"
 								ng-model="updatedText"
+								ng-keyup="taskList.cancelEdit($event, task)">
 						</form>
 					</li>
 				</ul>
@@ -39,7 +40,7 @@
 				<!-- This should be `0 items left` by default -->
 				<span id="todo-count">
 					<strong>{{taskList.completed().length}}</strong>
-					item left</span>
+					items left</span>
 				<!-- Remove this if you don't implement routing -->
 				<ul id="filters">
 					<li>
