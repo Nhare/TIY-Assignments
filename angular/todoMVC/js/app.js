@@ -24,6 +24,7 @@
         },
 
         removeTask: function(task){
+					// $(self.task).remove();
         },
 
         editTask: function(task, text){
@@ -33,10 +34,12 @@
         },
 
         startEditing: function($event, task){
+					// var editInput = task.text;
 					angular.forEach(self.tasks, function(task){
 						self.cancelEditing(task);
 					});
           task.editing = true;
+					// task.text = editInput;
         },
 
         cancelEditing: function(task){
@@ -59,6 +62,8 @@
       this.startEdit = TaskList.startEditing;
 
       this.editTask = TaskList.editTask;
+
+			this.removeTask = TaskList.removeTask;
 
       this.cancelEdit = function($event, task){
         if ( $event.keyCode === 27 ){
