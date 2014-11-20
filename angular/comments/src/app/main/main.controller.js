@@ -2,7 +2,7 @@
 
 angular.module('github-comments')
   .controller('MainCtrl', function($http, $interpolate, $cookies){
-      var apiUrl = 'https://api.github.com/gists/02be30f604c33f83b536/comments',
+      var apiUrl = 'https://api.github.com/gists/bccdaaa4ca9d9b5aefc6/comments',
           apiKeyTpl = $interpolate('?access_token={{key}}');
 
       var self = this;
@@ -24,4 +24,13 @@ angular.module('github-comments')
             self.comments.push(data);
           });
       };
+
+      this.editComment = function(){
+
+      };
+
+      this.deleteComment = function(){
+
+      };
+
   });

@@ -42,15 +42,15 @@
               <button type="submit" class="btn btn-primary col-xs-2"
               >POST</button> <em>{{140 - text.length}} characters remaining</em>
           </fieldset>
-          <blockquote>
+          <!-- <blockquote>
             <p>
             {{text || 'Lorem ipsum...' | limitTo:140 }}
             </p>
             <cite>
-              &mdash; <strong>{{author || 'Your Name'}}</strong>
-              on <time>2014-11-20</time>
+              &mdash; <strong>{{author || "Your Name"}}</strong>
+              on <time>{{comment.updated_at | date:'medium'}}</time>
             </cite>
-          </blockquote>
+          </blockquote> -->
         </form>
       </header>
       <section>
@@ -59,28 +59,17 @@
           {{comment.body}}
           </p>
           <cite>
-            <!-- // FIXME: ;)
-            <a ng-href="{{comment.user.html_url}}" rel="avatar"
-              class="thumbnail"><img ng-src="{{comment.user.avatar_url}}"></a>
-            -->
+
+            <a ng-href="{{comment.user.html_url}}" rel="avatar"><img height="20" ng-src="{{comment.user.avatar_url}}" width="20"></a>
+
             <a ng-href="{{comment.user.html_url}}"
               rel="author"><strong>{{comment.user.login}}</strong></a>
-            on <time>{{comment.updated_at | date}}</time>
+            on <time>{{comment.updated_at | date:'medium'}}</time>
           </cite>
         </blockquote>
       </section>
 
     </div> <!-- .container -->
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
