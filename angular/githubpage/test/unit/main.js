@@ -3,7 +3,7 @@
 describe('controllers', function(){
   beforeEach(module('githubpage'));
 
-
+  
     beforeEach(inject(function($httpBackend){
 
         $httpBackend.expectGET('https://api.github.com/users/al-the-x');

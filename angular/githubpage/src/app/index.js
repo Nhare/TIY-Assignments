@@ -20,3 +20,4 @@ angular.module('githubpage', ['restangular']);
     ).get().$object;
 
   });
+  
