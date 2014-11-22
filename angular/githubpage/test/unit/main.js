@@ -1,22 +1,20 @@
 'use strict';
 
 describe('controllers', function(){
-  var scope;
-
   beforeEach(module('githubpage'));
 
-  beforeEach(inject(function($rootScope) {
-  	scope = $rootScope.$new();
-  }));
 
-  it('should define more than 5 awesome things', inject(function($controller) {
-    expect(scope.awesomeThings).toBeUndefined();
+    beforeEach(inject(function($httpBackend){
 
-    $controller('MainCtrl', {
-      $scope: scope
-  	});
+        $httpBackend.expectGET('https://api.github.com/users/al-the-x');
 
-    expect(angular.isArray(scope.awesomeThings)).toBeTruthy();
-    expect(scope.awesomeThings.length > 5).toBeTruthy();
+        var MainCtr = $controller('MainCtrl');
+
+        assert.deepEqual(MainCtrl.user, {});
+
+        $httpBackend.flush();
+
+        assert.equal(MainCtrl.user.login, 'al-the-x');
+    // });
   }));
 });
