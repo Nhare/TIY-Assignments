@@ -1,9 +1,46 @@
-'use strict';
+var gulp = require('gulp'),
+    connect = require('gulp-connect');
+    // args = require('yargs')
+    //     .alias('p', 'path')
+    //     .demand(['path'])
+    //     .alias('w', 'watch')
+    //     .argv;
 
-var gulp = require('gulp');
+// gulp.task('default', [ ], function(){
+//
+// });
 
-require('require-dir')('./gulp');
 
-gulp.task('default', ['clean'], afunction () {
-    gulp.start('build');
+
+gulp.task('connect', function(){
+  connect.server({
+    livereload: true
+  });
 });
+
+gulp.task('html', function(){
+  gulp.src('./angular/**/*.*')
+    .pipe(connect.reload());
+});
+
+gulp.task('watch', function(){
+  gulp.watch(['./angular/**/*.*'], ['reload']);
+  // args.watch && gulp.watch([ args.watch ], [ 'html' ]);
+});
+
+// gulp.task('open', function(){
+//   require('child_process').exec('open http://localhost:8080');
+// });
+
+gulp.task('default', ['connect', 'watch']);
+
+
+// 'use strict';
+//
+// var gulp = require('gulp');
+//
+// require('require-dir')('./gulp');
+//
+// gulp.task('default', ['clean'], afunction(){
+//     gulp.start('build');
+// });
