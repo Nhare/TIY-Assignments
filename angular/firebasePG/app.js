@@ -1,8 +1,8 @@
 // Firebase Playground
 
-var myApp = angular.module("myApp", ["firebase"]);
+var rocketChat = angular.module("rocketChat", ["firebase"]);
 
-      myApp.controller('MyController', ['$scope', '$firebase',
+      rocketChat.controller('chatCtrl', ['$scope', '$firebase',
         function($scope, $firebase) {
           var ref = new Firebase("https://zsxedrfkba1.firebaseio-demo.com/");
           $scope.messages = $firebase(ref).$asArray();
