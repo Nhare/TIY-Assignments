@@ -4,7 +4,7 @@ var rocketChat = angular.module("rocketChat", ["firebase"]);
 
       rocketChat.controller('chatCtrl', ['$scope', '$firebase',
         function($scope, $firebase) {
-          var ref = new Firebase("https://zsxedrfkba1.firebaseio-demo.com/");
+          var ref = new Firebase("https://intense-inferno-770.firebaseio-demo.com/");
           $scope.messages = $firebase(ref).$asArray();
 
           //ADD MESSAGE METHOD
