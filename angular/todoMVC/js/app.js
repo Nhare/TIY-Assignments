@@ -1,69 +1,261 @@
-(function( window ) {
-	'use strict';
+// (function( window ) {
+// 	'use strict';
+//
+// 	// Your starting point. Enjoy the ride!
+//   angular.module('todomvc', [ ])
+//     .factory('TaskList', [ '$filter', '$http', function($filter, $http){
+//       return self = {
+//         tasks: [ ],
+//         get: function(){
+//           return $http.get("tasks.json")
+//             .success(function(data){
+//               self.tasks = data;
+//             })
+//
+//         },
+//         completed: function(){
+//           return $filter('filter')(self.tasks, function(task){
+//             return !task.completed;
+//           });
+//         },
+//         addTask: function(task){
+//           self.tasks.push({ text: task });
+//         },
+//         removeTask: function(task){
+//         },
+//         editTask: function(task, text){
+//           task.text = text;
+//
+//           self.cancelEditing(task);
+//         },
+//         startEditing: function(task){
+//           task.editing = true;
+//         },
+//         cancelEditing: function(task){
+//           task.editing = false;
+//         },
+//       };
+//     } ]) // END factory(TaskList)
+//     .controller('Ctrl', [ 'TaskList', function(TaskList){
+//       //console.log(TaskList);
+//       var self = this,
+//           tasks = this.tasks = [ ];
+//
+//       TaskList.get().success(function(){
+//         tasks = self.tasks = TaskList.tasks;
+//       });
+//
+//       this.completed = TaskList.completed;
+//
+//       this.startEdit = TaskList.startEditing;
+//
+//       this.editTask = TaskList.editTask;
+//
+//       this.cancelEdit = function($event, task){
+//         if ( $event.keyCode === 27 ){
+//           task.editing = false;
+//         }
+//       }
+//
+//       this.addTask = function($event, task){
+//         if ( $event.keyCode === 13 ){
+//           TaskList.addTask(task);
+//         }
+//       }
+//
+//     } ]) // END controller(Ctrl)
+//   ; // END module(todomvc)
+//
+// })( window );
+$(function() {
 
-	// Your starting point. Enjoy the ride!
-  angular.module('todomvc', [ ])
-    .factory('TaskList', [ '$filter', '$http', function($filter, $http){
-      return self = {
-        tasks: [ ],
-        get: function(){
-          return $http.get("tasks.json")
-            .success(function(data){
-              self.tasks = data;
-            })
+//binding the enter key to the input
+  var $input = $('#new-todo');
+  $input.keyup(function(e){
+    if(e.keyCode == 13)  {
+      $(this).trigger("addTask");
+      }
+    });
 
-        },
-        completed: function(){
-          return $filter('filter')(self.tasks, function(task){
-            return !task.completed;
-          });
-        },
-        addTask: function(task){
-          self.tasks.push({ text: task });
-        },
-        removeTask: function(task){
-        },
-        editTask: function(task, text){
-          task.text = text;
+/* ensure there is more than whitespace in the input field (line 17)
+// If yes, then
+// display the main section
+// add the input field value to the list item
+// clear the input value
+*/
+  $input.bind("addTask",function(){
+    if ($input.val().trim().length > 0 ){
+      $('#main').css({display: 'block'});
+      $('#todo-list').append('<li><div class="view"><input class="toggle" type="checkbox"><label>' +
+        $input.val() + '</label><button class="destroy"></button></div><input class="edit" value="' +
+        $input.val() + '" ></li>');
 
-          self.cancelEditing(task);
-        },
-        startEditing: function(task){
-          task.editing = true;
-        },
-        cancelEditing: function(task){
-          task.editing = false;
-        },
-      };
-    } ]) // END factory(TaskList)
-    .controller('Ctrl', [ 'TaskList', function(TaskList){
-      //console.log(TaskList);
-      var self = this,
-          tasks = this.tasks = [ ];
+      //Clears the input field
+      $input.val('');
 
-      TaskList.get().success(function(){
-        tasks = self.tasks = TaskList.tasks;
-      });
+      // Display the footer
+      $('#footer').show();
 
-      this.completed = TaskList.completed;
+      // update footer new count
+      $('#todo-count strong').text($('#todo-list li').length - $('.completed').length);
 
-      this.startEdit = TaskList.startEditing;
+    }
+  });
 
-      this.editTask = TaskList.editTask;
+// Toggling all of the Tasks on/off
+   var $complete = $('#todo-list li');
+   var $toggleAll = $('#toggle-all');
+   $toggleAll.click(function() {
+     if ($('#todo-list li').hasClass('')) {
+       $('#todo-list li').addClass('completed');
+       $('.toggle').prop('checked', true);
+       $('#clear-completed').show();
+       $('#clear-completed').html('Clear Completed (' + $('.completed').length + ')');
 
-      this.cancelEdit = function($event, task){
-        if ( $event.keyCode === 27 ){
-          task.editing = false;
-        }
+
+
+       $('#todo-count strong').text($('#todo-list li').length - $('.completed').length);
+     } else {
+       $('.toggle').prop('checked', false);
+       $('#todo-list li').removeClass('completed');
+       $('#todo-count strong').text($('#todo-list li').length - $('.completed').length);
+       $('#clear-completed').hide();
+       $('#clear-completed').html('Clear Completed (' + $('.completed').length + ')');
+
+     }
+   });
+
+// Toggle individual Tasks on/off
+  $('#todo-list').on('click', '.toggle', function(){
+    $(this).closest('li').toggleClass('completed');
+    $('#todo-count strong').text($('#todo-list li').length - $('.completed').length);
+
+    //will start the clear completed counter once a task has been marked as complete
+    $('#clear-completed').show().html('Clear Completed (' + $('.completed').length + ')');
+
+    if(('.completed').length === 0) {
+      $('#clear-completed').hide();
+    }
+
+
+    // if all individual tasks are checked off, the toggle-all icon will toggle
+    if($('.completed').length === $('#todo-list li').length) {
+      $('#toggle-all').prop('checked', true);
+    } else {
+      $('#toggle-all').prop('checked', false);
+      $('#clear-completed').html('Clear Completed (' + $('.completed').length + ')');
+    }
+
+  });
+
+  //clicking on the red "x" should remove the corresponding task item
+  //calls the function destroyTask
+  $('#todo-list').on('click', '.destroy', function(){
+    destroyTask($(this));
+    $('#clear-completed').show().html('Clear Completed (' + $('.completed').length + ')');
+    if($('.completed').length===0){
+      $('#clear-completed').hide();
       }
 
-      this.addTask = function($event, task){
-        if ( $event.keyCode === 13 ){
-          TaskList.addTask(task);
-        }
+    if($('#todo-list li').length===0){
+      $('#footer').hide();
+      $('#main').hide();
+    }
+
+  });
+
+  // functionality of the destroy button
+  var destroyTask = function(destroyButton){
+    destroyButton.parent().parent().removeClass('.completed').remove();
+  };
+
+  //clicking 'Clear Completed' will remove all checked-off tasks
+  $('#clear-completed').on('click', function(){
+    $('#todo-list li').filter('.completed').remove();
+    $('#clear-completed').html('Clear Completed (' + $('.completed').length + ')');
+    $('#clear-completed').hide();
+
+    if($('#todo-list li').length===0){
+      $('#footer').hide();
+      $('#main').hide();
+    }
+
+  });
+
+
+
+});
+
+// Show All Tasks in the List of Tasks
+$('a[href="#/"]').click(function(event){
+    $(this).addClass('selected');
+    $('#todo-list li').each(function() {
+      if($(this).hasClass('hidden')) $(this).removeClass('hidden');
+    });
+    highlightTab($(this));
+    return false;
+});
+
+// Show only Active Tasks in the List of Tasks
+$('a[href="#/active"]').click(function(event){
+    $('#todo-list li').each(function() {
+      if($(this).hasClass('completed')) $(this).addClass('hidden');
+      if(!$(this).hasClass('completed') && $(this).hasClass('hidden')) $(this).removeClass('hidden');
+    });
+    highlightTab($(this));
+    return false;
+});
+
+// Show only Completed Tasks in the List of Tasks
+$('a[href="#/completed"]').click(function(event){
+    $('#todo-list li').each(function() {
+      if($(this).hasClass('')) $(this).addClass('hidden');
+      if($(this).hasClass('completed hidden')) $(this).removeClass('hidden');
+    });
+    highlightTab($(this));
+    return false;
+});
+
+function highlightTab(element){
+  $('#filters').find('li a').each(function(){
+    if($(this).attr('href')==element.attr('href')){
+      if(!$(this).hasClass('selected')) $(this).addClass('selected');
+    } else {
+      $(this).removeClass('selected');
+    }
+  });
+}
+
+// Double Click to bring up the edit field for a list item label
+$('#todo-list').on('dblclick', '.view label', function(e) {
+  $editInput = $( e.target ).closest('li').addClass('editing').find('.edit');
+  $editInput.html($('.editing label').val());
+  $editInput.focus();
+});
+
+//On Enter remove the edit field and replace with the edited label
+$("#todo-list").on("keyup", ".edit", function (e) {
+  if (e.keyCode == 13) {
+    $(e.target).blur();
+  }
+//On Escape, ignore all edits that have occured and replace the value back to the state prior to editing
+  if (e.keyCode == 27) {
+    $(e.target).val($('.editing label').html()).closest('li').removeClass('editing');
+  }
+});
+
+//When the item being edited loses focus remove edit field and display the edited label
+$("#todo-list").on("focusout", ".edit", function(e) {
+      var $toDo = $('#todo-list')
+      $( '.editing label' ).html($editInput.val().trim());
+      $( '.editing' ).removeClass('editing');
+      if ($(this).val().trim().length == 0) {
+        $( this ).closest('li').remove();
       }
 
-    } ]) // END controller(Ctrl)
-  ; // END module(todomvc)
-
-})( window );
+//If there are no items in the list add display: none to both #main and #footer
+      if ($("#todo-list").children("li").length == 0) {
+        $("#main").css("display" , "none");
+        $("#footer").css("display" , "none");
+      }
+    });
