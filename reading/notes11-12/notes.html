@@ -1,0 +1,80 @@
+<!doctype>
+<html>
+  <head>
+  </head>
+  <body>
+  <script>
+
+    ;(function(){
+      _.templateSettings.interpolate = BLAHFUCKWHAT;
+      var $slide = $($('.slides template').prop('content').children),
+          sLideTpl = _.template($slide.html());
+
+      var images = [
+        { src: 'url' },
+        { src: 'url' }
+      ]
+
+      _.each(images, function(image){
+        $slide.clone().html(sLideTpl({ image: image })).appendTo($slides);
+      });
+
+    })();
+
+  </script>
+  </body>
+</html>
+
+
+<!--script
+_.reduce(fields, function(dict, item){ dict[item.name] = item.value; return dict; }, { })
+
+gulp
+
+gulp.task('wiredep', function(){
+  wiredep({ src: 'index.html' });
+});
+
+gulp.task('bower', function(){
+  gulp.watch('bower.json', [ 'wiredep' ]);
+});
+
+gulp.task('default', [ 'connect', 'watch', 'bower' ]);
+
+-->
+
+<!--
+Brew - Package manager.
+Bower
+Npm
+Gulp
+Lodash
+Chai
+wiredep
+jquery
+bootstrap
+-->
+
+
+TODOMVC   Angular JS
+
+"Enter" form clone template.
+Filters for All, Active, Completed.
+Check field, strikethrough todo.
+Delete selection.
+Remove completed, run delete all on checked fielded.
+
+Enter
+form? on enter clone "template" for new Li
+
+Filters
+Show those w/ class none, show w/ class completed, show all.
+
+Completed
+$('check-icon').onClick(Strikethrough this Li's content);
+
+Delete
+$('x-icon').onClick(Delete this Li);
+
+Remove Completed
+$('remove-comp-icon').onClick(Delete function on all Li's with completed class);

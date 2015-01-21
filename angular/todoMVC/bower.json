@@ -1,0 +1,11 @@
+{
+  "name": "todomvc-template",
+  "version": "0.0.0",
+  "dependencies": {
+    "todomvc-common": "~0.1.4",
+    "angularjs": "~1.3.2",
+    "jquery": "~2.1.1",
+    "lodash": "~2.4.1",
+    "restangular": "~1.4.0"
+  }
+}

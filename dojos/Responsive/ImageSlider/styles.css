@@ -63,3 +63,28 @@ ul {
   right: 5%;
   cursor: pointer;
 }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+img.right
+{
+    -webkit-animation-name:             rotate;
+    -webkit-animation-duration:         0.5s;
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+img.left
+{
+    -webkit-animation-name:             rotate;
+    -webkit-animation-duration:         0.5s;
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
