@@ -1,0 +1,335 @@
+/* Main css for Surf & Paddle */
+
+.main {
+	width: 100%;
+	margin-top: 2%;
+}
+.container, .container-fluid {
+	padding: 0;
+}
+.page-header {
+	background: rgba(0,128,255,0.5);
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+}
+
+.head-img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+}
+
+nav {
+	text-align: center;
+	list-style-type: none;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	padding: 2ex 0;
+}
+
+nav div {
+	color: #123456;
+	font-weight: bold;
+}
+
+nav::after {
+	display: block;
+	content: url(https://a4a9af4a2e802671f00b4af7d94a218d2d71be32.googledrive.com/host/0B_9V0tR7amAncWVCbGNEZUhXYmM/icon-logo.png);
+	margin-top: 2ex;
+}
+
+#logo {
+	display: none;
+}
+
+#search {
+	padding: 2%;
+	display: inline;
+}
+
+#about {
+	padding: 2%;
+	display: inline;
+}
+
+.glyphicon-search {/* flips the magnifying glass 180 to face the other direction */
+	transform: scaleX(-1);
+}
+.glyphicon-comment, .glyphicon-cloud,
+.glyphicon-share {
+	background-color: #123456;
+	color: white;
+	padding: .69%;
+	vertical-align: top;
+}
+button {
+	color: white;
+	background-color: lightsteelblue;
+	border: none;
+}
+.share {
+	background-color: steelblue;
+}
+
+.header1 {
+	margin: 0;
+	text-align: center;
+	clear: both;
+}
+.header1 p {
+	margin: 0;
+}
+
+header h1 {
+	color: #fff;
+	margin-top: 0.5ex;
+	margin-bottom: 0;
+	font-family: "open sans", "sans-serif";
+}
+
+header a {
+	text-decoration: none;
+}
+.col-md-8 h1{
+	font-size: 355%;
+	font-family: "Oswald", "sans-serif";
+}
+h1 small {
+	font-size: 30%;
+	color: #123456;
+}
+
+h1, h2, h4 {
+	color: #123456;
+}
+
+a:visited {
+	color:grey;
+}
+
+a {
+	text-decoration: underline;
+}
+
+.glyphs {
+
+	 float:left
+	 clear:both;
+}
+
+footer {
+
+	background-color: #123456;
+}
+
+.bigAl {
+	width: 40%;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.miniDave {
+	margin: 20%;
+}
+.some {
+	text-align: center;
+}
+.social {
+	text-align: center;
+}
+.someMini {
+	display: none;
+}
+.bg-container {
+      position: relative;
+      background: rgba(0,128,255,0.5);
+      overflow: hidden;
+}
+
+.bg-img {
+      display: block;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: -1;
+}
+
+.img {
+      max-width: 100%;
+}
+
+.mostpop {
+      padding: 0;
+}
+
+.mostpop article {
+      margin: 2ex 0;
+}
+
+.mostpop header {
+      text-align: center;
+			margin-top: 5ex;
+}
+
+.mostpop article {
+      position: relative;
+      height: 300px;
+      display: block;
+      text-decoration: none;
+      transition: background-color 0.25s;
+}
+
+.mostpop article:hover {
+      background-color: rgba(0,100,255,0);
+      transition: background-color 0.5s ease-in-out;
+}
+
+.mostpop .p-title {
+      position: absolute;
+      color: white;
+      bottom: 0; left: 0; right: 0;
+      margin: 0 auto; margin-left: 0;
+      padding: 2ex 1em;
+      max-width: 60%;
+}
+
+footer {
+			clear:both;
+			padding-top: 4ex;
+}
+blockquote {
+	color: #2971B0;
+	font-size: 150%;
+}
+
+.sideAd section img{
+	width: 100%;
+	padding: 0 6%;
+}
+.sidebar-heading {
+	display:none;
+}
+.row {
+	width: 100%;
+  margin: 0;
+}
+.mostpop h4 {
+	font-size: 250%;
+	font-family: "Oswald", "Arial", "sans-serif";
+	color: #123456;
+	text-transform: uppercase;
+}
+@media (min-width: 600px){
+	.mostpop article {
+				width: 48%; margin: 1%;
+				float: left;
+	}
+	header h1 {
+		font-size: 350%;
+	}
+	.col-md-8 h1 {
+		font-size: 250%;
+	}
+	.miniDave {
+		display: none;
+	}
+	.sidebar {
+		margin-top: 3ex;
+	}
+}
+
+@media (min-width: 768px) {
+.header1 {
+	margin: 8% 0 0 0;
+}
+.sidebar-heading {
+	display: block;
+}
+.sidebar-heading h3 {
+	color: #123456;
+	font-size: 300%;
+	vertical-align: top;
+}
+.sidebar {
+	margin-top: 4ex;
+}
+.sideAd {
+	width: 50%;
+	float: right;
+}
+.someMini {
+	  display: block;
+}
+
+.miniAl {
+	border-radius: 50%;
+}
+
+.date {
+	line-height: 28px;
+}
+#logo {
+	display: block;
+	float: left;
+}
+.absearch {
+	float: right;
+}
+nav {
+	width: 80%;
+	margin: 0 auto;
+}
+nav::after {
+	display: none;
+}
+.col-md-8 h1 {
+	font-size: 450%;
+}
+.mostpop h4 {
+	font-size: 350%;
+}
+
+@media (min-width: 992px) {
+	.sidebar {
+		margin-top: 2ex;
+	}
+	.page-header {
+		min-height: 450px;
+	}
+	.main {
+		width: 85%;
+		margin-top: 5%;
+	}
+	.sideAd {
+		width: 100%;
+		float: none;
+	}
+	.miniDave {
+		display: block;
+	}
+	header h1  {
+		font-size: 600%;
+		font-weight: bolder;
+	}
+	h4 {
+		font-size: 500%;
+		font-weight: bolder;
+		padding: 1ex;
+	}
+	.sidebar-heading h3 {
+		font-size: 150%;
+	}
+}
+
+@media (min-width: 1200px){
+	.mostpop article {
+				width: 25%; margin: 0;
+	}
+
+}
