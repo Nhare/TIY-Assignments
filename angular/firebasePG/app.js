@@ -1,10 +1,10 @@
 // Firebase Playground
 
-var myApp = angular.module("myApp", ["firebase"]);
+var rocketChat = angular.module("rocketChat", ["firebase"]);
 
-      myApp.controller('MyController', ['$scope', '$firebase',
+      rocketChat.controller('chatCtrl', ['$scope', '$firebase',
         function($scope, $firebase) {
-          var ref = new Firebase("https://zsxedrfkba1.firebaseio-demo.com/");
+          var ref = new Firebase("https://intense-inferno-770.firebaseio-demo.com/");
           $scope.messages = $firebase(ref).$asArray();
 
           //ADD MESSAGE METHOD
@@ -21,27 +21,3 @@ var myApp = angular.module("myApp", ["firebase"]);
           };
         }
       ]);
-
-// app.controller("SampleCtrl", function($scope, $firebase) {
-//   var ref = new Firebase("https://intense-inferno-770.firebaseio.com/messages");
-//   var sync = $firebase(ref);
-//
-//   $scope.messages = sync.$asArray();
-//
-//   $scope.addMessage = function(text) {
-//     $scope.messages.$add({text: text});
-//   };
-
-//   app.controller("SampleCtrl", ["$scope", "$firebaseAuth",
-//   function($scope, $firebaseAuth) {
-//     var ref = new Firebase("https://intense-inferno-770.firebaseio.com/");
-//     var auth = $firebaseAuth(ref);
-//     auth.$authWithOAuthPopup("facebook").then(function(authData) {
-//       console.log("Logged in as:", authData.uid);
-//     }).catch(function(error) {
-//       console.error("Authentication failed: ", error);
-//     });
-//   }
-// ]);
-
-// });
