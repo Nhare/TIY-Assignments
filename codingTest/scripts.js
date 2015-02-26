@@ -1,1 +1,0 @@
-// Findsome Winmore Coding Test

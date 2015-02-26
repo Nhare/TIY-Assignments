@@ -1,0 +1,137 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'normalize.css' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose cache add [ 'normalize.css', null ]
+5 verbose cache add name=undefined spec="normalize.css" args=["normalize.css",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'normalize.css',
+6 verbose parsed url   path: 'normalize.css',
+6 verbose parsed url   href: 'normalize.css' }
+7 silly lockFile baf8eabf-normalize-css normalize.css
+8 verbose lock normalize.css /Users/OHare/.npm/baf8eabf-normalize-css.lock
+9 silly lockFile baf8eabf-normalize-css normalize.css
+10 silly lockFile baf8eabf-normalize-css normalize.css
+11 verbose addNamed [ 'normalize.css', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 70dd7003-normalize-css normalize.css@
+14 verbose lock normalize.css@ /Users/OHare/.npm/70dd7003-normalize-css.lock
+15 silly addNameRange { name: 'normalize.css', range: '*', hasData: false }
+16 verbose request where is /normalize.css
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id 5a350d8bdc763d08
+19 verbose url raw /normalize.css
+20 verbose url resolving [ 'https://registry.npmjs.org/', './normalize.css' ]
+21 verbose url resolved https://registry.npmjs.org/normalize.css
+22 verbose request where is https://registry.npmjs.org/normalize.css
+23 info trying registry request attempt 1 at 14:56:17
+24 http GET https://registry.npmjs.org/normalize.css
+25 http 200 https://registry.npmjs.org/normalize.css
+26 silly registry.get cb [ 200,
+26 silly registry.get   { date: 'Wed, 29 Oct 2014 18:56:18 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"8LXTNM9M6IHQPFZ8U73NNY3K6"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '6867',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     'x-served-by': 'cache-iad2131-IAD',
+26 silly registry.get     'x-cache': 'HIT',
+26 silly registry.get     'x-cache-hits': '1',
+26 silly registry.get     'x-timer': 'S1414608978.960451,VS0,VE18',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 silly addNameRange number 2 { name: 'normalize.css', range: '*', hasData: true }
+28 silly addNameRange versions [ 'normalize.css', [ '0.0.1', '3.0.1', '3.0.2' ] ]
+29 verbose addNamed [ 'normalize.css', '3.0.2' ]
+30 verbose addNamed [ '3.0.2', '3.0.2' ]
+31 silly lockFile 6cf70175-normalize-css-3-0-2 normalize.css@3.0.2
+32 verbose lock normalize.css@3.0.2 /Users/OHare/.npm/6cf70175-normalize-css-3-0-2.lock
+33 silly lockFile a7336a8a-lize-css-normalize-css-3-0-2-tgz https://registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz
+34 verbose lock https://registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz /Users/OHare/.npm/a7336a8a-lize-css-normalize-css-3-0-2-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz',
+35 verbose addRemoteTarball   '060310d24f5e0394f3a42672edb6e80956e8efd4' ]
+36 info retry fetch attempt 1 at 14:56:18
+37 verbose fetch to= /var/folders/dz/xb_vsd3n3g7c09n62gg30vgw0000gn/T/npm-19622-q4y1h201/registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz
+38 http GET https://registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz
+39 http 200 https://registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz
+40 silly lockFile a7336a8a-lize-css-normalize-css-3-0-2-tgz https://registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz
+41 silly lockFile a7336a8a-lize-css-normalize-css-3-0-2-tgz https://registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz
+42 silly lockFile 6cf70175-normalize-css-3-0-2 normalize.css@3.0.2
+43 silly lockFile 6cf70175-normalize-css-3-0-2 normalize.css@3.0.2
+44 silly lockFile 70dd7003-normalize-css normalize.css@
+45 silly lockFile 70dd7003-normalize-css normalize.css@
+46 silly resolved [ { name: 'normalize.css',
+46 silly resolved     version: '3.0.2',
+46 silly resolved     description: 'Normalize.css as a node packaged module',
+46 silly resolved     style: 'normalize.css',
+46 silly resolved     files: [ 'normalize.css' ],
+46 silly resolved     homepage: 'http://necolas.github.io/normalize.css',
+46 silly resolved     repository:
+46 silly resolved      { type: 'git',
+46 silly resolved        url: 'git://github.com/necolas/normalize.css.git' },
+46 silly resolved     author: { name: 'Nicolas Gallagher' },
+46 silly resolved     license: 'MIT',
+46 silly resolved     gitHead: 'd83132802e8bc10ece0c0afbe88fce83674ec252',
+46 silly resolved     bugs: { url: 'https://github.com/necolas/normalize.css/issues' },
+46 silly resolved     _id: 'normalize.css@3.0.2',
+46 silly resolved     scripts: {},
+46 silly resolved     _shasum: '060310d24f5e0394f3a42672edb6e80956e8efd4',
+46 silly resolved     _from: 'normalize.css@',
+46 silly resolved     _npmVersion: '1.4.26',
+46 silly resolved     _npmUser: { name: 'necolas', email: 'nicolasgallagher@gmail.com' },
+46 silly resolved     maintainers: [ [Object], [Object] ],
+46 silly resolved     dist:
+46 silly resolved      { shasum: '060310d24f5e0394f3a42672edb6e80956e8efd4',
+46 silly resolved        tarball: 'http://registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz' },
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/normalize.css/-/normalize.css-3.0.2.tgz' } ]
+47 info install normalize.css@3.0.2 into /usr/local/lib
+48 info installOne normalize.css@3.0.2
+49 verbose lib/node_modules/normalize.css unbuild
+50 verbose tar unpack /Users/OHare/.npm/normalize.css/3.0.2/package.tgz
+51 silly lockFile c917b5bb-l-lib-node-modules-normalize-css tar:///usr/local/lib/node_modules/normalize.css
+52 verbose lock tar:///usr/local/lib/node_modules/normalize.css /Users/OHare/.npm/c917b5bb-l-lib-node-modules-normalize-css.lock
+53 silly lockFile 075f0ffb--normalize-css-3-0-2-package-tgz tar:///Users/OHare/.npm/normalize.css/3.0.2/package.tgz
+54 verbose lock tar:///Users/OHare/.npm/normalize.css/3.0.2/package.tgz /Users/OHare/.npm/075f0ffb--normalize-css-3-0-2-package-tgz.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/normalize.css'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/normalize.css']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/local/lib/node_modules/normalize.css',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/local/lib/node_modules/normalize.css',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:107:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 error System Darwin 13.3.0
+59 error command "node" "/usr/local/bin/npm" "install" "-g" "normalize.css"
+60 error cwd /Users/OHare/TIY-Assignments
+61 error node -v v0.10.32
+62 error npm -v 1.4.28
+63 error path /usr/local/lib/node_modules/normalize.css
+64 error fstream_path /usr/local/lib/node_modules/normalize.css
+65 error fstream_type Directory
+66 error fstream_class DirWriter
+67 error code EACCES
+68 error errno 3
+69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/normalize.css'
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+70 error fstream_stack Object.oncomplete (fs.js:107:15)
+71 verbose exit [ 3, true ]

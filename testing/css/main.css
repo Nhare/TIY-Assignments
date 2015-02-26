@@ -1,0 +1,43 @@
+.header {
+  background-color: grey;
+}
+
+.main {
+  width: 100%;
+  margin-top: 3%;
+}
+
+.container, .container-fluid {
+  padding: 2em;
+}
+
+.centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+}
+
+.center {
+  text-align:center;
+}
+
+.head-img {
+  height: auto;
+  width: 100%;
+}
+
+.mailer-cta {
+  color: orange;
+  font-family: "open sans", "sans-serif";
+}
+
+.fish-music {
+  color: teal;
+  font-family: "open sans", "sans-serif";
+}
+
+
+.video {
+  width: 100%;
+}
