@@ -4,12 +4,16 @@ module.exports = {
     parseMail: parseMail,
 };
 
+//Regular Expression
 var regexes = {
     parse: {
+        //Each new line takes header before ':' and the follow text
+        //global multi-line matching
         header: /^(\S+):(.*)$/gm,
     }
 };
 
+//RFC822 - Unfolds folded lines in data.
 function unfold(data, parse)
 {
     data = data.toString();
@@ -18,6 +22,9 @@ function unfold(data, parse)
     return data.replace(re.fold);
 }
 
+
+//Parse headers out of email data
+//Returns object of parsed headers
 function parseMail(data, parse)
 {
     data = unfold(data, parse);
